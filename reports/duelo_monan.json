@@ -1,0 +1,2237 @@
+{
+  "criado_em": "2026-10-04T00:43:00+00:00",
+  "pre_registro_sha256": "bf8e2f48f32d6e3a2b141c7cf9d80fe185d5a21250790b822f6f138d3607c021",
+  "rodadas": [
+    "2026-09-02",
+    "2026-10-02"
+  ],
+  "ultimo_merge": "2026-10-03",
+  "estacoes_no_dominio": 1222,
+  "verdades": {
+    "merge_0p1_principal": {
+      "D1": {
+        "rodadas": 31,
+        "pares": 37882,
+        "mae_monan": 3.4677948761944988,
+        "mae_gefs": 2.9274565109269335,
+        "crps_m4d": 1.9399493375755201,
+        "vies_monan": 0.8145815558840611,
+        "vies_gefs": 0.06114199334663994,
+        "vies_m4d": -0.22379253466051918,
+        "brier10_monan": 0.09914999208067157,
+        "brier10_gefs": 0.09123066363972336,
+        "brier10_m4d": 0.058578884392465946,
+        "crps_gefs_ens": 2.430607545956048,
+        "mae_m4d": 2.875344773455098,
+        "mae_gefs_c00": 2.978977704798282,
+        "brier10_gefs_c00": 0.09175861886911989,
+        "rmse_monan": 9.447962050253718,
+        "rmse_gefs": 7.767792593439425,
+        "rmse_m4d": 7.318060213690826,
+        "rmse_gefs_c00": 7.998410939961218,
+        "contrastes": {
+          "MONAN_vs_GEFS_mae": {
+            "delta_pct": 18.457605202697813,
+            "ic95": [
+              13.762778508049987,
+              25.364254716829866
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_rmse": {
+            "delta_pct": 21.629947460663956,
+            "ic95": [
+              14.460115855952377,
+              32.74184479407455
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_brier10": {
+            "delta_pct": 8.680555555555557,
+            "ic95": [
+              3.4125968889928195,
+              16.24034160072107
+            ],
+            "veredito": "candidato pior"
+          },
+          "M4D_crps_vs_MONAN_mae": {
+            "delta_pct": -44.05812895991159,
+            "ic95": [
+              -47.94648868683595,
+              -41.0736011479349
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_crps_vs_GEFS_mae": {
+            "delta_pct": -33.732599260329735,
+            "ic95": [
+              -37.12761213441121,
+              -29.799935050782956
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_brier10": {
+            "delta_pct": -40.91892176370089,
+            "ic95": [
+              -45.62748601131187,
+              -36.79829347063315
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_GEFS_brier10": {
+            "delta_pct": -35.7903559445777,
+            "ic95": [
+              -39.51421769484222,
+              -30.819318091437722
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_rmse_media": {
+            "delta_pct": -22.543505416659613,
+            "ic95": [
+              -28.60363978226583,
+              -17.438826853751628
+            ],
+            "veredito": "candidato melhor"
+          },
+          "secundario_MONAN_vs_GEFSc00_mae": {
+            "delta_pct": 16.408889888933096,
+            "ic95": [
+              11.493487748241108,
+              22.80477609773518
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_rmse": {
+            "delta_pct": 18.12298869329574,
+            "ic95": [
+              11.779904556056533,
+              27.483551733311238
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_brier10": {
+            "delta_pct": 8.055235903337188,
+            "ic95": [
+              3.1451490073050152,
+              13.746247093912334
+            ],
+            "veredito": "candidato pior"
+          }
+        }
+      },
+      "D2": {
+        "rodadas": 30,
+        "pares": 36660,
+        "mae_monan": 3.6652351200218223,
+        "mae_gefs": 3.022695878377889,
+        "crps_m4d": 1.9810961466630934,
+        "vies_monan": 0.9720328559738135,
+        "vies_gefs": 0.08046366307939797,
+        "vies_m4d": -0.25802770601747793,
+        "brier10_monan": 0.10837424986361154,
+        "brier10_gefs": 0.09547190398254228,
+        "brier10_m4d": 0.05953623512996785,
+        "crps_gefs_ens": 2.423040050332911,
+        "mae_m4d": 2.946028852793836,
+        "mae_gefs_c00": 3.1261977669181187,
+        "brier10_gefs_c00": 0.09953627932351337,
+        "rmse_monan": 9.626539226253517,
+        "rmse_gefs": 7.725138299689233,
+        "rmse_m4d": 7.372107681905186,
+        "rmse_gefs_c00": 8.096695330844955,
+        "contrastes": {
+          "MONAN_vs_GEFS_mae": {
+            "delta_pct": 21.257158096525018,
+            "ic95": [
+              12.86646816910174,
+              31.035183907277755
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_rmse": {
+            "delta_pct": 24.613163581042595,
+            "ic95": [
+              13.112996527916334,
+              39.12672668674733
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_brier10": {
+            "delta_pct": 13.514285714285679,
+            "ic95": [
+              4.981302672377606,
+              22.65453291783079
+            ],
+            "veredito": "candidato pior"
+          },
+          "M4D_crps_vs_MONAN_mae": {
+            "delta_pct": -45.9490024025717,
+            "ic95": [
+              -51.08487818757748,
+              -41.40350914111315
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_crps_vs_GEFS_mae": {
+            "delta_pct": -34.45929639053743,
+            "ic95": [
+              -39.30866249306558,
+              -30.950492567760065
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_brier10": {
+            "delta_pct": -45.06422401548901,
+            "ic95": [
+              -51.389633332753185,
+              -39.520118799557416
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_GEFS_brier10": {
+            "delta_pct": -37.64004628958225,
+            "ic95": [
+              -43.186379342937926,
+              -32.75198487119927
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_rmse_media": {
+            "delta_pct": -23.418920251215937,
+            "ic95": [
+              -31.322782883416536,
+              -15.695866817138787
+            ],
+            "veredito": "candidato melhor"
+          },
+          "secundario_MONAN_vs_GEFSc00_mae": {
+            "delta_pct": 17.242586467429398,
+            "ic95": [
+              9.770526668902528,
+              25.632361919420337
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_rmse": {
+            "delta_pct": 18.894670392011758,
+            "ic95": [
+              9.115635929244467,
+              32.3738530518964
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_brier10": {
+            "delta_pct": 8.87914497122495,
+            "ic95": [
+              2.0595176604266334,
+              15.313315463473595
+            ],
+            "veredito": "candidato pior"
+          }
+        }
+      },
+      "D3": {
+        "rodadas": 29,
+        "pares": 35438,
+        "mae_monan": 3.9063740476324855,
+        "mae_gefs": 3.112097928114987,
+        "crps_m4d": 2.0835300645693176,
+        "vies_monan": 1.1792915091145095,
+        "vies_gefs": -0.12499659408251963,
+        "vies_m4d": -0.5885540301399413,
+        "brier10_monan": 0.11815000846548904,
+        "brier10_gefs": 0.09890513008634799,
+        "brier10_m4d": 0.06339766429575439,
+        "crps_gefs_ens": 2.4826712387713967,
+        "mae_m4d": 2.9806717546735215,
+        "mae_gefs_c00": 3.1870214877742367,
+        "brier10_gefs_c00": 0.10480275410576217,
+        "rmse_monan": 9.898420869095927,
+        "rmse_gefs": 7.9091255960299875,
+        "rmse_m4d": 7.633147119159715,
+        "rmse_gefs_c00": 8.195574238726758,
+        "contrastes": {
+          "MONAN_vs_GEFS_mae": {
+            "delta_pct": 25.522208422232893,
+            "ic95": [
+              20.017149484427907,
+              30.937838884385496
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_rmse": {
+            "delta_pct": 25.151898890877057,
+            "ic95": [
+              19.686445809130586,
+              31.35934889072958
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_brier10": {
+            "delta_pct": 19.457917261055634,
+            "ic95": [
+              9.43719200591223,
+              30.21953659271225
+            ],
+            "veredito": "candidato pior"
+          },
+          "M4D_crps_vs_MONAN_mae": {
+            "delta_pct": -46.66332411684767,
+            "ic95": [
+              -51.290084571667116,
+              -43.01581931603391
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_crps_vs_GEFS_mae": {
+            "delta_pct": -33.05062653245871,
+            "ic95": [
+              -38.42869069101661,
+              -29.699765573928286
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_brier10": {
+            "delta_pct": -46.34137981101162,
+            "ic95": [
+              -53.19029729158815,
+              -40.67039019793579
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_GEFS_brier10": {
+            "delta_pct": -35.90052989121416,
+            "ic95": [
+              -43.14887451529014,
+              -30.33695265435675
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_rmse_media": {
+            "delta_pct": -22.88520340662289,
+            "ic95": [
+              -27.488591124487147,
+              -18.836369107316397
+            ],
+            "veredito": "candidato melhor"
+          },
+          "secundario_MONAN_vs_GEFSc00_mae": {
+            "delta_pct": 22.571311885337586,
+            "ic95": [
+              16.288552116084006,
+              28.765148861475918
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_rmse": {
+            "delta_pct": 20.777636572708523,
+            "ic95": [
+              14.86421445750515,
+              27.05288963604573
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_brier10": {
+            "delta_pct": 12.735595045772774,
+            "ic95": [
+              4.545046571765685,
+              19.823558424795447
+            ],
+            "veredito": "candidato pior"
+          }
+        }
+      },
+      "D4": {
+        "rodadas": 28,
+        "pares": 34216,
+        "mae_monan": 3.915246741290624,
+        "mae_gefs": 3.179061443240428,
+        "crps_m4d": 2.1602866871639512,
+        "vies_monan": 1.0436511135141455,
+        "vies_gefs": -0.25500550676145217,
+        "vies_m4d": -0.6957442964525168,
+        "brier10_monan": 0.11783960720130933,
+        "brier10_gefs": 0.10194061257891048,
+        "brier10_m4d": 0.0664748253244794,
+        "crps_gefs_ens": 2.5284265413383893,
+        "mae_m4d": 3.0777034615022063,
+        "mae_gefs_c00": 3.4278190436288134,
+        "brier10_gefs_c00": 0.11021159691372458,
+        "rmse_monan": 9.708197506625337,
+        "rmse_gefs": 8.051670577013947,
+        "rmse_m4d": 7.811581806104062,
+        "rmse_gefs_c00": 8.709840144963044,
+        "contrastes": {
+          "MONAN_vs_GEFS_mae": {
+            "delta_pct": 23.157315805126434,
+            "ic95": [
+              17.4993506233379,
+              28.761218290601985
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_rmse": {
+            "delta_pct": 20.573704720862196,
+            "ic95": [
+              14.504126655610907,
+              28.721957444456883
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_brier10": {
+            "delta_pct": 15.596330275229331,
+            "ic95": [
+              4.803021619384208,
+              25.262719891036685
+            ],
+            "veredito": "candidato pior"
+          },
+          "M4D_crps_vs_MONAN_mae": {
+            "delta_pct": -44.82374087994686,
+            "ic95": [
+              -49.53733854134482,
+              -41.28182543589622
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_crps_vs_GEFS_mae": {
+            "delta_pct": -32.04640030606129,
+            "ic95": [
+              -37.93772476241475,
+              -28.52007287907566
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_brier10": {
+            "delta_pct": -43.588724620476505,
+            "ic95": [
+              -49.763272025721385,
+              -37.75960869154415
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_GEFS_brier10": {
+            "delta_pct": -34.7906357998169,
+            "ic95": [
+              -42.167916629969085,
+              -29.877991216563554
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_rmse_media": {
+            "delta_pct": -19.536229039705198,
+            "ic95": [
+              -25.284404152953808,
+              -14.921554604095945
+            ],
+            "veredito": "candidato melhor"
+          },
+          "secundario_MONAN_vs_GEFSc00_mae": {
+            "delta_pct": 14.219761646046592,
+            "ic95": [
+              9.60776701640708,
+              18.631165338304612
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_rmse": {
+            "delta_pct": 11.462407404108909,
+            "ic95": [
+              6.113230669351818,
+              17.913227077410472
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_brier10": {
+            "delta_pct": 6.921241050119331,
+            "ic95": [
+              -0.9245408486383818,
+              14.181802321331006
+            ],
+            "veredito": "inconclusivo"
+          }
+        }
+      },
+      "D5": {
+        "rodadas": 27,
+        "pares": 32994,
+        "mae_monan": 4.13157264957265,
+        "mae_gefs": 3.2369609545383273,
+        "crps_m4d": 2.1763011478783776,
+        "vies_monan": 1.2573017821422074,
+        "vies_gefs": -0.21539316079249446,
+        "vies_m4d": -0.6813947889971914,
+        "brier10_monan": 0.1242347093410923,
+        "brier10_gefs": 0.10047281323877069,
+        "brier10_m4d": 0.06559468863152157,
+        "crps_gefs_ens": 2.5181364246960705,
+        "mae_m4d": 3.1708334072615467,
+        "mae_gefs_c00": 3.4918932087963723,
+        "brier10_gefs_c00": 0.11159604776626052,
+        "rmse_monan": 10.254294312820514,
+        "rmse_gefs": 8.216076952028073,
+        "rmse_m4d": 7.99096762723988,
+        "rmse_gefs_c00": 8.843078114280353,
+        "contrastes": {
+          "MONAN_vs_GEFS_mae": {
+            "delta_pct": 27.63739530994489,
+            "ic95": [
+              13.8552704701755,
+              37.75053180470742
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_rmse": {
+            "delta_pct": 24.807671260787334,
+            "ic95": [
+              11.085860944882764,
+              38.424868495558634
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_brier10": {
+            "delta_pct": 23.65007541478128,
+            "ic95": [
+              7.414900135586167,
+              39.47120060932408
+            ],
+            "veredito": "candidato pior"
+          },
+          "M4D_crps_vs_MONAN_mae": {
+            "delta_pct": -47.325114854183106,
+            "ic95": [
+              -52.032323410033456,
+              -41.41584210857687
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_crps_vs_GEFS_mae": {
+            "delta_pct": -32.76714861737424,
+            "ic95": [
+              -38.01922397490549,
+              -28.70766666179406
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_brier10": {
+            "delta_pct": -47.20099642087282,
+            "ic95": [
+              -51.946235809814056,
+              -41.38367089454618
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_GEFS_brier10": {
+            "delta_pct": -34.71399225615618,
+            "ic95": [
+              -41.49774560415832,
+              -26.149840758324128
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_rmse_media": {
+            "delta_pct": -22.07198873501116,
+            "ic95": [
+              -29.57787211563906,
+              -12.709086886916655
+            ],
+            "veredito": "candidato melhor"
+          },
+          "secundario_MONAN_vs_GEFSc00_mae": {
+            "delta_pct": 18.318986364327273,
+            "ic95": [
+              8.531223259075945,
+              25.739851069363677
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_rmse": {
+            "delta_pct": 15.958427374527462,
+            "ic95": [
+              5.851611512899305,
+              25.529208045744372
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_brier10": {
+            "delta_pct": 11.325366648560564,
+            "ic95": [
+              -1.1498418770444687,
+              20.24895779661812
+            ],
+            "veredito": "inconclusivo"
+          }
+        }
+      },
+      "D6": {
+        "rodadas": 26,
+        "pares": 31772,
+        "mae_monan": 4.574070266272189,
+        "mae_gefs": 3.442974375313953,
+        "crps_m4d": 2.31887992235741,
+        "vies_monan": 1.3420561972806246,
+        "vies_gefs": -0.06902075963203028,
+        "vies_m4d": -0.5582656131318312,
+        "brier10_monan": 0.12731335767342314,
+        "brier10_gefs": 0.1063200302152839,
+        "brier10_m4d": 0.07058162787457149,
+        "crps_gefs_ens": 2.6311773247215204,
+        "mae_m4d": 3.36292301109122,
+        "mae_gefs_c00": 3.706355831543045,
+        "brier10_gefs_c00": 0.1162658944983004,
+        "rmse_monan": 11.745289007228852,
+        "rmse_gefs": 8.407251628371654,
+        "rmse_m4d": 8.135528792713114,
+        "rmse_gefs_c00": 9.208467706404562,
+        "contrastes": {
+          "MONAN_vs_GEFS_mae": {
+            "delta_pct": 32.85228897049504,
+            "ic95": [
+              18.088890160489008,
+              46.44255183827287
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_rmse": {
+            "delta_pct": 39.7042639665077,
+            "ic95": [
+              20.84072053980086,
+              62.53182222261439
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_brier10": {
+            "delta_pct": 19.74541148608644,
+            "ic95": [
+              3.2355956721222334,
+              33.62776809958475
+            ],
+            "veredito": "candidato pior"
+          },
+          "M4D_crps_vs_MONAN_mae": {
+            "delta_pct": -49.30379755081313,
+            "ic95": [
+              -53.84380282489637,
+              -43.28927926260684
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_crps_vs_GEFS_mae": {
+            "delta_pct": -32.64893462513907,
+            "ic95": [
+              -38.61362857449022,
+              -25.433152333221116
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_brier10": {
+            "delta_pct": -44.56070504744412,
+            "ic95": [
+              -49.93873345138321,
+              -36.404214016552245
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_GEFS_brier10": {
+            "delta_pct": -33.61398813407681,
+            "ic95": [
+              -41.07800784959008,
+              -23.859569104528152
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_rmse_media": {
+            "delta_pct": -30.733685755148688,
+            "ic95": [
+              -39.95957373462927,
+              -20.178127346492282
+            ],
+            "veredito": "candidato melhor"
+          },
+          "secundario_MONAN_vs_GEFSc00_mae": {
+            "delta_pct": 23.411525340994956,
+            "ic95": [
+              12.587232568875569,
+              35.154770595659265
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_rmse": {
+            "delta_pct": 27.548788590092045,
+            "ic95": [
+              13.568097531090965,
+              48.57387240252157
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_brier10": {
+            "delta_pct": 9.5018949648078,
+            "ic95": [
+              -4.030314952394791,
+              19.924317423204368
+            ],
+            "veredito": "inconclusivo"
+          }
+        }
+      },
+      "D7": {
+        "rodadas": 25,
+        "pares": 30550,
+        "mae_monan": 5.354481374795418,
+        "mae_gefs": 3.837672805644075,
+        "crps_m4d": 2.487340636109288,
+        "vies_monan": 1.830676923076923,
+        "vies_gefs": -0.04061470224255787,
+        "vies_m4d": -0.9011757514317903,
+        "brier10_monan": 0.1564975450081833,
+        "brier10_gefs": 0.13008183306055646,
+        "brier10_m4d": 0.07690146056052802,
+        "crps_gefs_ens": 2.8855814333506684,
+        "mae_m4d": 3.601262693210494,
+        "mae_gefs_c00": 3.898345830797952,
+        "brier10_gefs_c00": 0.1239607201309329,
+        "rmse_monan": 12.904287485975495,
+        "rmse_gefs": 8.973357372390582,
+        "rmse_m4d": 8.749677546788238,
+        "rmse_gefs_c00": 9.643561129655716,
+        "contrastes": {
+          "MONAN_vs_GEFS_mae": {
+            "delta_pct": 39.52417639462562,
+            "ic95": [
+              17.73338390601601,
+              63.58989119352844
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_rmse": {
+            "delta_pct": 43.80668182992111,
+            "ic95": [
+              18.806420891302704,
+              73.4479950253297
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_brier10": {
+            "delta_pct": 20.306995470558633,
+            "ic95": [
+              1.33235473283773,
+              40.11001453061238
+            ],
+            "veredito": "candidato pior"
+          },
+          "M4D_crps_vs_MONAN_mae": {
+            "delta_pct": -53.54656292544628,
+            "ic95": [
+              -60.52453857761314,
+              -45.757562110882695
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_crps_vs_GEFS_mae": {
+            "delta_pct": -35.186224514733254,
+            "ic95": [
+              -43.1525342749344,
+              -27.670696800136707
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_brier10": {
+            "delta_pct": -50.860915705414534,
+            "ic95": [
+              -57.5544856930145,
+              -43.50564513807349
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_GEFS_brier10": {
+            "delta_pct": -40.882244083439076,
+            "ic95": [
+              -49.40885894784306,
+              -29.607871790180035
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_rmse_media": {
+            "delta_pct": -32.19557797129463,
+            "ic95": [
+              -42.736733492334096,
+              -20.29161464579171
+            ],
+            "veredito": "candidato melhor"
+          },
+          "secundario_MONAN_vs_GEFSc00_mae": {
+            "delta_pct": 37.35265179640077,
+            "ic95": [
+              20.74716052992031,
+              56.633001189710065
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_rmse": {
+            "delta_pct": 33.812471476874336,
+            "ic95": [
+              14.96976621635854,
+              56.0360755116308
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_brier10": {
+            "delta_pct": 26.247689463955638,
+            "ic95": [
+              11.49123257751249,
+              41.51886079366669
+            ],
+            "veredito": "candidato pior"
+          }
+        }
+      },
+      "D8": {
+        "rodadas": 24,
+        "pares": 29328,
+        "mae_monan": 4.916551657119476,
+        "mae_gefs": 3.8750424661166982,
+        "crps_m4d": 2.506873870139709,
+        "vies_monan": 0.7957899618112384,
+        "vies_gefs": -0.009825487879377462,
+        "vies_m4d": -0.7865868771997288,
+        "brier10_monan": 0.15879023458810693,
+        "brier10_gefs": 0.12690943807965085,
+        "brier10_m4d": 0.07695328311000064,
+        "crps_gefs_ens": 2.8597943201994926,
+        "mae_m4d": 3.744168524586007,
+        "mae_gefs_c00": 3.999452387380975,
+        "brier10_gefs_c00": 0.1340698308783415,
+        "rmse_monan": 11.314799268691281,
+        "rmse_gefs": 8.771952992257741,
+        "rmse_m4d": 8.752689275669008,
+        "rmse_gefs_c00": 9.401525133374927,
+        "contrastes": {
+          "MONAN_vs_GEFS_mae": {
+            "delta_pct": 26.877361993054684,
+            "ic95": [
+              10.082855354464131,
+              45.842345798906024
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_rmse": {
+            "delta_pct": 28.988370989651834,
+            "ic95": [
+              14.110241970001564,
+              45.8502398127074
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_brier10": {
+            "delta_pct": 25.120902740462103,
+            "ic95": [
+              8.402358137651706,
+              47.29176897537115
+            ],
+            "veredito": "candidato pior"
+          },
+          "M4D_crps_vs_MONAN_mae": {
+            "delta_pct": -49.01154213421927,
+            "ic95": [
+              -55.37755873864881,
+              -44.522528995896636
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_crps_vs_GEFS_mae": {
+            "delta_pct": -35.30718973895721,
+            "ic95": [
+              -45.416565026401436,
+              -28.74840349816174
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_brier10": {
+            "delta_pct": -51.53777352265194,
+            "ic95": [
+              -57.404543340104304,
+              -47.25610859890304
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_GEFS_brier10": {
+            "delta_pct": -39.36362474341486,
+            "ic95": [
+              -49.28029616456544,
+              -30.31458026758384
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_rmse_media": {
+            "delta_pct": -22.64388375065375,
+            "ic95": [
+              -31.81103809074818,
+              -14.415927799896254
+            ],
+            "veredito": "candidato melhor"
+          },
+          "secundario_MONAN_vs_GEFSc00_mae": {
+            "delta_pct": 22.930621017820396,
+            "ic95": [
+              9.57445521238798,
+              39.423293840061426
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_rmse": {
+            "delta_pct": 20.350678301378267,
+            "ic95": [
+              9.513347698817674,
+              34.76399540302132
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_brier10": {
+            "delta_pct": 18.438453713123092,
+            "ic95": [
+              5.653953728453512,
+              34.16203873218553
+            ],
+            "veredito": "candidato pior"
+          }
+        }
+      },
+      "D9": {
+        "rodadas": 23,
+        "pares": 28106,
+        "mae_monan": 5.430542873407814,
+        "mae_gefs": 3.9321509858869375,
+        "crps_m4d": 2.485230472715594,
+        "vies_monan": 1.6064086316089092,
+        "vies_gefs": 0.10774552749276417,
+        "vies_m4d": -0.7113534082697047,
+        "brier10_monan": 0.16715292108446594,
+        "brier10_gefs": 0.12527574183448373,
+        "brier10_m4d": 0.07690825423919108,
+        "crps_gefs_ens": 2.862768349019979,
+        "mae_m4d": 3.760841654877146,
+        "mae_gefs_c00": 4.084968197184282,
+        "brier10_gefs_c00": 0.1357361417490927,
+        "rmse_monan": 12.739588166178311,
+        "rmse_gefs": 8.913522095727009,
+        "rmse_m4d": 8.746478938068027,
+        "rmse_gefs_c00": 9.788560919193152,
+        "contrastes": {
+          "MONAN_vs_GEFS_mae": {
+            "delta_pct": 38.10616359592556,
+            "ic95": [
+              25.754905076370473,
+              48.99138149690981
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_rmse": {
+            "delta_pct": 42.92428996485525,
+            "ic95": [
+              31.338715915965736,
+              56.59491507226006
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_brier10": {
+            "delta_pct": 33.428003408122706,
+            "ic95": [
+              20.64132924162904,
+              44.24981377461265
+            ],
+            "veredito": "candidato pior"
+          },
+          "M4D_crps_vs_MONAN_mae": {
+            "delta_pct": -54.236058334329215,
+            "ic95": [
+              -60.88133927703824,
+              -49.889829262700204
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_crps_vs_GEFS_mae": {
+            "delta_pct": -36.79717585526476,
+            "ic95": [
+              -46.32204635193603,
+              -31.118874325632135
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_brier10": {
+            "delta_pct": -53.98928493727747,
+            "ic95": [
+              -60.5980159498947,
+              -49.45390050181169
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_GEFS_brier10": {
+            "delta_pct": -38.608821538008954,
+            "ic95": [
+              -48.603479975956596,
+              -31.824638205264545
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_rmse_media": {
+            "delta_pct": -31.34409979367613,
+            "ic95": [
+              -40.650819484446046,
+              -25.302274263109307
+            ],
+            "veredito": "candidato melhor"
+          },
+          "secundario_MONAN_vs_GEFSc00_mae": {
+            "delta_pct": 32.93966100277157,
+            "ic95": [
+              20.522171123983174,
+              45.320684667232335
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_rmse": {
+            "delta_pct": 30.14771294112153,
+            "ic95": [
+              19.49180518912444,
+              40.64015735215294
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_brier10": {
+            "delta_pct": 23.14547837483618,
+            "ic95": [
+              9.560020648803006,
+              36.09724474106684
+            ],
+            "veredito": "candidato pior"
+          }
+        }
+      },
+      "D10": {
+        "rodadas": 22,
+        "pares": 26884,
+        "mae_monan": 5.60293105564648,
+        "mae_gefs": 3.844773492543727,
+        "crps_m4d": 2.360148801618054,
+        "vies_monan": 1.6494375650944797,
+        "vies_gefs": 0.12186272646229178,
+        "vies_m4d": -0.6132117759439633,
+        "brier10_monan": 0.1695060258890046,
+        "brier10_gefs": 0.12594851956554085,
+        "brier10_m4d": 0.07346700440935874,
+        "crps_gefs_ens": 2.7003474530800413,
+        "mae_m4d": 3.581107779577327,
+        "mae_gefs_c00": 3.96829027114601,
+        "brier10_gefs_c00": 0.13100729058175864,
+        "rmse_monan": 13.753195171862522,
+        "rmse_gefs": 8.611349899054572,
+        "rmse_m4d": 8.433922270494943,
+        "rmse_gefs_c00": 9.847751938439199,
+        "contrastes": {
+          "MONAN_vs_GEFS_mae": {
+            "delta_pct": 45.72850823364225,
+            "ic95": [
+              29.919951838070176,
+              61.27321613324147
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_rmse": {
+            "delta_pct": 59.71009578152744,
+            "ic95": [
+              34.790583096041644,
+              90.39738376014768
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_brier10": {
+            "delta_pct": 34.583579444772575,
+            "ic95": [
+              20.32501859986653,
+              53.864287875505404
+            ],
+            "veredito": "candidato pior"
+          },
+          "M4D_crps_vs_MONAN_mae": {
+            "delta_pct": -57.87653322559518,
+            "ic95": [
+              -64.84183829798803,
+              -50.99555573721893
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_crps_vs_GEFS_mae": {
+            "delta_pct": -38.614100253365926,
+            "ic95": [
+              -47.81797510796996,
+              -32.62521488304775
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_brier10": {
+            "delta_pct": -56.65817541055078,
+            "ic95": [
+              -63.9171252901499,
+              -52.132942755900714
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_GEFS_brier10": {
+            "delta_pct": -41.66902107084465,
+            "ic95": [
+              -49.51887944601411,
+              -35.38388639245356
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_rmse_media": {
+            "delta_pct": -38.676633574212694,
+            "ic95": [
+              -49.87976022719636,
+              -26.826730068399748
+            ],
+            "veredito": "candidato melhor"
+          },
+          "secundario_MONAN_vs_GEFSc00_mae": {
+            "delta_pct": 41.19257092622912,
+            "ic95": [
+              22.90012664685446,
+              63.34650783761387
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_rmse": {
+            "delta_pct": 39.658221062403285,
+            "ic95": [
+              17.64563940989016,
+              63.84859350185629
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_brier10": {
+            "delta_pct": 29.38671209540036,
+            "ic95": [
+              14.97663155565998,
+              52.2518760216756
+            ],
+            "veredito": "candidato pior"
+          }
+        }
+      }
+    },
+    "merge_0p5_secundaria": {
+      "D1": {
+        "rodadas": 31,
+        "pares": 37882,
+        "mae_monan": 3.250884651246546,
+        "mae_gefs": 2.6494805261446,
+        "crps_m4d": 1.7619334072858757,
+        "vies_monan": 0.9046374333663572,
+        "vies_gefs": 0.15119787082893604,
+        "vies_m4d": -0.13373665717822317,
+        "brier10_monan": 0.09595586294282245,
+        "brier10_gefs": 0.08566073596958976,
+        "brier10_m4d": 0.05702396818916646,
+        "crps_gefs_ens": 2.1723495209658092,
+        "mae_m4d": 2.571116518088656,
+        "mae_gefs_c00": 2.720364742496651,
+        "brier10_gefs_c00": 0.08766696584129666,
+        "rmse_monan": 8.705875961131339,
+        "rmse_gefs": 6.628796334383491,
+        "rmse_m4d": 6.07861973146575,
+        "rmse_gefs_c00": 6.930049077835897,
+        "contrastes": {
+          "MONAN_vs_GEFS_mae": {
+            "delta_pct": 22.698944912687512,
+            "ic95": [
+              17.207911264759375,
+              30.664404349606492
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_rmse": {
+            "delta_pct": 31.334189828311043,
+            "ic95": [
+              21.29151611648496,
+              46.16016326487604
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_brier10": {
+            "delta_pct": 12.018489984591696,
+            "ic95": [
+              5.0372347303306775,
+              21.110123901160083
+            ],
+            "veredito": "candidato pior"
+          },
+          "M4D_crps_vs_MONAN_mae": {
+            "delta_pct": -45.80141726621198,
+            "ic95": [
+              -49.82873159313434,
+              -42.480745224861984
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_crps_vs_GEFS_mae": {
+            "delta_pct": -33.498910828012065,
+            "ic95": [
+              -37.329413862451496,
+              -29.037529412996424
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_brier10": {
+            "delta_pct": -40.57271078563951,
+            "ic95": [
+              -45.76861911391028,
+              -35.8160656472957
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_GEFS_brier10": {
+            "delta_pct": -33.43044798329724,
+            "ic95": [
+              -38.25883359058353,
+              -26.70835031855863
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_rmse_media": {
+            "delta_pct": -30.177965335083567,
+            "ic95": [
+              -37.28286511071204,
+              -24.041903350251417
+            ],
+            "veredito": "candidato melhor"
+          },
+          "secundario_MONAN_vs_GEFSc00_mae": {
+            "delta_pct": 19.50179328757966,
+            "ic95": [
+              13.690151799213185,
+              26.483153711458673
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_rmse": {
+            "delta_pct": 25.62502607629431,
+            "ic95": [
+              17.420180367757375,
+              37.08834707796122
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_brier10": {
+            "delta_pct": 9.454983438723286,
+            "ic95": [
+              3.2942820908300026,
+              15.112895637780111
+            ],
+            "veredito": "candidato pior"
+          }
+        }
+      },
+      "D2": {
+        "rodadas": 30,
+        "pares": 36660,
+        "mae_monan": 3.4604284274060864,
+        "mae_gefs": 2.7361104704943098,
+        "crps_m4d": 1.8007325558796192,
+        "vies_monan": 1.0654301309083682,
+        "vies_gefs": 0.1738609380139526,
+        "vies_m4d": -0.16463043108292338,
+        "brier10_monan": 0.10602836879432624,
+        "brier10_gefs": 0.08968903436988544,
+        "brier10_m4d": 0.05792061815492818,
+        "crps_gefs_ens": 2.1641468304894835,
+        "mae_m4d": 2.640554896221069,
+        "mae_gefs_c00": 2.869327021620067,
+        "brier10_gefs_c00": 0.09577195853791601,
+        "rmse_monan": 8.883646106110058,
+        "rmse_gefs": 6.535157346167333,
+        "rmse_m4d": 6.101023886911709,
+        "rmse_gefs_c00": 7.004091935239821,
+        "contrastes": {
+          "MONAN_vs_GEFS_mae": {
+            "delta_pct": 26.47254066393454,
+            "ic95": [
+              17.301182349513514,
+              37.17365410694079
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_rmse": {
+            "delta_pct": 35.93622365221307,
+            "ic95": [
+              21.263853492790474,
+              53.69730810575364
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_brier10": {
+            "delta_pct": 18.217761557177603,
+            "ic95": [
+              9.707893861391884,
+              27.91513020833333
+            ],
+            "veredito": "candidato pior"
+          },
+          "M4D_crps_vs_MONAN_mae": {
+            "delta_pct": -47.96214995755782,
+            "ic95": [
+              -53.15471479523908,
+              -43.58952112987981
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_crps_vs_GEFS_mae": {
+            "delta_pct": -34.186408944435044,
+            "ic95": [
+              -39.54850313283591,
+              -30.29878760500423
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_brier10": {
+            "delta_pct": -45.372527358897166,
+            "ic95": [
+              -51.795056109163454,
+              -40.19746754542727
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_GEFS_brier10": {
+            "delta_pct": -35.42062464842862,
+            "ic95": [
+              -41.93774155482995,
+              -29.38428975603041
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_rmse_media": {
+            "delta_pct": -31.32297466559927,
+            "ic95": [
+              -39.33608031777542,
+              -22.94071290524928
+            ],
+            "veredito": "candidato melhor"
+          },
+          "secundario_MONAN_vs_GEFSc00_mae": {
+            "delta_pct": 20.60069839833991,
+            "ic95": [
+              12.822390134255444,
+              29.57167207532373
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_rmse": {
+            "delta_pct": 26.835087092640798,
+            "ic95": [
+              14.72877622037268,
+              42.95680517401641
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_brier10": {
+            "delta_pct": 10.709199658217017,
+            "ic95": [
+              4.106795562066952,
+              16.90255881347524
+            ],
+            "veredito": "candidato pior"
+          }
+        }
+      },
+      "D3": {
+        "rodadas": 29,
+        "pares": 35438,
+        "mae_monan": 3.692797395292377,
+        "mae_gefs": 2.8415765163107496,
+        "crps_m4d": 1.9006772200354665,
+        "vies_monan": 1.2775529548422053,
+        "vies_gefs": -0.026735148354823855,
+        "vies_m4d": -0.4902925844122455,
+        "brier10_monan": 0.11476381285625602,
+        "brier10_gefs": 0.09512387832270444,
+        "brier10_m4d": 0.06216237167751333,
+        "crps_gefs_ens": 2.233156169850791,
+        "mae_m4d": 2.6917492453809757,
+        "mae_gefs_c00": 2.93445175214295,
+        "brier10_gefs_c00": 0.10136012190304192,
+        "rmse_monan": 9.195651491598593,
+        "rmse_gefs": 6.716222674195349,
+        "rmse_m4d": 6.368298980726576,
+        "rmse_gefs_c00": 7.101947890616056,
+        "contrastes": {
+          "MONAN_vs_GEFS_mae": {
+            "delta_pct": 29.955937279731494,
+            "ic95": [
+              22.725550393152737,
+              36.52870315936577
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_rmse": {
+            "delta_pct": 36.91701329274788,
+            "ic95": [
+              28.526761109616967,
+              46.55025548347513
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_brier10": {
+            "delta_pct": 20.646692376149534,
+            "ic95": [
+              9.617410584530873,
+              32.477302576932196
+            ],
+            "veredito": "candidato pior"
+          },
+          "M4D_crps_vs_MONAN_mae": {
+            "delta_pct": -48.53015162818104,
+            "ic95": [
+              -53.310526706282474,
+              -44.6279134432057
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_crps_vs_GEFS_mae": {
+            "delta_pct": -33.11187613194605,
+            "ic95": [
+              -39.08917181455744,
+              -29.391160490225282
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_brier10": {
+            "delta_pct": -45.834518625332755,
+            "ic95": [
+              -53.11527495121484,
+              -39.477534257416394
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_GEFS_brier10": {
+            "delta_pct": -34.65113831184463,
+            "ic95": [
+              -42.59969748815014,
+              -27.837605199129136
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_rmse_media": {
+            "delta_pct": -30.746625331061818,
+            "ic95": [
+              -36.6598855569811,
+              -25.793375608779236
+            ],
+            "veredito": "candidato melhor"
+          },
+          "secundario_MONAN_vs_GEFSc00_mae": {
+            "delta_pct": 25.84283904465725,
+            "ic95": [
+              18.58541567646501,
+              32.94318936302589
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_rmse": {
+            "delta_pct": 29.480695060421237,
+            "ic95": [
+              21.759764141617634,
+              38.20157310091785
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_brier10": {
+            "delta_pct": 13.223830734966624,
+            "ic95": [
+              4.007107037467205,
+              22.001686555854054
+            ],
+            "veredito": "candidato pior"
+          }
+        }
+      },
+      "D4": {
+        "rodadas": 28,
+        "pares": 34216,
+        "mae_monan": 3.6871007497697144,
+        "mae_gefs": 2.8907274318296983,
+        "crps_m4d": 1.97566142956011,
+        "vies_monan": 1.1435185902436997,
+        "vies_gefs": -0.15513803003189788,
+        "vies_m4d": -0.5958768197229626,
+        "brier10_monan": 0.11684592003740941,
+        "brier10_gefs": 0.0984334814122048,
+        "brier10_m4d": 0.06518938600487724,
+        "crps_gefs_ens": 2.279783149046348,
+        "mae_m4d": 2.777993765131184,
+        "mae_gefs_c00": 3.15769164120267,
+        "brier10_gefs_c00": 0.1060030395136778,
+        "rmse_monan": 8.941071237613185,
+        "rmse_gefs": 6.8325362078440515,
+        "rmse_m4d": 6.524327927265394,
+        "rmse_gefs_c00": 7.567350269062552,
+        "contrastes": {
+          "MONAN_vs_GEFS_mae": {
+            "delta_pct": 27.549235848775556,
+            "ic95": [
+              20.45766050033298,
+              34.792311920545096
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_rmse": {
+            "delta_pct": 30.860210112731544,
+            "ic95": [
+              22.630178032233825,
+              42.788835085679196
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_brier10": {
+            "delta_pct": 18.705463182897898,
+            "ic95": [
+              6.605670508172084,
+              30.693866237151077
+            ],
+            "veredito": "candidato pior"
+          },
+          "M4D_crps_vs_MONAN_mae": {
+            "delta_pct": -46.41693938839333,
+            "ic95": [
+              -51.59682930670109,
+              -42.549010264290224
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_crps_vs_GEFS_mae": {
+            "delta_pct": -31.65521564550945,
+            "ic95": [
+              -38.156867409866074,
+              -27.575696747111483
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_brier10": {
+            "delta_pct": -44.20910376330968,
+            "ic95": [
+              -51.533316557024406,
+              -37.32638407754495
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_GEFS_brier10": {
+            "delta_pct": -33.7731582083468,
+            "ic95": [
+              -41.5898308237062,
+              -27.909062596829372
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_rmse_media": {
+            "delta_pct": -27.029684096253103,
+            "ic95": [
+              -34.29132550738085,
+              -21.555067019195207
+            ],
+            "veredito": "candidato melhor"
+          },
+          "secundario_MONAN_vs_GEFSc00_mae": {
+            "delta_pct": 16.7657000341366,
+            "ic95": [
+              11.465730493327488,
+              22.05932351897501
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_rmse": {
+            "delta_pct": 18.1532626310003,
+            "ic95": [
+              10.887836905977933,
+              26.882510551603822
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_brier10": {
+            "delta_pct": 10.228839261097345,
+            "ic95": [
+              0.7724684772996704,
+              19.27539464335802
+            ],
+            "veredito": "candidato pior"
+          }
+        }
+      },
+      "D5": {
+        "rodadas": 27,
+        "pares": 32994,
+        "mae_monan": 3.9194616123570505,
+        "mae_gefs": 2.9670802769262683,
+        "crps_m4d": 2.002436659225284,
+        "vies_monan": 1.3515740961406288,
+        "vies_gefs": -0.12112084679407334,
+        "vies_m4d": -0.5871224749987705,
+        "brier10_monan": 0.12238588834333515,
+        "brier10_gefs": 0.09807843850397042,
+        "brier10_m4d": 0.06491544474808764,
+        "crps_gefs_ens": 2.289801354504993,
+        "mae_m4d": 2.897762746502818,
+        "mae_gefs_c00": 3.250204392472285,
+        "brier10_gefs_c00": 0.10944414135903495,
+        "rmse_monan": 9.501403265885173,
+        "rmse_gefs": 7.025167840920388,
+        "rmse_m4d": 6.734742150626225,
+        "rmse_gefs_c00": 7.757848704690387,
+        "contrastes": {
+          "MONAN_vs_GEFS_mae": {
+            "delta_pct": 32.098266529458265,
+            "ic95": [
+              15.907147336997864,
+              44.22543978708081
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_rmse": {
+            "delta_pct": 35.24806070171223,
+            "ic95": [
+              17.707795667705017,
+              52.144717587900416
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_brier10": {
+            "delta_pct": 24.783683559950553,
+            "ic95": [
+              5.236626085032822,
+              44.30543124320144
+            ],
+            "veredito": "candidato pior"
+          },
+          "M4D_crps_vs_MONAN_mae": {
+            "delta_pct": -48.910415325612114,
+            "ic95": [
+              -54.01407504602405,
+              -42.31263604913944
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_crps_vs_GEFS_mae": {
+            "delta_pct": -32.51154426803382,
+            "ic95": [
+              -38.280303276753244,
+              -27.99503408393286
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_brier10": {
+            "delta_pct": -46.958390688003874,
+            "ic95": [
+              -52.50292085561327,
+              -39.92681354995157
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_GEFS_brier10": {
+            "delta_pct": -33.81272608101349,
+            "ic95": [
+              -41.68096121341955,
+              -22.735638601965412
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_rmse_media": {
+            "delta_pct": -29.118447431787853,
+            "ic95": [
+              -37.68828974327174,
+              -18.628238745809547
+            ],
+            "veredito": "candidato melhor"
+          },
+          "secundario_MONAN_vs_GEFSc00_mae": {
+            "delta_pct": 20.591234860023413,
+            "ic95": [
+              9.47495671576496,
+              29.272948119295105
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_rmse": {
+            "delta_pct": 22.474717251712264,
+            "ic95": [
+              10.128754708047978,
+              33.28112353130957
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_brier10": {
+            "delta_pct": 11.824979230130172,
+            "ic95": [
+              -2.319765772061323,
+              22.93416790873652
+            ],
+            "veredito": "inconclusivo"
+          }
+        }
+      },
+      "D6": {
+        "rodadas": 26,
+        "pares": 31772,
+        "mae_monan": 4.346248961992767,
+        "mae_gefs": 3.1693333497409144,
+        "crps_m4d": 2.1572438139624746,
+        "vies_monan": 1.4382873179192326,
+        "vies_gefs": 0.02721036100657768,
+        "vies_m4d": -0.46203449249322326,
+        "brier10_monan": 0.1258970162407151,
+        "brier10_gefs": 0.10383356414452977,
+        "brier10_m4d": 0.07066073959515792,
+        "crps_gefs_ens": 2.399813180092628,
+        "mae_m4d": 3.0796570333465065,
+        "mae_gefs_c00": 3.478354680589743,
+        "brier10_gefs_c00": 0.11434596500062949,
+        "rmse_monan": 10.995404986966216,
+        "rmse_gefs": 7.220248400222976,
+        "rmse_m4d": 6.868834944878748,
+        "rmse_gefs_c00": 8.154850040367776,
+        "contrastes": {
+          "MONAN_vs_GEFS_mae": {
+            "delta_pct": 37.13448483884041,
+            "ic95": [
+              19.78791375723276,
+              53.39119725286778
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_rmse": {
+            "delta_pct": 52.285688489978476,
+            "ic95": [
+              28.460271909531926,
+              79.41189853707334
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_brier10": {
+            "delta_pct": 21.248863291906652,
+            "ic95": [
+              3.7647010328227277,
+              38.577009519098475
+            ],
+            "veredito": "candidato pior"
+          },
+          "M4D_crps_vs_MONAN_mae": {
+            "delta_pct": -50.36538788212048,
+            "ic95": [
+              -55.30056291357925,
+              -43.712286901945845
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_crps_vs_GEFS_mae": {
+            "delta_pct": -31.93383037038927,
+            "ic95": [
+              -38.90462145542456,
+              -23.422916504081282
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_brier10": {
+            "delta_pct": -43.874174539566056,
+            "ic95": [
+              -49.97458240786703,
+              -34.757515009612526
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_GEFS_brier10": {
+            "delta_pct": -31.948074616024325,
+            "ic95": [
+              -40.83172167603107,
+              -18.74299084458001
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_rmse_media": {
+            "delta_pct": -37.52995043819705,
+            "ic95": [
+              -46.50482796186433,
+              -25.812917160383062
+            ],
+            "veredito": "candidato melhor"
+          },
+          "secundario_MONAN_vs_GEFSc00_mae": {
+            "delta_pct": 24.951287637403198,
+            "ic95": [
+              13.015931007227907,
+              38.161531495582665
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_rmse": {
+            "delta_pct": 34.83270608947131,
+            "ic95": [
+              18.2485597503549,
+              59.14563087690072
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_brier10": {
+            "delta_pct": 10.101844205890442,
+            "ic95": [
+              -3.8673616678165357,
+              21.624299742177804
+            ],
+            "veredito": "inconclusivo"
+          }
+        }
+      },
+      "D7": {
+        "rodadas": 25,
+        "pares": 30550,
+        "mae_monan": 5.138226592133651,
+        "mae_gefs": 3.5618424646824645,
+        "crps_m4d": 2.313659165639905,
+        "vies_monan": 1.9331480555752585,
+        "vies_gefs": 0.06185643025577807,
+        "vies_m4d": -0.7987046189334543,
+        "brier10_monan": 0.15734860883797055,
+        "brier10_gefs": 0.1302127659574468,
+        "brier10_m4d": 0.07745334743669573,
+        "crps_gefs_ens": 2.6517077207306965,
+        "mae_m4d": 3.3281097304037943,
+        "mae_gefs_c00": 3.647258117447602,
+        "brier10_gefs_c00": 0.12160392798690672,
+        "rmse_monan": 12.197213013561239,
+        "rmse_gefs": 7.80268327867975,
+        "rmse_m4d": 7.507030685046847,
+        "rmse_gefs_c00": 8.586488970002897,
+        "contrastes": {
+          "MONAN_vs_GEFS_mae": {
+            "delta_pct": 44.25754769004697,
+            "ic95": [
+              20.40119889543833,
+              70.26243974948851
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_rmse": {
+            "delta_pct": 56.32074990009159,
+            "ic95": [
+              25.414396826987968,
+              92.27197927688167
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_brier10": {
+            "delta_pct": 20.839617898441443,
+            "ic95": [
+              1.665365984930048,
+              42.958227991610435
+            ],
+            "veredito": "candidato pior"
+          },
+          "M4D_crps_vs_MONAN_mae": {
+            "delta_pct": -54.971640036622894,
+            "ic95": [
+              -61.99675852353948,
+              -46.86544814516596
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_crps_vs_GEFS_mae": {
+            "delta_pct": -35.04319215178525,
+            "ic95": [
+              -43.73839639940041,
+              -26.572348314035825
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_brier10": {
+            "delta_pct": -50.77595664258261,
+            "ic95": [
+              -58.01994655962771,
+              -42.8681904098305
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_GEFS_brier10": {
+            "delta_pct": -40.517854092733664,
+            "ic95": [
+              -49.82703231180781,
+              -27.047361751354043
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_rmse_media": {
+            "delta_pct": -38.452901685817096,
+            "ic95": [
+              -49.16316358313228,
+              -25.714140225640683
+            ],
+            "veredito": "candidato melhor"
+          },
+          "secundario_MONAN_vs_GEFSc00_mae": {
+            "delta_pct": 40.87915981470067,
+            "ic95": [
+              23.228435751665902,
+              62.38067878555613
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_rmse": {
+            "delta_pct": 42.05122787873474,
+            "ic95": [
+              20.176931243580164,
+              67.78030099023655
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_brier10": {
+            "delta_pct": 29.39434724091521,
+            "ic95": [
+              15.109820213417493,
+              46.22699881020498
+            ],
+            "veredito": "candidato pior"
+          }
+        }
+      },
+      "D8": {
+        "rodadas": 24,
+        "pares": 29328,
+        "mae_monan": 4.702225410333084,
+        "mae_gefs": 3.5777111038653597,
+        "crps_m4d": 2.3223967677659223,
+        "vies_monan": 0.8991567816259579,
+        "vies_gefs": 0.0935413319353419,
+        "vies_m4d": -0.6832200573850092,
+        "brier10_monan": 0.15879023458810693,
+        "brier10_gefs": 0.12670485542825968,
+        "brier10_m4d": 0.07768789850191805,
+        "crps_gefs_ens": 2.6127806671257194,
+        "mae_m4d": 3.4572659778215473,
+        "mae_gefs_c00": 3.7580857875420883,
+        "brier10_gefs_c00": 0.13454719039825422,
+        "rmse_monan": 10.492599104849658,
+        "rmse_gefs": 7.560354606583558,
+        "rmse_m4d": 7.484386298096048,
+        "rmse_gefs_c00": 8.37178252486637,
+        "contrastes": {
+          "MONAN_vs_GEFS_mae": {
+            "delta_pct": 31.431109830326974,
+            "ic95": [
+              11.847281246218486,
+              51.573438394153484
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_rmse": {
+            "delta_pct": 38.78448367637017,
+            "ic95": [
+              20.266280991598776,
+              58.244509181381204
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_brier10": {
+            "delta_pct": 25.32292787944026,
+            "ic95": [
+              6.3552305796181034,
+              48.20741527708508
+            ],
+            "veredito": "candidato pior"
+          },
+          "M4D_crps_vs_MONAN_mae": {
+            "delta_pct": -50.610688235776976,
+            "ic95": [
+              -57.00291772573478,
+              -45.66268032544269
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_crps_vs_GEFS_mae": {
+            "delta_pct": -35.087079410721444,
+            "ic95": [
+              -46.32316753070747,
+              -27.72056658196953
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_brier10": {
+            "delta_pct": -51.075140921961506,
+            "ic95": [
+              -57.51138362791656,
+              -45.97346788308258
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_GEFS_brier10": {
+            "delta_pct": -38.68593414251203,
+            "ic95": [
+              -49.82506257829352,
+              -28.136870987293705
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_rmse_media": {
+            "delta_pct": -28.669853643443023,
+            "ic95": [
+              -38.55202826327528,
+              -19.35977356775195
+            ],
+            "veredito": "candidato melhor"
+          },
+          "secundario_MONAN_vs_GEFSc00_mae": {
+            "delta_pct": 25.12288638861793,
+            "ic95": [
+              10.39104254821724,
+              42.267464150876606
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_rmse": {
+            "delta_pct": 25.33291534609161,
+            "ic95": [
+              12.495960807215035,
+              42.18580396820829
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_brier10": {
+            "delta_pct": 18.018246325392816,
+            "ic95": [
+              5.819728175165205,
+              32.370457985317536
+            ],
+            "veredito": "candidato pior"
+          }
+        }
+      },
+      "D9": {
+        "rodadas": 23,
+        "pares": 28106,
+        "mae_monan": 5.21701617701541,
+        "mae_gefs": 3.662326561740973,
+        "crps_m4d": 2.318259655686501,
+        "vies_monan": 1.701507635404711,
+        "vies_gefs": 0.20284453128856572,
+        "vies_m4d": -0.6162544044739032,
+        "brier10_monan": 0.16647690884508648,
+        "brier10_gefs": 0.1254536397922152,
+        "brier10_m4d": 0.0779855757221998,
+        "crps_gefs_ens": 2.6404393391738,
+        "mae_m4d": 3.494109478601091,
+        "mae_gefs_c00": 3.855766868739339,
+        "brier10_gefs_c00": 0.13591403970682417,
+        "rmse_monan": 12.019541595882949,
+        "rmse_gefs": 7.778712568473863,
+        "rmse_m4d": 7.523225391656386,
+        "rmse_gefs_c00": 8.799943926084113,
+        "contrastes": {
+          "MONAN_vs_GEFS_mae": {
+            "delta_pct": 42.45087348342249,
+            "ic95": [
+              28.915836244618298,
+              53.616496652838684
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_rmse": {
+            "delta_pct": 54.51839221565569,
+            "ic95": [
+              39.539428029604046,
+              72.7981484702659
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_brier10": {
+            "delta_pct": 32.699943278502566,
+            "ic95": [
+              20.649597839505052,
+              43.76240797286924
+            ],
+            "veredito": "candidato pior"
+          },
+          "M4D_crps_vs_MONAN_mae": {
+            "delta_pct": -55.563494974386906,
+            "ic95": [
+              -62.45914635128932,
+              -50.84542659147161
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_crps_vs_GEFS_mae": {
+            "delta_pct": -36.699810445509215,
+            "ic95": [
+              -46.970813770869846,
+              -30.580377765791695
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_brier10": {
+            "delta_pct": -53.15531969976176,
+            "ic95": [
+              -60.27775799547261,
+              -48.400273498438025
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_GEFS_brier10": {
+            "delta_pct": -37.83713581258799,
+            "ic95": [
+              -48.91449036796136,
+              -30.1914235405155
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_rmse_media": {
+            "delta_pct": -37.40838340928647,
+            "ic95": [
+              -48.02788542131106,
+              -30.227918655411457
+            ],
+            "veredito": "candidato melhor"
+          },
+          "secundario_MONAN_vs_GEFSc00_mae": {
+            "delta_pct": 35.30424308877207,
+            "ic95": [
+              21.50690430432887,
+              47.61460352594123
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_rmse": {
+            "delta_pct": 36.586570287744145,
+            "ic95": [
+              23.550125857542362,
+              49.73128941833332
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_brier10": {
+            "delta_pct": 22.486910994764408,
+            "ic95": [
+              9.656681965365742,
+              33.86631364319892
+            ],
+            "veredito": "candidato pior"
+          }
+        }
+      },
+      "D10": {
+        "rodadas": 22,
+        "pares": 26884,
+        "mae_monan": 5.382399024297697,
+        "mae_gefs": 3.584262467961663,
+        "crps_m4d": 2.20020375447637,
+        "vies_monan": 1.7417629907218275,
+        "vies_gefs": 0.21418815208963912,
+        "vies_m4d": -0.5208863503166158,
+        "brier10_monan": 0.1700267817289094,
+        "brier10_gefs": 0.1258741258741259,
+        "brier10_m4d": 0.073890734795256,
+        "crps_gefs_ens": 2.4925348255588564,
+        "mae_m4d": 3.325156044236093,
+        "mae_gefs_c00": 3.7658370365947005,
+        "brier10_gefs_c00": 0.13137925903883352,
+        "rmse_monan": 13.061440307474045,
+        "rmse_gefs": 7.472133242559838,
+        "rmse_m4d": 7.225804075180088,
+        "rmse_gefs_c00": 8.844023852591775,
+        "contrastes": {
+          "MONAN_vs_GEFS_mae": {
+            "delta_pct": 50.16754694749286,
+            "ic95": [
+              33.2474774725224,
+              65.72630908358404
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_rmse": {
+            "delta_pct": 74.80202618816519,
+            "ic95": [
+              43.82769445975874,
+              113.62963952245732
+            ],
+            "veredito": "candidato pior"
+          },
+          "MONAN_vs_GEFS_brier10": {
+            "delta_pct": 35.076832151300216,
+            "ic95": [
+              19.962072180781046,
+              53.53194322076253
+            ],
+            "veredito": "candidato pior"
+          },
+          "M4D_crps_vs_MONAN_mae": {
+            "delta_pct": -59.12224744869309,
+            "ic95": [
+              -66.25876041576683,
+              -52.26550359124505
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_crps_vs_GEFS_mae": {
+            "delta_pct": -38.61488174643624,
+            "ic95": [
+              -48.365006316935705,
+              -32.35953216096479
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_brier10": {
+            "delta_pct": -56.54170828624672,
+            "ic95": [
+              -64.0663707672459,
+              -51.540568655502675
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_GEFS_brier10": {
+            "delta_pct": -41.297916245991075,
+            "ic95": [
+              -49.57476014466268,
+              -34.71031520698811
+            ],
+            "veredito": "candidato melhor"
+          },
+          "M4D_vs_MONAN_rmse_media": {
+            "delta_pct": -44.67835165892598,
+            "ic95": [
+              -56.831042812478394,
+              -31.990631667944847
+            ],
+            "veredito": "candidato melhor"
+          },
+          "secundario_MONAN_vs_GEFSc00_mae": {
+            "delta_pct": 42.927029820833404,
+            "ic95": [
+              23.569195804165055,
+              65.94397608544591
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_rmse": {
+            "delta_pct": 47.68662460862021,
+            "ic95": [
+              21.725578199173437,
+              76.12701685397509
+            ],
+            "veredito": "candidato pior"
+          },
+          "secundario_MONAN_vs_GEFSc00_brier10": {
+            "delta_pct": 29.416761041902607,
+            "ic95": [
+              15.032492674244809,
+              51.544052807818964
+            ],
+            "veredito": "candidato pior"
+          }
+        }
+      }
+    }
+  },
+  "limites": "um mes de rodadas (setembro de 2026); serie de testes TM143, que pode diferir da configuracao operacional oficial; o MERGE usa pluviometros que podem coincidir com as estacoes; nao ha arquivo historico para MOS do MONAN (classe pos-processamento fica para o arquivo prospectivo)"
+}

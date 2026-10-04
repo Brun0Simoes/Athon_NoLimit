@@ -1,0 +1,39 @@
+{
+  "rmse_B0": 1.7246675213746776,
+  "SOL-B0": 1.7248919600003272,
+  "SOL-B": 1.7246675213746776,
+  "SOL-C": 1.7246675213746776,
+  "SOL-D": 1.7246675213746776,
+  "SOL-B_vs_B0ctl": {
+    "delta": -0.00022443862564958117,
+    "delta_pct": -0.013011749770663883,
+    "ic95_blocos6": [
+      -0.0003077308998907846,
+      1.2766875393721562e-05
+    ],
+    "meses_melhores": 8
+  },
+  "SOL-C_vs_SOL-B": {
+    "delta": 0.0,
+    "delta_pct": 0.0,
+    "ic95_blocos6": [
+      0.0,
+      0.0
+    ],
+    "meses_melhores": 0
+  },
+  "SOL-D_vs_SOL-C": {
+    "delta": 0.0,
+    "delta_pct": 0.0,
+    "ic95_blocos6": [
+      0.0,
+      0.0
+    ],
+    "meses_melhores": 0
+  },
+  "SOL-NEG": {
+    "delta_p05": 0.0,
+    "delta_mediana": 0.00012140707056906841,
+    "frac_melhor_que_SOL-B": 0.0
+  }
+}

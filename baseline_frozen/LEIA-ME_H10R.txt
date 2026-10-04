@@ -1,0 +1,57 @@
+WorCAP 2026 - Previsão Mensal de Precipitação na América do Sul
+===============================================================
+
+Equipe no Kaggle: Bruno Simões
+Submissão: candidate_O48-H10R_20260923T215421Z.csv
+SHA-256:   337c35ce58630d124122a3a6c4a4f69b88ffd5ba38989089b18b5ff98b7f9f20
+
+
+MODELO
+------
+Previsão = max(P + correção, 0)
+
+  P         base O09M-CLIP (pasta base_O09M-CLIP/), feita com os arquivos oficiais, o GEFSv12 e o CFSv2.
+  correção  LightGBM treinado no erro da base em 2010-2019, com o SEAS5 lead 0,5 (anomalia e anomalia
+            suavizada), P, climatologia, latitude, longitude e mês.
+
+
+ARQUIVOS
+--------
+  h10r.py            gera a submissão, do carregamento dos dados até o CSV
+  comum.py           funções usadas por h10r.py
+  baixar_seas5.py    baixa o SEAS5/SEAS5.1 do Copernicus
+  requirements.txt   bibliotecas (Python 3.12)
+  base_O09M-CLIP/    código da base P e como gerá-la (COMO_GERAR_A_BASE.txt)
+
+
+COMO EXECUTAR
+-------------
+  1. pip install -r requirements.txt
+  2. python baixar_seas5.py --destino seas5
+  3. Gerar a base P (base_O09M-CLIP/COMO_GERAR_A_BASE.txt). Ela produz:
+       base_residual.npz e official_O09M-CLIP_20260919T155410949985Z.csv
+  4. python h10r.py --oficial <pasta com treino_tp.nc e sample_submission.csv> --seas5 seas5
+                    --base-oof base_residual.npz
+                    --base-csv official_O09M-CLIP_20260919T155410949985Z.csv --saida H10R.csv
+
+O passo 4 leva cerca de 1 minuto em um computador de 16 núcleos e gera um arquivo idêntico ao
+enviado (mesmo SHA-256).
+
+
+DADOS EXTERNOS
+--------------
+  SEAS5 / SEAS5.1 (ECMWF, lead 0,5, precipitação mensal) - Copernicus Climate Data Store
+    https://cds.climate.copernicus.eu/datasets/seasonal-monthly-single-levels
+  GEFSv12 reforecast (NOAA, na base P)
+    https://noaa-gefs-retrospective.s3.amazonaws.com
+  GEFSv12 operacional (NOAA, na base P)
+    https://noaa-gefs-pds.s3.amazonaws.com
+  CFSv2 NMME (NOAA/NCEP via IRI, na base P)
+    https://iridl.ldeo.columbia.edu/SOURCES/.Models/.NMME/.NCEP-CFSv2/
+
+  Contains modified Copernicus Climate Change Service information [2026]. Neither the European
+  Commission nor ECMWF is responsible for any use that may be made of the Copernicus information
+  or data it contains.
+
+
+Licença MIT. Código desenvolvido com auxílio do assistente de IA Claude (Anthropic).

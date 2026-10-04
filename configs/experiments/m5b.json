@@ -1,0 +1,29 @@
+{
+  "id": "M5-B",
+  "plano": "plan.md §9.2–9.3, tabela M5-B/C; aberto porque o M5-A mostrou estrutura (reports/m5a.json: DEC −15,1% contra CLIMF, IC95 [−16,0; −14,3])",
+  "registrado_em": "2026-10-03",
+  "registrado_antes_de": "qualquer treino do flow e qualquer métrica do controle INTERP",
+  "controle_adicional_pos_M5A": {
+    "INTERP": "interpolação bilinear de Q (centros grossos → centros finos, borda pelo vizinho) usada como peso na mesma projeção conservativa; peso total zero com Q > 0 → uniforme",
+    "status": "diagnóstico interpretativo declarado depois de ver o M5-A; não altera o veredito do M5-A, só separa continuidade espacial de estrutura aprendida"
+  },
+  "M5-B": {
+    "gerador": "conditional flow matching; U-Net 16/32/64 com GroupNorm e embedding de tempo 32 (FiLM por bloco), < 1 milhão de parâmetros; contexto = as mesmas 4 entradas do DEC",
+    "alvo": "r = log1p(y / (A(y) + 0,1)) expandido; células com Q = 0 ficam fora da perda",
+    "treino": "o mesmo período do M5-A (treino 2020-10..2024-12, os últimos 20% só para acompanhar a perda); 150 épocas fixas, lote 32, Adam 1e-3, semente 0",
+    "amostragem": "Euler com 8 passos fixos a partir de N(0, I); 8 amostras por dia de teste; w = max(expm1(r), 0) e a mesma projeção do DEC; peso total zero com Q > 0 → padrão climatológico (fallback registrado e contado)",
+    "comparacao": "CRPS justo do ensemble de 8 contra o CRPS do DEC (determinístico, igual ao MAE) e do INTERP; RMSE da média do ensemble; FSS médio dos membros; frequência seca; quantis 95/99 dos membros; erro de agregação",
+    "criterio": "benefício probabilístico se CRPS(FLOW) < CRPS(DEC) com IC95 < 0 (blocos de 7 dias) e RMSE da média do ensemble no máximo 2% acima do DEC; sem isso, o M5 para no decoder determinístico"
+  },
+  "M5-C": "as mesmas amostras sem projeção (ŷ = expm1(r)·(Q + 0,1)): erro de agregação e CRPS, só diagnóstico",
+  "M5-D": "não aplicável no modo diagnóstico: o M1+ECC é o produto mensal; o análogo diário (ECC fino com membros do GEFS) fica registrado como trabalho futuro",
+  "M5-E": "três dias conjuntamente: só se o M5-B passar e couber no orçamento; senão fica pendente com a justificativa",
+  "modo_previsao": {
+    "Q": "média do GEFS bruto (5 membros) em D1, D3 e D5, interpolada bilinearmente aos centros grossos do recorte (a grade do GEFS está deslocada 0,25° da grade do recorte)",
+    "inits": "quartas-feiras do período de teste do M5-A (2025-01..2026-08)",
+    "bracos": "UNIF, CLIMF, INTERP e DEC (o decoder treinado com Q observado, sem retreino), todos com Q previsto",
+    "metrica": "RMSE fino contra o MERGE 0,1°, por lead; bootstrap por blocos de 4 inits",
+    "pergunta": "o refinamento ainda ajuda quando o erro de Q domina?"
+  },
+  "orcamento": "2 h de GPU no total do M5-B (plan.md §12)"
+}

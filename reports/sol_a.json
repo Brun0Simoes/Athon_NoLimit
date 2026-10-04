@@ -1,0 +1,75 @@
+{
+  "criado_em": "2026-10-04T11:20:30+00:00",
+  "pre_registro_sha256": "5aa3ad9c0d99c0acaef417c15a9f9fb6720efcbdfe86f3fbac5dcbd06db7b2e6",
+  "meses": 98,
+  "G_vs_F": {
+    "rmse_base": 1.7276327223907217,
+    "rmse_cand": 1.7276327223907217,
+    "meses_melhores": 0,
+    "delta_pct": 0.0,
+    "ic95_delta_blocos6": [
+      0.0,
+      0.0
+    ]
+  },
+  "G_vs_S": {
+    "rmse_base": 1.7276327223907217,
+    "rmse_cand": 1.7276327223907217,
+    "meses_melhores": 0,
+    "delta_pct": 0.0,
+    "ic95_delta_blocos6": [
+      0.0,
+      0.0
+    ]
+  },
+  "F_vs_S": {
+    "rmse_base": 1.7276327223907217,
+    "rmse_cand": 1.7276327223907217,
+    "meses_melhores": 0,
+    "delta_pct": 0.0,
+    "ic95_delta_blocos6": [
+      0.0,
+      0.0
+    ]
+  },
+  "G_vs_B0T2": {
+    "rmse_base": 1.7276327223907217,
+    "rmse_cand": 1.7276327223907217,
+    "meses_melhores": 0,
+    "delta_pct": 0.0,
+    "ic95_delta_blocos6": [
+      0.0,
+      0.0
+    ]
+  },
+  "kappas": {
+    "S_2016": Infinity,
+    "S_2017": Infinity,
+    "S_2018": Infinity,
+    "S_2019": Infinity,
+    "S_2021": Infinity,
+    "S_2022": Infinity,
+    "S_2023": Infinity,
+    "S_2024": Infinity,
+    "F_2016": Infinity,
+    "F_2017": Infinity,
+    "F_2018": Infinity,
+    "F_2019": Infinity,
+    "F_2021": Infinity,
+    "F_2022": Infinity,
+    "F_2023": Infinity,
+    "F_2024": Infinity,
+    "G_2016": Infinity,
+    "G_2017": Infinity,
+    "G_2018": Infinity,
+    "G_2019": Infinity,
+    "G_2021": Infinity,
+    "G_2022": Infinity,
+    "G_2023": Infinity,
+    "G_2024": Infinity
+  },
+  "criterio": {
+    "regra": "G ≤ F − 0,5% com IC95 < 0",
+    "aprovado": false
+  }
+}

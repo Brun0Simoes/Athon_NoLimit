@@ -1,0 +1,205 @@
+{
+  "criado_em": "2026-10-04T02:12:41+00:00",
+  "pre_registro_sha256": "850f53a1c661eb4a77cb176a17ae93059806f6db257dc8e8e3fa5cde54c28f37",
+  "dias": 9404,
+  "series": {
+    "amazonia": {
+      "media_mm_dia": 4.801513106405128,
+      "semi_sinodico": {
+        "amplitude_mm_dia": 0.08034772414418899,
+        "amplitude_pct_media": 1.6733834181772125,
+        "fase_graus": 135.6904022596603,
+        "p_empirico": 0.10963455149501661,
+        "significativo_bonferroni": false
+      },
+      "sinodico": {
+        "amplitude_mm_dia": 0.030589554012861214,
+        "amplitude_pct_media": 0.6370815477324289,
+        "fase_graus": -64.48608277914147,
+        "p_empirico": 0.6744186046511628,
+        "significativo_bonferroni": false
+      },
+      "nulo_amplitude_p50_p95": [
+        0.042642703614627894,
+        0.09643963710294091
+      ]
+    },
+    "andes": {
+      "media_mm_dia": 1.1047685452556244,
+      "semi_sinodico": {
+        "amplitude_mm_dia": 0.013299308246640013,
+        "amplitude_pct_media": 1.203809458891028,
+        "fase_graus": 81.62586427272103,
+        "p_empirico": 0.770764119601329,
+        "significativo_bonferroni": false
+      },
+      "sinodico": {
+        "amplitude_mm_dia": 0.02049279919183861,
+        "amplitude_pct_media": 1.8549405013243683,
+        "fase_graus": -107.49001314941889,
+        "p_empirico": 0.521594684385382,
+        "significativo_bonferroni": false
+      },
+      "nulo_amplitude_p50_p95": [
+        0.021064196478789786,
+        0.042830384515275335
+      ]
+    },
+    "centro_sudeste": {
+      "media_mm_dia": 2.968829843831987,
+      "semi_sinodico": {
+        "amplitude_mm_dia": 0.10154941445763581,
+        "amplitude_pct_media": 3.420519861339104,
+        "fase_graus": 30.75553754028307,
+        "p_empirico": 0.24584717607973422,
+        "significativo_bonferroni": false
+      },
+      "sinodico": {
+        "amplitude_mm_dia": 0.004114566206402957,
+        "amplitude_pct_media": 0.1385921869167188,
+        "fase_graus": 78.12617692136354,
+        "p_empirico": 1.0,
+        "significativo_bonferroni": false
+      },
+      "nulo_amplitude_p50_p95": [
+        0.06745379742770054,
+        0.14607937417401243
+      ]
+    },
+    "nordeste": {
+      "media_mm_dia": 2.234066689304864,
+      "semi_sinodico": {
+        "amplitude_mm_dia": 0.038503741578128685,
+        "amplitude_pct_media": 1.7234821933677023,
+        "fase_graus": 165.29543306809447,
+        "p_empirico": 0.7674418604651163,
+        "significativo_bonferroni": false
+      },
+      "sinodico": {
+        "amplitude_mm_dia": 0.04334065107107127,
+        "amplitude_pct_media": 1.9399891363384871,
+        "fase_graus": -92.92821376196028,
+        "p_empirico": 0.7043189368770764,
+        "significativo_bonferroni": false
+      },
+      "nulo_amplitude_p50_p95": [
+        0.05912123828495257,
+        0.13194562024511228
+      ]
+    },
+    "norte_amsul": {
+      "media_mm_dia": 4.690965765962787,
+      "semi_sinodico": {
+        "amplitude_mm_dia": 0.03692581550753928,
+        "amplitude_pct_media": 0.7871687270768332,
+        "fase_graus": 1.6817557030927208,
+        "p_empirico": 0.7674418604651163,
+        "significativo_bonferroni": false
+      },
+      "sinodico": {
+        "amplitude_mm_dia": 0.04821902953024582,
+        "amplitude_pct_media": 1.0279126289967546,
+        "fase_graus": 174.01513179968032,
+        "p_empirico": 0.6013289036544851,
+        "significativo_bonferroni": false
+      },
+      "nulo_amplitude_p50_p95": [
+        0.057726616490011526,
+        0.11300864144068912
+      ]
+    },
+    "oceano_outros": {
+      "media_mm_dia": 2.911813231591517,
+      "semi_sinodico": {
+        "amplitude_mm_dia": 0.008387940647522171,
+        "amplitude_pct_media": 0.2880658881729703,
+        "fase_graus": -1.829399532205854,
+        "p_empirico": 0.8970099667774086,
+        "significativo_bonferroni": false
+      },
+      "sinodico": {
+        "amplitude_mm_dia": 0.02320710715218186,
+        "amplitude_pct_media": 0.796998478487492,
+        "fase_graus": -158.13262045059366,
+        "p_empirico": 0.4053156146179402,
+        "significativo_bonferroni": false
+      },
+      "nulo_amplitude_p50_p95": [
+        0.020587082769137552,
+        0.04467910265010939
+      ]
+    },
+    "patagonia": {
+      "media_mm_dia": 1.8261863228175241,
+      "semi_sinodico": {
+        "amplitude_mm_dia": 0.049548964446320364,
+        "amplitude_pct_media": 2.7132480310045226,
+        "fase_graus": -97.95011605097712,
+        "p_empirico": 0.2757475083056478,
+        "significativo_bonferroni": false
+      },
+      "sinodico": {
+        "amplitude_mm_dia": 0.01920813996437787,
+        "amplitude_pct_media": 1.051817096885419,
+        "fase_graus": 136.66706987901514,
+        "p_empirico": 0.8372093023255814,
+        "significativo_bonferroni": false
+      },
+      "nulo_amplitude_p50_p95": [
+        0.03617531164827035,
+        0.07148689591449613
+      ]
+    },
+    "sul_prata": {
+      "media_mm_dia": 3.5078479706020387,
+      "semi_sinodico": {
+        "amplitude_mm_dia": 0.06691572379284232,
+        "amplitude_pct_media": 1.907600453430079,
+        "fase_graus": 129.55898186171805,
+        "p_empirico": 0.6976744186046512,
+        "significativo_bonferroni": false
+      },
+      "sinodico": {
+        "amplitude_mm_dia": 0.07837371390241975,
+        "amplitude_pct_media": 2.2342391848004963,
+        "fase_graus": 33.91797377803854,
+        "p_empirico": 0.6146179401993356,
+        "significativo_bonferroni": false
+      },
+      "nulo_amplitude_p50_p95": [
+        0.09496980182390104,
+        0.17211252686342662
+      ]
+    },
+    "dominio": {
+      "media_mm_dia": 2.990098830399641,
+      "semi_sinodico": {
+        "amplitude_mm_dia": 0.007688490744353977,
+        "amplitude_pct_media": 0.25713165953535966,
+        "fase_graus": 65.34187442670711,
+        "p_empirico": 0.8538205980066446,
+        "significativo_bonferroni": false
+      },
+      "sinodico": {
+        "amplitude_mm_dia": 0.015577397578750868,
+        "amplitude_pct_media": 0.5209659767890974,
+        "fase_graus": -151.73505723787736,
+        "p_empirico": 0.5415282392026578,
+        "significativo_bonferroni": false
+      },
+      "nulo_amplitude_p50_p95": [
+        0.01646747074478573,
+        0.03545230033470004
+      ]
+    }
+  },
+  "veredito_semi_sinodico": {
+    "regioes_significativas": [],
+    "sobrevive": false
+  },
+  "veredito_sinodico": {
+    "regioes_significativas": [],
+    "sobrevive": false
+  },
+  "alfa_bonferroni": 0.002777777777777778
+}

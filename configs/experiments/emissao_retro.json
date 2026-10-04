@@ -1,0 +1,16 @@
+{
+  "id": "EMISSAO-RETRO-CEGA",
+  "complementa": "configs/experiments/emissao_mensal.json (sem alterá-lo)",
+  "registrado_em": "2026-10-04",
+  "registrado_antes_de": "qualquer insumo ou verdade de 2026-07, 2026-08 e 2026-09",
+  "meses": ["2026-07", "2026-08", "2026-09"],
+  "rotulo": "retroativa_cega — não é prospectiva no tempo, mas é cega: o laboratório nunca baixou nem leu o ERA5 de precipitação desses meses (o alvo aberto vai até 2026-06). O MERGE diário desses meses foi usado na avaliação do produto diário (outro alvo e outro modelo), sem retorno ao modelo mensal, congelado com dados ≤ 2026-06",
+  "regras": {
+    "modelo": "idêntico ao da emissão prospectiva (mesmo código e mesmas regras de reajuste anual)",
+    "insumos": "os publicados até o dia 1 de T, 00 UTC: ERA5 de T−2, SEAS5 init T−1, CFSv2 origem T−1, GEFS da última quarta antes de T. O ERA5 de T−2 baixado hoje pode já ser o final (não o ERA5T da época); o expver fica registrado, como no bloco virgem",
+    "latencia_do_alvo": "Y de treino só dos meses ≤ T−2 (ERA5T sai ~dia 6 do mês seguinte): T=2026-07 treina com Y ≤ 2026-05; 2026-08 e 2026-09 com Y ≤ 2026-06 (julho e agosto não são baixados antes da avaliação)",
+    "ordem": "os três meses são emitidos e registrados em reports/emissoes.jsonl (hash da previsão e do manifesto) ANTES de qualquer download da verdade de julho a setembro"
+  },
+  "avaliacao": "src/emissao/avalia.py, com as mesmas métricas da emissão prospectiva. A regra dos 6 meses vale para o conjunto (retroativas cegas + prospectivas), e o resultado só prospectivo é relatado separadamente",
+  "proibido": "reemitir, trocar o modelo ou retirar meses depois de ver a verdade"
+}

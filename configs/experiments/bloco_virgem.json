@@ -1,0 +1,42 @@
+{
+  "id": "BLOCO-VIRGEM-2025",
+  "registrado_em": "2026-10-03",
+  "autorizacao": "usuario respondeu 'Siga' a proposta de congelar a selecao da secao 14 de reports/triagem.md e abrir o bloco uma unica vez",
+  "registrado_antes_de": "qualquer download ou leitura de precipitacao de 2025-01..2026-06",
+  "bloco": "2025-01..2026-06 (18 meses), tratado como UM bloco com corte de treino em 2025-01: nenhuma observacao de 2025-2026 entra em nenhum ajuste, nem para prever 2026",
+  "candidatos_congelados": {
+    "media": {
+      "id": "B0-T2",
+      "receita": "src/models/b0.py com casos da base T-2; bloco '2025' acrescentado a ORDEM com corte 2025-01",
+      "base": "O09M-CLIP T-2 congelada como desenvolvida (treino ate 2022, correcao GEFS congelada antes de 2020, escala 0,7818); insumos: ERA5 de T-2 (2024-11..2026-04), CFSv2 lead 1,5, GEFS da ultima quarta-feira antes do mes",
+      "componentes": "V0n, H6, C1 e pesos W reajustados com todos os meses anteriores a 2025-01 (protocolo expansivo do desenvolvimento)"
+    },
+    "probabilistico": {
+      "id": "B0-T2 + contexto + Schaake",
+      "media": "B0-T2",
+      "dispersao": "hurdle-Gamma (eps 0,01) com rede de contexto do M1-C: treino blocos 2013-2023, parada antecipada em 2024, semente 0",
+      "dependencia": "Schaake shuffle: postos dos campos observados do mesmo mes-calendario nos 51 anos mais recentes anteriores a 2025",
+      "secundario": "ECC-Q com os 51 membros do SEAS5.1 (mesmas marginais)"
+    }
+  },
+  "comparadores": {
+    "media": ["base T-2 sozinha (P)", "climatologia 1995-2024 por mes-calendario e celula"],
+    "probabilistico": ["mesma media com hurdle-Gamma constante por regiao x estacao (verossimilhanca conjunta, mesmos meses de treino)", "mesmas marginais com amostragem independente"]
+  },
+  "metricas": {
+    "media": "RMSE nao ponderado (o da competicao), RMSE por area, vies, por mes e por regiao; delta pareado com IC por bootstrap de blocos de 6 meses",
+    "probabilistico": "CRPS contra Y_eps, cobertura de 80% por quantis, PIT aleatorizado, Brier > 10 e > 20 mm/dia, twCRPS acima de 10 mm/dia; CRPS e cobertura das medias regionais; escore de variograma"
+  },
+  "criterios": {
+    "media_confirmada": "RMSE(B0-T2) < RMSE(base T-2); confirmacao forte se o IC95 excluir 0",
+    "probabilistico_confirmado": "CRPS(contexto) <= 0,97 x CRPS(constante) com IC95 < 0; cobertura de 80% entre 0,75 e 0,85",
+    "dependencia_confirmada": "CRPS regional (Schaake) < CRPS regional (independente) com IC95 < 0",
+    "expectativa_do_desenvolvimento": "B0-T2 -1,6% contra a base T-2 (por ano entre -0,3% e -2,9%); CRPS -8% contra o constante; CRPS regional -26%"
+  },
+  "poder": "18 meses dao so 3 blocos de 6 meses: os IC serao largos; um resultado na direcao esperada com IC incluindo 0 e inconclusivo, nao refutacao",
+  "regras": [
+    "todas as previsoes e parametros gravados e com hash antes do download do alvo (reports/bloco_virgem_previsoes.json)",
+    "uma unica avaliacao; nenhum ajuste, selecao ou nova variante depois de ver o alvo",
+    "relatar tudo, inclusive o que contrariar o desenvolvimento"
+  ]
+}

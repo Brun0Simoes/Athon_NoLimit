@@ -1,0 +1,24 @@
+{
+  "id": "DUELO-ATHON-MONAN",
+  "registrado_em": "2026-10-04",
+  "registrado_antes_de": "qualquer métrica deste confronto (as fontes já foram avaliadas isoladamente em reports/duelo_multimodelo.json)",
+  "pedido": "o usuário pediu o melhor modelo do Athon contra o MONAN",
+  "arena_diaria": {
+    "classe": "diário independente (o campeão do Athon não usa o MONAN); o braço com MONAN como entrada é relatado à parte, na classe pós-processamento (plan.md §10)",
+    "campeao_athon": "ATHON = MOS hurdle-Gamma com GEFS + AIGEFS (a melhor combinação sem MONAN que cobre todo o período do MONAN; o GraphCastGFS termina em 2026-05)",
+    "referencias_athon": "M4D (produto diário promovido, coeficientes do pré-registro DIARIO-ETAPA3)",
+    "monan": "MONAN bruto e MONAN_MOS (mesmo MOS, mesma validação)",
+    "pos_processamento": "ATHON+MONAN = MOS com GEFS + AIGEFS + MONAN",
+    "dados": "inits com GEFS, AIGEFS e MONAN 00 UTC (2025-11-26..2026-10-02), D1..D10, verdade MERGE 0,5°, validação cruzada deixando um mês de fora",
+    "metricas": "CRPS (hurdle para MOS e M4D; |f − y| para brutos), RMSE, Brier > 10 mm; células com estação e domínio; por região em D1 e D5; bootstrap por blocos de 4 inits",
+    "criterio": "vencedor por lead só com IC95 do CRPS excluindo 0; contraste principal ATHON vs MONAN_MOS; ATHON vs MONAN bruto como contexto"
+  },
+  "arena_mensal": {
+    "campeao_athon": "B0-T2 (previsões congeladas do bloco 2025-01..2026-06 e emissões 2026-07..10), alvo ERA5 na grade oficial 0,25°",
+    "monan_mensal": "rodada MONAN 00 UTC do dia 1 de T; MONAN10 = média de D1..D10; MONAN_MENSAL = (10·MONAN10 + (n − 10)·climatologia oficial)/n, n = dias do mês. MONAN 0,1° → 0,25° por média de área",
+    "combinacao": "ATHON+MONAN10 = (10·MONAN10 + (n − 10)·B0-T2)/n (o MONAN substitui o Athon só nos dias que ele cobre)",
+    "referencias": "climatologia oficial 1981–2009 e base T−2",
+    "meses": "2025-12..2026-10 com rodada MONAN disponível; avaliação com ERA5 nos meses com verdade publicada (até 2026-08) e, como sensibilidade, com MERGE (até 2026-09)",
+    "criterio": "RMSE e meses vencidos por braço; com poucos meses, bootstrap por mês; declarar empate se o IC incluir 0"
+  }
+}

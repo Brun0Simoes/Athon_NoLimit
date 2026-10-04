@@ -1,0 +1,27 @@
+{
+  "id": "DUELO-MONAN-GRADE",
+  "registrado_em": "2026-10-04",
+  "registrado_antes_de": "qualquer download ou métrica do MONAN em grade",
+  "motivo": "o usuário apontou que o MONAN tem mais dados; achado o acervo dataserver.cptec.inpe.br/dataserver_dimnt/monan/monan_gam/netcdf (MONAN global 10 km, precipitação acumulada rainnc + rainc, 4 rodadas/dia, de 2025-11-26 em diante)",
+  "dados": {
+    "monan": "rodadas 00 UTC; lidos por faixa de bytes só os blocos da América do Sul nas horas 12, 36, …, 252; D_k = acumulado(36 + 24(k−1)) − acumulado(12 + 24(k−1)); 0,1° → 0,5° por média de área (5×5 células finas por célula da grade diária)",
+    "inits": "as inits do conjunto diário a partir de 2025-11-26 (quartas-feiras de 2025-12 a 2026-08 e todos os dias de 2026-09-01 a 2026-10-02) com rodada MONAN disponível",
+    "verdade": "MERGE agregado a 0,5° (runs/dados/diario.npz), domínio do produto; 'com estação' como no M4D"
+  },
+  "bracos": {
+    "MONAN_bruto": "previsão determinística do MONAN",
+    "GEFS_bruto": "média dos 5 membros",
+    "M4D": "coeficientes do pré-registro DIARIO-ETAPA3 (dobra do ano da init; janela de setembro de 2026 com coef_monan)",
+    "MOS_MONAN": "hurdle-Gamma com a mesma forma do M4D (μ linear em previsão e climatologia; p0 logístico), por lead × região, estações agrupadas (arquivo curto)",
+    "MOS_GEFS": "idêntico, com a média do GEFS no lugar do MONAN e as mesmas inits de treino",
+    "MOS_MONAN_GEFS": "idêntico, com MONAN e GEFS juntos (complementaridade)"
+  },
+  "validacao_dos_MOS": "validação cruzada deixando um mês-calendário de inits de fora; os três MOS usam exatamente as mesmas inits de treino. Fora do modo operacional (meses posteriores entram no treino de meses anteriores); simétrico entre os braços, que é o que a classe pós-processamento compara",
+  "metricas": "CRPS (hurdle para MOS e M4D; |f − y| para os brutos), RMSE, MAE e Brier > 10 mm por lead (D1, D3, D5, D7, D10), nas células com estação e no domínio; bootstrap por blocos de 4 inits",
+  "criterios": {
+    "pos_processamento": "MOS_MONAN vs MOS_GEFS: vencedor por lead só se o IC95 do CRPS excluir 0; caso contrário, empate",
+    "complementaridade": "MOS_MONAN_GEFS vs MOS_GEFS com IC95 < 0 indica que o MONAN acrescenta informação ao GEFS",
+    "independente": "MONAN_bruto vs GEFS_bruto e M4D vs MONAN_bruto, como no duelo por estação"
+  },
+  "limites_declarados": "cerca de 10 meses de MONAN (um ciclo anual incompleto); versão do modelo pode ter mudado no período; MERGE como verdade a 0,5°"
+}

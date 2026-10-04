@@ -1,0 +1,63 @@
+{
+  "produto": "diario_operacional",
+  "versao": 2,
+  "criado_em": "2026-10-03T23:36:37+00:00",
+  "alvo": {
+    "variavel": "precipitação acumulada em 24 h terminando às 12 UTC (convenção MERGE)",
+    "unidade": "mm/dia",
+    "fonte": "MERGE CPTEC diário (pluviômetros + IMERG), agregado conservativamente a 0,5°",
+    "grade": "0,5° (grade do GEFS), domínio do produto mensal: lat −60..15, lon −90..−25 (19.781 células); 'com estação' = célula com pluviômetro em ≥ 10% dos dias (2.754)"
+  },
+  "emissao": {
+    "rodada": "GEFS 00 UTC de d0",
+    "entrega_comum": "~07 UTC de d0",
+    "leads": "D1..D10 = dias d0+1..d0+10 (12–12 UTC)",
+    "regra": "só entram produtos publicados até a entrega; MONAN (~6h40 após a rodada) e GOES (varreduras até 06 UTC) cabem; o MERGE do dia sai depois das 12 UTC do dia seguinte"
+  },
+  "modelo_promovido": {
+    "id": "M4D",
+    "descricao": "hurdle-Gamma por lead × região × estação: μ = max(a + b·EM + c·clim, 0,01); p0 logístico em log1p(EM), log1p(clim); forma k por MV",
+    "coeficientes": "runs/diario_m4/coef_final.npz (todas as inits com os 10 alvos observados até 2026-10-03)",
+    "codigo": "src/models/diario_m4.py (preve, prob_excede)",
+    "evidencia": "reports/diario_m4.json (dobras 2022–2026) e reports/duelo_monan.json"
+  },
+  "produtos_auxiliares": {
+    "G0_D0": "substituído por GG0 (F2-3)",
+    "M5_DEC": "refinamento 0,1° só diagnóstico (reports/m5a.json); sem valor com Q previsto (reports/m5_previsao.json)",
+    "GG0_D0": "D0 = hurdle-Gamma com GEFS 12 UTC de d0−1 + GOES RRQPE até 06 UTC (reports/gefs_d0.json; −7,1% vs GEFS só, −24% vs CLIM aprox.)"
+  },
+  "rejeitados": {
+    "M4F_D1": "GOES não acrescenta ao GEFS em D1 (+0,22%, IC>0)",
+    "M5B_flow": "RMSE da média +2,66% > 2% (critério)",
+    "M5_FLOWREC_previsao": "flow recentrado piora o CRPS fino em modo previsão (+11%)"
+  },
+  "pre_registros_sha256": {
+    "configs/experiments/diario.json": "bf8e2f48f32d6e3a2b141c7cf9d80fe185d5a21250790b822f6f138d3607c021",
+    "configs/experiments/goes_d0d1.json": "e73992ff14dfe7312739ecf142bd5e400b4347fba5bba7e6a05bb893e7b91ebd",
+    "configs/experiments/m5a.json": "c0671338f7d66b08bb6c1a3ed8589dd5bf91093795688d8630a56ec94c46ea66",
+    "configs/experiments/m5b.json": "7d54bdc349c13cf587705f1741655394dff082fcffd509d072bc9668e5feed5e",
+    "configs/experiments/fase2.json": "850f53a1c661eb4a77cb176a17ae93059806f6db257dc8e8e3fa5cde54c28f37"
+  },
+  "artefatos_sha256": {
+    "runs/diario_m4/coef_final.npz": "09aba6812523ec7efe9fd3557740e71448256e06746aa3c78664a826022cafe7",
+    "runs/diario_m4/coef_monan.npz": "a06a6f7a8c61a3667c907d01513e1aa7494b8a56bcc9271bc46eb9129757994b",
+    "runs/dados/diario.npz": "008ba449232cbc2e06b416fc34cd007b31deef5b2d4272a0789e544ae8da1292",
+    "runs/dados/merge_clim_2001_2019.npz": "be70f0304abc9895d49be9c1dfcdeb53b5aef1a2e5bbc50975285770f3882ccd",
+    "runs/m5a_decoder.pt": "91dde3de3b057641e645c3f84838460b3302274606ba8322397fb7f031610eb7",
+    "runs/m5b_flow.pt": "3de14dba5f1a13ac21a91cd58f3ccfe050e1fd6f150064d3cd7097c2f3a4bb53",
+    "reports/diario_m4.json": "adcf529e9f547b3cacf3c7b1fb0b0651d45d4187c96dfc58ad8933d65b384ab4",
+    "reports/duelo_monan.json": "c47d8671c53be231adb34beaa62ae676eef67915719f143b7505a2ddc6d04cd2",
+    "reports/goes_d0d1.json": "cb6e6377ce0e48280cfd1f9c21a9c7c677076d35f06a1560645513c60a76e177",
+    "reports/m5a.json": "a09e1b7779d5945d91c03c8ea5ccda6124709ad9e0de427ecbd335bc4d1f85b9",
+    "reports/m5b.json": "d39307b84f7dba534e75fab5ab2661c2b806467dfee7a4789542ab25f43fc591",
+    "reports/m5_previsao.json": "94a88ce78ad435d7336ed7ce2f0910ed91488c38d83797c770bcce2973b75585",
+    "reports/diario_ecc.json": "8afa6699ae1693e4a37def453d6c540cedaba3428ae1157d6151892367509d0d",
+    "reports/gefs_d0.json": "aaced56cda9fcdccaa2a8b47cdef6a2a7d301daf99be67a657735f6e6f9df456",
+    "reports/m5_flowrec.json": "b87692fafa0397b1d92dd2113ff950dd3c3bea90ff1995d841089f773074c48c",
+    "reports/mos_monan_piloto.json": "c6679898538026a511ce281de2670aca31c42302363b12e0139558f31f3f1541",
+    "reports/sol_e.json": "bfafe5ec2f76cde16963bd16dba07b49224460542e2247c2daf588ab221ccdac"
+  },
+  "prospectivo": "nova confirmação só com previsões arquivadas antes da verdade (arquivo prospectivo: MONAN TM143, GEFS e M4D por rodada; tarefa agendada depende de autorização do usuário)",
+  "atualizado_em": "2026-10-04T02:15:19+00:00",
+  "dependencia_espacial": "Schaake com campos MERGE passados (ou ECC com os membros do GEFS, 2–3% atrás até D5) sobre as marginais do M4D — reports/diario_ecc.json"
+}

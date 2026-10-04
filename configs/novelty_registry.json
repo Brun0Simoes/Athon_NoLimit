@@ -1,0 +1,273 @@
+{
+  "nota": "Cada cenario liga-se ao antecedente mais proximo e a diferenca cientifica real. Se a diferenca for so seed, mais arvores ou nome, o cenario nao inicia (plan.md 2.2). Estado: pendente | em_execucao | encerrado | bloqueado.",
+  "criado_em": "2026-10-02",
+  "cenarios": {
+    "B0": {
+      "antecedente": "O61-S6R",
+      "diferenca": "contrato operacional: SEAS5 lead 1,5, dobras expansivas, tudo so com o passado",
+      "estado": "encerrado (referência: runs/b0_l15)"
+    },
+    "REF-L05": {
+      "antecedente": "O61-S6R",
+      "diferenca": "mesmas dobras causais do B0, mas SEAS5 lead 0,5; mede o custo do lead (RETROSPECTIVO)",
+      "estado": "encerrado (runs/ref_l05_retrospectivo; RETROSPECTIVO)"
+    },
+    "M1-A": {
+      "antecedente": "O51 (spread simples quase nao alterou RMSE)",
+      "diferenca": "encoder invariante a permutacao (DeepSets) sobre membros individuais vs resumos fixos (media, spread, quantis), mesma media MSE e mesmos meses",
+      "estado": "encerrado: inconclusivo (membros −0,39% vs mesma rede sem membros, abaixo de 0,5%)"
+    },
+    "M1-B": {
+      "antecedente": "M1-A; atencao do repositorio precipitation (comparador documental)",
+      "diferenca": "duas queries condicionadas no contexto vs DeepSets, mesmos membros e head",
+      "estado": "não iniciado: DeepSets ≈ resumos, atenção sem justificativa (regra M1-A)"
+    },
+    "M1-C": {
+      "antecedente": "nenhum produto probabilistico no historico",
+      "diferenca": "media congelada + Gamma (mensal); avaliado por CRPS/PIT",
+      "estado": "encerrado: promovido (contexto); reavaliado com baseline conjunto: −7,46% CRPS, IC<0 com blocos 6/12/24; extremos sub-cobertos (0,55)"
+    },
+    "M1-D": {
+      "antecedente": "M1-C",
+      "diferenca": "spline flow positivo vs Gamma com encoder fixo",
+      "estado": "não iniciado: hurdle-Gamma já calibrada (PIT quase plano); flow sem defeito a corrigir"
+    },
+    "M1-E": {
+      "antecedente": "M1-C",
+      "diferenca": "ECC-Q vs amostragem independente",
+      "estado": "encerrado: dependência espacial promovida; postos do SEAS5 não superam o Schaake"
+    },
+    "M2-A": {
+      "antecedente": "base usa chuva/atmosfera de T-1; O40 sem solo",
+      "diferenca": "solo/energia antecedentes alem da persistencia da chuva",
+      "estado": "encerrado: rejeitado (κ=∞ em todos os blocos, T−2 e T−1)"
+    },
+    "M2-B": {
+      "antecedente": "vizinhanca 3x3 isotropica (S6R, O54-O61)",
+      "diferenca": "pooling a montante orientado pelo vento, com controles isotropico e de direcao rotacionada",
+      "estado": "não iniciado: condicionado a sinal no M2-A"
+    },
+    "M2-C": {
+      "antecedente": "campos mensais separados",
+      "diferenca": "media de produtos q*v subdiaria vs produto de medias",
+      "estado": "pendente"
+    },
+    "M2-D": {
+      "antecedente": "M2-A/B",
+      "diferenca": "ConvGRU vs ridge/GAM com os mesmos dados",
+      "estado": "não iniciado: condicionado a sinal"
+    },
+    "M2-E": {
+      "antecedente": "M2-D",
+      "diferenca": "perda auxiliar de balanco hidrico",
+      "estado": "não iniciado: condicionado a sinal"
+    },
+    "M2-F": {
+      "antecedente": "M2-A",
+      "diferenca": "elos intermediarios solo-temperatura-convergencia por regiao",
+      "estado": "não iniciado: condicionado a sinal"
+    },
+    "SOL-A": {
+      "antecedente": "sen/cos do mes no V0n",
+      "diferenca": "geometria solar x solo/energia vs Fourier x solo com capacidade igual",
+      "estado": "encerrado: nulo (κ=∞ em todos os blocos para solo, Fourier×solo e geometria×solo) — reports/sol_a.json"
+    },
+    "SOL-B": {
+      "antecedente": "ENSO/SST ja investigados",
+      "diferenca": "QBO/MJO sobre o melhor M2, ENSO controlado",
+      "estado": "encerrado: nulo (QBO/MJO zerados pela seleção)"
+    },
+    "SOL-C": {
+      "antecedente": "SOL-B",
+      "diferenca": "F10.7 passado (uma fonte, duas janelas pre-fixadas)",
+      "estado": "encerrado: inconclusivo (F10.7 zerado; poder baixo medido)"
+    },
+    "SOL-D": {
+      "antecedente": "SOL-C",
+      "diferenca": "interacao solar x QBO vs aditivo e indice falso autocorrelacionado",
+      "estado": "encerrado: inconclusivo (idem)"
+    },
+    "SOL-E": {
+      "antecedente": "nenhum",
+      "diferenca": "mare lunar subdiaria, separado do mensal",
+      "estado": "encerrado: sinal subdiário detectado (M2 0,42% da chuva horária, p=0,005; CMORPH 2010–2019) que some na agregação diária — reports/sol_e_subdiario.json, reports/sol_e.json"
+    },
+    "M3-A": {
+      "antecedente": "O40 ResU-Net so observado",
+      "diferenca": "rede temporal pequena com tres heads mensais, so observado",
+      "estado": "encerrado (referência do M3)"
+    },
+    "M3-B": {
+      "antecedente": "M3-A",
+      "diferenca": "pre-treino em 2 familias CMIP6, encoder congelado",
+      "estado": "encerrado: inconclusivo (−0,29% vs A, IC inclui 0)"
+    },
+    "M3-C": {
+      "antecedente": "M3-B",
+      "diferenca": "ajuste parcial do encoder",
+      "estado": "encerrado: inconclusivo (igual ao B)"
+    },
+    "M3-D": {
+      "antecedente": "M3-B",
+      "diferenca": "mais familias com orcamento de atualizacoes igual",
+      "estado": "não iniciado: B/C não superaram A com significância"
+    },
+    "M3-E": {
+      "antecedente": "M3-B",
+      "diferenca": "pre-treino com alinhamento temporal destruido (controle)",
+      "estado": "encerrado: controle confirma relação temporal (B −0,68% vs E)"
+    },
+    "M4-A": {
+      "antecedente": "GEFS janelas na base (media de area)",
+      "diferenca": "campos brutos por membro/lead da fonte direta",
+      "estado": "encerrado: inconclusivo (−0,034% vs B0, IC<0; A0 −0,062%)"
+    },
+    "M4-B": {
+      "antecedente": "M4-A",
+      "diferenca": "mesmos campos via AWIPS; paridade de engenharia, ganho esperado nulo",
+      "estado": "encerrado: AWIPS público sem membros/histórico; conteúdo equivalente obtido por fonte direta (NOAA EAGLE no AWS)"
+    },
+    "M4-C": {
+      "antecedente": "M4-A",
+      "diferenca": "produtos antes da media e persistencia, mesma cadencia",
+      "estado": "encerrado: sem evidência (C vs A −0,006%, IC inclui 0)"
+    },
+    "M4-D": {
+      "antecedente": "W regiao x estacao do S6R",
+      "diferenca": "interacao regime x correcao com poucos coeficientes; controle de regimes permutados",
+      "estado": "não iniciado: condicionado a promoção de A ou C"
+    },
+    "M4-E": {
+      "antecedente": "M1-B",
+      "diferenca": "contexto de regime nas queries de M1",
+      "estado": "não iniciado: M1-B e M4-D não promovidos"
+    },
+    "M4-F": {
+      "antecedente": "nenhum",
+      "diferenca": "cabeca diaria + GOES passado em D0-D1",
+      "estado": "encerrado: D1 rejeitado (M4F +0,22% CRPS vs M4D, IC>0); D0 aprovado só como fechamento do dia corrente (G0 −15,2% vs CLIM, IC<0) — reports/goes_d0d1.json"
+    },
+    "M5-A": {
+      "antecedente": "nenhum",
+      "diferenca": "climatologia fina conservativa vs decoder deterministico",
+      "estado": "encerrado: estrutura aprendível (DEC −15,1% vs CLIMF, IC<0); dois terços do ganho são continuidade espacial (INTERP −10,3%); DEC vs INTERP −5,3% (IC<0) — reports/m5a.json, reports/m5b.json"
+    },
+    "M5-B": {
+      "antecedente": "M5-A",
+      "diferenca": "flow matching vs decoder com mesmos inputs",
+      "estado": "encerrado: reprovado pelo critério (CRPS −28,3% vs DEC, mas RMSE da média +2,66% > 2%); corrige frequência seca e caudas — gatilho §11 'separar média e distribuição' registrado"
+    },
+    "M5-C": {
+      "antecedente": "M5-B",
+      "diferenca": "com/sem projecao conservativa",
+      "estado": "encerrado: projeção sem custo (CRPS 0,694 vs 0,697 sem projeção; sem projeção erro de agregação médio 5,7% de Q)"
+    },
+    "M5-D": {
+      "antecedente": "M1-E",
+      "diferenca": "flow vs M1+ECC",
+      "estado": "não aplicável no modo diagnóstico (M1+ECC é mensal); ECC fino com membros do GEFS fica como trabalho futuro"
+    },
+    "M5-E": {
+      "antecedente": "M5-B",
+      "diferenca": "um dia vs tres conjuntamente",
+      "estado": "não iniciado: M5-B não passou"
+    },
+    "M3-R": {
+      "antecedente": "M3-B",
+      "diferenca": "head treinado no resíduo físico Y − B0, encoder congelado, controles embaralhado e aleatório",
+      "estado": "encerrado: −0,1% vs B0, igual ao embaralhado"
+    },
+    "M2-A-inc": {
+      "antecedente": "M2-A",
+      "diferenca": "chuva congelada, solo/energia com κ próprio",
+      "estado": "encerrado: κ=∞ em todos os blocos (T−2 e T−1)"
+    },
+    "M1-E-sch": {
+      "antecedente": "M1-E",
+      "diferenca": "Schaake shuffle com campos observados passados, mesmas marginais",
+      "estado": "encerrado: empata com ECC (CRPS regional −0,0018, IC inclui 0)"
+    },
+    "BLOCO-VIRGEM": {
+      "antecedente": "candidatos da seção 14 da triagem",
+      "diferenca": "avaliação única pré-registrada em 2025-01..2026-06",
+      "estado": "encerrado: média, probabilístico e dependência confirmados (reports/bloco_virgem.md)"
+    },
+    "DIARIO-M4D": {
+      "antecedente": "M4 (plan.md §8, cabeça diária) + distribuição do M1-C",
+      "diferenca": "primeiro produto diário: hurdle-Gamma por lead × região × estação sobre o GEFS 00 UTC",
+      "estado": "encerrado: promovido (CRPS −23,7% vs GEFS e −15,5% vs CLIM em D1, IC<0, D1–D5); perde no FSS > 10 mm para a fração de membros do GEFS — reports/diario_m4.json"
+    },
+    "DUELO-MONAN": {
+      "antecedente": "plan.md §10, classe diário independente",
+      "diferenca": "série TM143 (testes), setembro de 2026, por estação",
+      "estado": "encerrado: MONAN bruto pior que GEFS bruto (MAE +18% a +46%) e que o controle do GEFS (+16% a +41%); M4D vence ambos — reports/duelo_monan.json; classe pós-processamento aguarda arquivo prospectivo"
+    },
+    "GOES-D0": {
+      "antecedente": "M4-F",
+      "diferenca": "fechamento do dia corrente com RRQPE até a emissão",
+      "estado": "encerrado: aprovado como quase-observação (G0 −15,2% vs CLIM); sem baseline GEFS de D0"
+    },
+    "M5-PREV": {
+      "antecedente": "M5-A",
+      "diferenca": "refinamento com Q previsto (GEFS bruto)",
+      "estado": "encerrado: rejeitado (DEC +0,1% a +0,2% vs UNIF; erro grosso domina) — reports/m5_previsao.json"
+    },
+    "EMISSAO-MENSAL": {
+      "antecedente": "BLOCO-VIRGEM (D-10: confirmação nova só prospectiva)",
+      "diferenca": "previsões arquivadas antes da verdade",
+      "estado": "encerrado antecipadamente (D-20): 4 meses emitidos (07–09 retroativas cegas, 10 prospectiva), 2 avaliados (07, 08) na direção confirmada; mínimo de 6 meses não atingido"
+    },
+    "F2-1-ECC-DIARIO": {
+      "antecedente": "DIARIO-M4D, M1-E",
+      "diferenca": "dependência espacial no diário",
+      "estado": "encerrado: promovido (CRPS regional −27% vs independente; Schaake 2–3% melhor até D5); não recupera FSS (causa nas marginais) — reports/diario_ecc.json"
+    },
+    "F2-2-FLOWREC": {
+      "antecedente": "M5-B (gatilho §11)",
+      "diferenca": "flow recentrado no DEC",
+      "estado": "encerrado: diagnóstico aprovado (CRPS −29%, média = DEC); modo previsão reprovado (+11% CRPS) — reports/m5_flowrec.json"
+    },
+    "F2-3-GEFS-D0": {
+      "antecedente": "GOES-D0",
+      "diferenca": "baseline GEFS 12 UTC de d0−1",
+      "estado": "encerrado: GG0 promovido (GOES −7,1% sobre o GEFS; GEFS −18,5% vs CLIM) — reports/gefs_d0.json"
+    },
+    "F2-5-MOS-MONAN": {
+      "antecedente": "DUELO-MONAN",
+      "diferenca": "MOS simples (piloto)",
+      "estado": "piloto: MONAN+MOS empata com GEFS+MOS em D1, levemente melhor D3–D5 — reports/mos_monan_piloto.json; duelo definitivo aguarda arquivo"
+    },
+    "SENS-MERGE": {
+      "antecedente": "BLOCO-VIRGEM; plan.md §11",
+      "diferenca": "verdade MERGE em vez de ERA5",
+      "estado": "encerrado: média robusta (B0-T2 −0,8% vs base, IC<0); dispersão por contexto não transfere (+3,6% vs constante) — reports/sensibilidade_merge.json"
+    },
+    "DUELO-MONAN-GRADE": {
+      "antecedente": "DUELO-MONAN, F2-5",
+      "diferenca": "MONAN global 10 km em grade, 10 meses (acervo monan_gam)",
+      "estado": "encerrado: bruto pior que GEFS; pós-processado empata; GEFS+MONAN −1,3% a −3,1% vs GEFS (IC<0) — reports/duelo_multimodelo.json"
+    },
+    "DUELO-IA": {
+      "antecedente": "plan.md §8.3 (AI-GEFS via AWIPS)",
+      "diferenca": "GraphCastGFS e AIGEFS por fonte direta",
+      "estado": "encerrado: IA supera GEFS (bruto −8% a −14%; MOS −1% a −6%, IC<0); próximo passo natural: M4D-IA — reports/duelo_multimodelo.json"
+    },
+    "DUELO-ATHON-MONAN": {
+      "antecedente": "DUELO-MONAN-GRADE, DUELO-IA",
+      "diferenca": "melhor Athon (diário e mensal) contra o MONAN",
+      "estado": "encerrado: diário Athon vence 9/10 leads vs MONAN+MOS; mensal Athon −4,9% vs MONAN mensal (ERA5, 7/8 meses, IC inclui 0) — reports/duelo_athon_monan.json"
+    }
+  },
+  "excluidos_da_primeira_rodada": {
+    "analogos_log": "final_search/methods/analog_log.py: ganho caiu de 0,01534 para 0,00528 com selecao interna; nao passou estabilidade",
+    "nova_unet_mesmos_campos": "O40",
+    "novo_centro_ou_pesos_fixos": "O54-O61",
+    "spread_simples": "O51"
+  },
+  "proximos_motivados": [
+    "M4D-IA: cabeça diária sobre AIGFS/AIGEFS com MONAN complementar",
+    "arquivo prospectivo (MONAN/IA/GEFS por rodada) para confirmação operacional",
+    "calibração da cauda do M4D (FSS)"
+  ],
+  "estado_do_estudo": "encerrado em 04/10/2026 — reports/CONCLUSAO.md (com adendo da fase 3)"
+}

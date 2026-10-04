@@ -1,0 +1,21 @@
+{
+  "id": "M4-AC adendo 1",
+  "registrado_em": "2026-10-03",
+  "registrado_antes_de": "qualquer metrica do M4 (runs/m4ac/metricas.json inexistente; coleta em 45/158 meses)",
+  "motivo": "revisao reports/revisao_resultados_20261003.md, secao 5",
+  "correcoes_de_protocolo": {
+    "normalizacao_interna": "na selecao interna de kappa, cada bloco de validacao interna usa media/desvio calculados so com meses anteriores a ele; o ajuste final do bloco externo usa os meses anteriores ao bloco externo (como antes)",
+    "mascara": "uniao de elevacao > 1500 m com pressao de superficie climatologica (ERA5, 1991-2020, minimo das medias mensais) < 875 hPa, nas duas grades; features zeradas e divergencia anulada nas celulas mascaradas e vizinhas"
+  },
+  "braco_diagnostico": {
+    "A_m": "q_med, u_med, v_med, media_membros(q_m*u_m), media_membros(q_m*v_m), -div(media_membros(q_m*V_m)), onde q_m, u_m, v_m sao medias temporais de cada membro",
+    "leitura": "C - A_m = covariancia temporal dentro dos membros; A_m - A = covariancia entre membros. Diagnostico: nao altera o contraste principal C vs A nem a regra de promocao"
+  },
+  "estratos_pre_definidos": {
+    "periodo": ["reforecast: blocos 2016-2019", "operacional: blocos 2021-2024"],
+    "defasagem_da_init": ["1-3 dias", "4-7 dias"],
+    "regiao": "as 8 regioes da grade"
+  },
+  "auditoria_grib": "amostra de 4 mensagens por mes (c00 e p04; primeiro e ultimo passo; q, u ou v alternados): dataDate = init, dataTime = 0, passo = hora pedida, level = 850 e typeOfLevel isobarico, shortName e unidade esperados, vento relativo a Terra (uvRelativeToGrid = 0) e orientacao da grade; falha bloqueia o uso do mes",
+  "inalterado": "fontes, init, membros, campos, passos, janelas W1/W2, features de A0/A/C, corretor, blocos e regra de promocao do m4ac.json"
+}

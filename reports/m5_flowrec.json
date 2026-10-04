@@ -1,0 +1,161 @@
+{
+  "diagnostico": {
+    "criado_em": "2026-10-04T00:46:23+00:00",
+    "pre_registro_sha256": "850f53a1c661eb4a77cb176a17ae93059806f6db257dc8e8e3fa5cde54c28f37",
+    "dias_teste": 638,
+    "crps": {
+      "FLOWREC": 0.6860741967007378,
+      "DEC": 0.9682249140992532
+    },
+    "rmse": {
+      "FLOWREC_media": 2.895690835060933,
+      "DEC": 2.896349436281217
+    },
+    "freq_seca": {
+      "obs": 0.6113584117032392,
+      "FLOWREC_membros": 0.5725065852490422,
+      "DEC": 0.5440752351097179
+    },
+    "quantis_q95_q99": {
+      "obs": [
+        22.125,
+        42.875
+      ],
+      "FLOWREC_membros": [
+        21.508557735518604,
+        40.59682091542548
+      ],
+      "DEC": [
+        20.826533115783352,
+        38.901749642250444
+      ]
+    },
+    "erro_max_agregacao": 2.842170943040401e-14,
+    "FLOWREC_vs_DEC_crps": {
+      "delta_pct": -29.141030486806084,
+      "ic95": [
+        -29.345179481622697,
+        -28.934830398340317
+      ]
+    },
+    "FLOWREC_vs_DEC_rmse": {
+      "delta_pct": -0.02273901111634613,
+      "ic95": [
+        -0.030596218178410017,
+        -0.017328830551122387
+      ]
+    },
+    "criterio": {
+      "regra": "ŷ(s) = max(DEC + (flow(s) − média das 8 amostras), 0), reprojetado conservativamente (peso nulo → DEC); critério: RMSE da média ≤ 1,02 × DEC, CRPS < DEC com IC95 < 0 (blocos de 7 dias) e frequência seca mais próxima da observada que a do DEC",
+      "aprovado": true
+    }
+  },
+  "previsao": {
+    "D1": {
+      "inits": 87,
+      "crps": {
+        "UNIF": 1.4881776240279316,
+        "DEC": 1.4570131959175987,
+        "FLOWREC": 1.6497915814431978
+      },
+      "rmse_media": {
+        "UNIF": 5.5730685207387936,
+        "DEC": 5.5703783814701024,
+        "FLOWREC": 5.570351482745123
+      },
+      "FLOWREC_vs_UNIF_crps": {
+        "delta_pct": 10.859856700293523,
+        "ic95": [
+          9.14805972107957,
+          11.99383577280706
+        ]
+      },
+      "FLOWREC_vs_DEC_crps": {
+        "delta_pct": 13.231066545295844,
+        "ic95": [
+          11.20683940526253,
+          14.705614210663091
+        ]
+      },
+      "FLOWREC_vs_UNIF_rmse": {
+        "delta_pct": -0.048752998165380035,
+        "ic95": [
+          -0.22478946542901918,
+          0.06173099827817716
+        ]
+      }
+    },
+    "D3": {
+      "inits": 87,
+      "crps": {
+        "UNIF": 1.688865130542427,
+        "DEC": 1.6656186037514746,
+        "FLOWREC": 1.8912043088818384
+      },
+      "rmse_media": {
+        "UNIF": 6.359296048980933,
+        "DEC": 6.3614060399141215,
+        "FLOWREC": 6.361382881539641
+      },
+      "FLOWREC_vs_UNIF_crps": {
+        "delta_pct": 11.980777782677322,
+        "ic95": [
+          9.986194058923294,
+          14.154675033983713
+        ]
+      },
+      "FLOWREC_vs_DEC_crps": {
+        "delta_pct": 13.543659071907399,
+        "ic95": [
+          11.32421402238637,
+          16.129931418001245
+        ]
+      },
+      "FLOWREC_vs_UNIF_rmse": {
+        "delta_pct": 0.03281546483502318,
+        "ic95": [
+          -0.04284813359334422,
+          0.10714027030193907
+        ]
+      }
+    },
+    "D5": {
+      "inits": 87,
+      "crps": {
+        "UNIF": 1.8176414915891081,
+        "DEC": 1.7945140957816286,
+        "FLOWREC": 2.028350944166539
+      },
+      "rmse_media": {
+        "UNIF": 7.015510306243512,
+        "DEC": 7.0134855145107,
+        "FLOWREC": 7.013475916460566
+      },
+      "FLOWREC_vs_UNIF_crps": {
+        "delta_pct": 11.592464936152712,
+        "ic95": [
+          9.665952627424547,
+          14.632171717064592
+        ]
+      },
+      "FLOWREC_vs_DEC_crps": {
+        "delta_pct": 13.030649853048892,
+        "ic95": [
+          10.95489379675576,
+          16.550515666329662
+        ]
+      },
+      "FLOWREC_vs_UNIF_rmse": {
+        "delta_pct": -0.028998457619477946,
+        "ic95": [
+          -0.14969444321228015,
+          0.059584761942721984
+        ]
+      }
+    },
+    "criterio": {
+      "regra": "Q(m) = os 5 membros ECC do M4D (F2-1) interpolados aos centros grossos do recorte, D1/D3/D5, quartas-feiras 2025-01..2026-08; braços UNIF(Q(m)), DEC(Q(m)) e FLOWREC(Q(m)) (8 amostras por membro); critério: CRPS justo fino de FLOWREC < UNIF com IC95 < 0 (blocos de 4 inits)",
+      "aprovado": false
+    }
+  }
+}

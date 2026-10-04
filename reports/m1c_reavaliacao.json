@@ -1,0 +1,231 @@
+{
+  "criado_em": "2026-10-03T11:46:27+00:00",
+  "eps": 0.01,
+  "bracos": {
+    "constante_freq": {
+      "crps_Yeps": 0.7786966716073941,
+      "crps_Y_bruto": 0.7786702199475624,
+      "cobertura80_quantis": 0.8565120334576332,
+      "pit_aleatorizado_frac": [
+        0.0839,
+        0.0695,
+        0.0856,
+        0.1073,
+        0.1309,
+        0.1455,
+        0.1384,
+        0.1065,
+        0.0709,
+        0.0617
+      ],
+      "cobertura80_por_regiao": {
+        "amazonia": 0.8298,
+        "andes": 0.8369,
+        "centro_sudeste": 0.8115,
+        "nordeste": 0.8949,
+        "norte_amsul": 0.8755,
+        "oceano_outros": 0.8665,
+        "patagonia": 0.8261,
+        "sul_prata": 0.7977
+      },
+      "cobertura80_por_estacao": {
+        "DJF": 0.8554,
+        "MAM": 0.8793,
+        "JJA": 0.8843,
+        "SON": 0.8094
+      },
+      "cobertura80_Y_ge_p99": 0.7778665837810635,
+      "p99_mm_dia": 17.640938758850044,
+      "meses": 86
+    },
+    "constante_conjunta": {
+      "crps_Yeps": 0.7786237198405302,
+      "crps_Y_bruto": 0.7785977651635216,
+      "cobertura80_quantis": 0.8577608038546851,
+      "pit_aleatorizado_frac": [
+        0.0829,
+        0.0699,
+        0.0857,
+        0.1076,
+        0.1311,
+        0.1458,
+        0.1384,
+        0.1063,
+        0.0707,
+        0.0616
+      ],
+      "cobertura80_por_regiao": {
+        "amazonia": 0.8317,
+        "andes": 0.8436,
+        "centro_sudeste": 0.8105,
+        "nordeste": 0.9061,
+        "norte_amsul": 0.8741,
+        "oceano_outros": 0.867,
+        "patagonia": 0.8264,
+        "sul_prata": 0.7989
+      },
+      "cobertura80_por_estacao": {
+        "DJF": 0.8562,
+        "MAM": 0.8792,
+        "JJA": 0.8863,
+        "SON": 0.8117
+      },
+      "cobertura80_Y_ge_p99": 0.7778221807794207,
+      "p99_mm_dia": 17.640938758850044,
+      "meses": 86
+    },
+    "contexto": {
+      "crps_Yeps": 0.7205622189073089,
+      "crps_Y_bruto": 0.7205528661671723,
+      "cobertura80_quantis": 0.805895759272235,
+      "pit_aleatorizado_frac": [
+        0.1061,
+        0.0999,
+        0.1031,
+        0.1039,
+        0.1053,
+        0.104,
+        0.1012,
+        0.0959,
+        0.0896,
+        0.091
+      ],
+      "cobertura80_por_regiao": {
+        "amazonia": 0.7751,
+        "andes": 0.8204,
+        "centro_sudeste": 0.8309,
+        "nordeste": 0.8303,
+        "norte_amsul": 0.8029,
+        "oceano_outros": 0.8079,
+        "patagonia": 0.7787,
+        "sul_prata": 0.7971
+      },
+      "cobertura80_por_estacao": {
+        "DJF": 0.8132,
+        "MAM": 0.8066,
+        "JJA": 0.8273,
+        "SON": 0.7774
+      },
+      "cobertura80_Y_ge_p99": 0.5493095333244528,
+      "p99_mm_dia": 17.640938758850044,
+      "meses": 86
+    },
+    "membros": {
+      "crps_Yeps": 0.7256414948984529,
+      "crps_Y_bruto": 0.7256344603231017,
+      "cobertura80_quantis": 0.8191938244995813,
+      "pit_aleatorizado_frac": [
+        0.0953,
+        0.0947,
+        0.1021,
+        0.1061,
+        0.1085,
+        0.1095,
+        0.107,
+        0.0991,
+        0.0894,
+        0.0884
+      ],
+      "cobertura80_por_regiao": {
+        "amazonia": 0.789,
+        "andes": 0.8348,
+        "centro_sudeste": 0.8131,
+        "nordeste": 0.8051,
+        "norte_amsul": 0.8225,
+        "oceano_outros": 0.8246,
+        "patagonia": 0.8093,
+        "sul_prata": 0.7966
+      },
+      "cobertura80_por_estacao": {
+        "DJF": 0.8351,
+        "MAM": 0.814,
+        "JJA": 0.8343,
+        "SON": 0.7939
+      },
+      "cobertura80_Y_ge_p99": 0.5612095377647529,
+      "p99_mm_dia": 17.640938758850044,
+      "meses": 86
+    }
+  },
+  "segmentos": 2,
+  "contexto_vs_constante_conjunta": {
+    "delta_crps": -0.05806150093322124,
+    "delta_pct": -7.456939655667413,
+    "meses_melhores": 84,
+    "ic95": {
+      "blocos6": [
+        -0.07008599356753467,
+        -0.04972374811608126
+      ],
+      "blocos12": [
+        -0.06368809449849108,
+        -0.05269532796454634
+      ],
+      "blocos24": [
+        -0.06386306082365543,
+        -0.05046499353241794
+      ]
+    }
+  },
+  "contexto_vs_constante_freq": {
+    "delta_crps": -0.058134452700085416,
+    "delta_pct": -7.465609501076157,
+    "meses_melhores": 84,
+    "ic95": {
+      "blocos6": [
+        -0.07026511000237473,
+        -0.0497460709775619
+      ],
+      "blocos12": [
+        -0.06371671328243761,
+        -0.05272276872463373
+      ],
+      "blocos24": [
+        -0.06377647032198572,
+        -0.05045390213437692
+      ]
+    }
+  },
+  "membros_vs_contexto": {
+    "delta_crps": 0.0050792759911441115,
+    "delta_pct": 0.7049045672761668,
+    "meses_melhores": 39,
+    "ic95": {
+      "blocos6": [
+        0.0005346399362449333,
+        0.011534888332758703
+      ],
+      "blocos12": [
+        9.02843302434484e-05,
+        0.014323746912306007
+      ],
+      "blocos24": [
+        0.00032126890850657237,
+        0.01548497779758247
+      ]
+    }
+  },
+  "constante_conjunta_vs_constante_freq": {
+    "delta_crps": -7.295176686416329e-05,
+    "delta_pct": -0.009368444674814836,
+    "meses_melhores": 44,
+    "ic95": {
+      "blocos6": [
+        -0.0005545314396565776,
+        0.00034600650711567903
+      ],
+      "blocos12": [
+        -0.00046404750237223765,
+        0.0003197897430654169
+      ],
+      "blocos24": [
+        -0.00027423934843264473,
+        0.00018780112517346805
+      ]
+    }
+  },
+  "frequencias_casos_teste": {
+    "zeros_exatos": 0.005616136534992954,
+    "abaixo_de_eps": 0.011670978232586558
+  }
+}

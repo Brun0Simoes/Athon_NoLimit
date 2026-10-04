@@ -1,0 +1,102 @@
+{
+  "criado_em": "2026-10-03T14:14:53+00:00",
+  "eps": 0.01,
+  "bracos": {
+    "constante_conjunta": {
+      "crps_Yeps": 0.7866257863995824,
+      "crps_Y_bruto": 0.786600043851719,
+      "cobertura80_quantis": 0.8625534061370767,
+      "pit_aleatorizado_frac": [
+        0.0795,
+        0.0688,
+        0.0841,
+        0.1064,
+        0.1315,
+        0.1481,
+        0.1417,
+        0.1087,
+        0.0711,
+        0.0601
+      ],
+      "cobertura80_por_regiao": {
+        "amazonia": 0.8336,
+        "andes": 0.8603,
+        "centro_sudeste": 0.7982,
+        "nordeste": 0.9103,
+        "norte_amsul": 0.8912,
+        "oceano_outros": 0.8723,
+        "patagonia": 0.8265,
+        "sul_prata": 0.7894
+      },
+      "cobertura80_por_estacao": {
+        "DJF": 0.867,
+        "MAM": 0.8824,
+        "JJA": 0.8879,
+        "SON": 0.815
+      },
+      "cobertura80_Y_ge_p99": 0.786495567100336,
+      "p99_mm_dia": 17.640938758850044,
+      "meses": 86
+    },
+    "contexto": {
+      "crps_Yeps": 0.7238104043545093,
+      "crps_Y_bruto": 0.7238033411367961,
+      "cobertura80_quantis": 0.8084977959653926,
+      "pit_aleatorizado_frac": [
+        0.1016,
+        0.0977,
+        0.1017,
+        0.1042,
+        0.1055,
+        0.1047,
+        0.1026,
+        0.0982,
+        0.0907,
+        0.0931
+      ],
+      "cobertura80_por_regiao": {
+        "amazonia": 0.7795,
+        "andes": 0.8369,
+        "centro_sudeste": 0.8195,
+        "nordeste": 0.8169,
+        "norte_amsul": 0.8154,
+        "oceano_outros": 0.8104,
+        "patagonia": 0.7889,
+        "sul_prata": 0.7853
+      },
+      "cobertura80_por_estacao": {
+        "DJF": 0.8204,
+        "MAM": 0.8087,
+        "JJA": 0.829,
+        "SON": 0.7768
+      },
+      "cobertura80_Y_ge_p99": 0.5435815461125172,
+      "p99_mm_dia": 17.640938758850044,
+      "meses": 86
+    }
+  },
+  "segmentos": 2,
+  "contexto_vs_constante_conjunta": {
+    "delta_crps": -0.06281538204507318,
+    "delta_pct": -7.985421166089875,
+    "meses_melhores": 85,
+    "ic95": {
+      "blocos6": [
+        -0.07690497018511348,
+        -0.05208121750394981
+      ],
+      "blocos12": [
+        -0.07332905869631699,
+        -0.05288365577315604
+      ],
+      "blocos24": [
+        -0.074847510194727,
+        -0.049968062815780305
+      ]
+    }
+  },
+  "frequencias_casos_teste": {
+    "zeros_exatos": 0.005616136534992954,
+    "abaixo_de_eps": 0.011670978232586558
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "criado_em": "2026-10-03T12:10:01+00:00",
+  "reps": 100,
+  "por_rho": {
+    "0.0": {
+      "ganho_mediano_pct": 0.007251175358391482,
+      "p05": 0.0,
+      "p95": 0.028952958629337996,
+      "frac_criterio_preregistrado": 0.0,
+      "frac_ganho_negativo": 0.0
+    },
+    "0.1": {
+      "ganho_mediano_pct": 0.0,
+      "p05": 0.0,
+      "p95": 0.02597993476784354,
+      "frac_criterio_preregistrado": 0.0,
+      "frac_ganho_negativo": 0.01
+    },
+    "0.2": {
+      "ganho_mediano_pct": 0.0,
+      "p05": -2.6671047016479837e-05,
+      "p95": 0.020777488826838608,
+      "frac_criterio_preregistrado": 0.0,
+      "frac_ganho_negativo": 0.05
+    },
+    "0.3": {
+      "ganho_mediano_pct": 0.0,
+      "p05": -0.039549237663225045,
+      "p95": 0.016046477956410673,
+      "frac_criterio_preregistrado": 0.0,
+      "frac_ganho_negativo": 0.4
+    }
+  }
+}

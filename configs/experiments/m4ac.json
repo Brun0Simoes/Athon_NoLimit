@@ -1,0 +1,35 @@
+{
+  "id": "M4-AC",
+  "registrado_em": "2026-10-03",
+  "registrado_antes_de": "qualquer download de q/u/v do GEFS e qualquer resultado com eles",
+  "pergunta": "M4-A: o transporte de umidade previsto pelo GEFS antes da emissao acrescenta ao B0? M4-C: calcular produtos q*V antes de agregar (media de produtos) vale mais que agregar os campos separadamente (produto de medias), com os mesmos dados?",
+  "fonte": {
+    "reforecast": "s3://noaa-gefs-retrospective GEFSv12/reforecast, meses-alvo 2011-01..2019-12 (rotulo reforecast)",
+    "operacional": "s3://noaa-gefs-pds gefs.AAAAMMDD/00/atmos pgrb2ap5 (UGRD, VGRD 850) e pgrb2bp5 (SPFH 850), meses-alvo 2020-11..2024-12",
+    "versao": "GEFSv12 nos dois periodos"
+  },
+  "inicializacao": "00 UTC da ultima quarta-feira antes do dia 1 do mes-alvo (a mesma da base P; publicada horas depois, antes da emissao)",
+  "membros": ["c00", "p01", "p02", "p03", "p04"],
+  "campos": "SPFH, UGRD, VGRD em 850 hPa, instantaneos",
+  "passos": "00 e 12 UTC de cada dia das janelas; mesmos passos nos dois bracos",
+  "janelas": {"W1": "dias 1-7 do mes-alvo", "W2": "dias 8-14", "W34": "dias 15-28 (coletada, fora dos bracos principais)"},
+  "grade": "0,5 grau no recorte da base (lat -62..17, lon -92..-23); trecho de 0,25 grau levado a 0,5 grau pelo filtro tenda (como a base)",
+  "terreno": "celulas com elevacao > 1500 m (ERA5 estatico) mascaradas antes das derivadas e com features zeradas",
+  "features_por_janela": {
+    "A0": ["q_med", "u_med", "v_med"],
+    "A": ["q_med", "u_med", "v_med", "q_med*u_med", "q_med*v_med", "-div(q_med*V_med)"],
+    "C": ["q_med", "u_med", "v_med", "media(q*u)", "media(q*v)", "-div(media(q*V))"]
+  },
+  "nota_capacidade": "A e C tem o mesmo numero de variaveis (6 por janela, W1 e W2 = 12) e a mesma rotina; so muda a ordem produto/media. Medias sobre passos e membros; os produtos de C sao por membro e passo",
+  "padronizacao": "anomalia por celula e estacao (DJF, MAM, JJA, SON) com media e desvio dos meses anteriores ao bloco (inclui 2011-2012 sem B0)",
+  "corretor": "ridge com coeficientes por regiao x estacao sobre r = Y - B0, kappa por selecao interna cronologica (b0.KAPPAS), como o M2-A; features levadas a grade oficial por bilinear",
+  "blocos_avaliados": "2016..2024 (B0 desde 2013; tres blocos minimos de treino)",
+  "contrastes": {
+    "M4-A": "A contra B0",
+    "M4-C": "C contra A (principal)",
+    "A_vs_A0": "valor dos produtos de medias"
+  },
+  "promocao": "melhora pareada >= 0,5% no RMSE e IC95 de blocos de 6 meses < 0",
+  "teto_transferencia_gib": 60,
+  "proibido": "trocar janelas, niveis, passos ou features depois de ver o resultado"
+}

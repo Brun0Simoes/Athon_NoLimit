@@ -1,0 +1,23 @@
+{
+  "id": "SOL-A e SOL-E-subdiário (plan.md §6.3–6.4)",
+  "registrado_em": "2026-10-04",
+  "registrado_antes_de": "qualquer métrica destes braços",
+  "motivo": "fechar a astronomia do plano: SOL-A nunca foi executado (condicionado ao M2-A) e o SOL-E só tinha o teste de sobrevivência à agregação diária",
+  "SOL_A": {
+    "estrutura": "a do M2-A (src/models/memoria_m2.py): correção do resíduo do B0-T2 por ridge por região × estação, κ por seleção interna cronológica, blocos 2016–2024, estado de T−2",
+    "bracos": {
+      "S": "solo/energia: swvl1, swvl2 e rn de T−2 (3 colunas)",
+      "F": "S + S×cos(2πm/12) + S×sen(2πm/12), m = mês-alvo (9 colunas)",
+      "G": "S + S×Q̃ + S×Ñ, Q̃ = insolação média diária no topo da atmosfera do mês-alvo na latitude da célula e Ñ = duração do dia, ambas padronizadas (9 colunas, mesma capacidade de F)"
+    },
+    "contraste_principal": "G contra F (pareado, bootstrap por blocos de 6 meses); G contra S e contra o B0-T2 como contexto",
+    "criterio": "a geometria vale como representação se G ≤ F − 0,5% com IC95 < 0; como no plano, ganho de G não é descoberta de atividade solar"
+  },
+  "SOL_E_subdiario": {
+    "dados": "CMORPH CDR v1.0 horário 0,25° (NOAA NCEI, sem credencial), 2010–2019, recorte 20°S–10°N × 85°W–30°W (América do Sul tropical, terra e oceano)",
+    "metodo": "para cada célula e hora UTC, fase semidiurna lunar local φ = 2·(ângulo horário local da Lua); composto da taxa de chuva em 12 classes de φ, somando todas as células e horas; amplitude e fase do 2º harmônico lunar (M2, período 12,4206 h solar)",
+    "controle": "o mesmo composto com 200 períodos falsos uniformes em [11,0; 13,8] h, excluindo ±0,15 h de 12,0 h (maré solar e ciclo diurno) e de 12,42 h; nulo adicional reamostrando anos inteiros",
+    "criterio": "sinal lunar subdiário presente se a amplitude em 12,42 h superar o p95 dos períodos falsos e o IC por reamostragem de anos excluir 0; sobrevivência à agregação já foi avaliada (SOL-E diário nulo)",
+    "limite": "a efeméride lunar usa fórmulas de baixa precisão (erro < 1° na ascensão reta, irrelevante para o 2º harmônico)"
+  }
+}

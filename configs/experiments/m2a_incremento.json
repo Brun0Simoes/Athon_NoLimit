@@ -1,0 +1,13 @@
+{
+  "id": "M2-A incremento",
+  "registrado_em": "2026-10-03",
+  "motivo": "revisao 03/10 secao 4: no M2-A a penalidade unica removia tambem a chuva; o incremento do solo nao foi isolado",
+  "estagio_1": "correcao de chuva do braco A do M2-A (z(tp) em T-L e media T-L-2..T-L), ridge regiao x estacao, kappa1 por selecao interna cronologica",
+  "estagio_2": "sobre r2 = Y - B0 - c1 (c1 ajustado no prefixo), ridge regiao x estacao com as 7 variaveis de superficie (swvl1-3, skt, ssrd, rn, e) nas mesmas duas janelas = 14 colunas, kappa2 proprio por selecao interna",
+  "defasagens": [2, 1],
+  "blocos": "2016-2024",
+  "contraste": "B0 + c1 + c2 contra B0 + c1, pareado",
+  "promocao": "melhora >= 0,5% no RMSE e IC95 de blocos de 6 meses < 0; IC tambem com blocos de 12 e 24 meses dentro de segmentos consecutivos",
+  "limitacao_declarada": "na selecao interna de kappa2, c1 vem do ajuste no prefixo inteiro (vazamento so dentro da validacao interna, nao no bloco externo)",
+  "proibido": "acrescentar interacoes ou outras janelas depois do resultado"
+}

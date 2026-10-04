@@ -1,0 +1,59 @@
+{
+  "meses": {
+    "2026-07": {
+      "avaliado_em": "2026-10-04T02:13:17+00:00",
+      "verdade": {
+        "arquivo": "E:\\Atlon\\data\\raw\\era5_verdade\\tp_2026_07.nc",
+        "sha256": "90797a7ee664e256f61f167f5ffaa6cb21d9209beeb835d23b291e15176e0f07",
+        "expver": "0001"
+      },
+      "rmse": {
+        "B0T2": 1.6120551996913846,
+        "base_T2": 1.67245074855506,
+        "clim_oficial": 1.8177666138829691
+      },
+      "crps": {
+        "contexto": 0.6737557820706672,
+        "constante": 0.7081106308521449
+      },
+      "cobertura80": {
+        "contexto": 0.7638141062359186,
+        "constante": 0.848156209824213
+      },
+      "crps_regional": {
+        "schaake": 0.21475466063229193,
+        "independente": 0.3274234271345021
+      },
+      "brier_acima_clim": 0.22708374763730618
+    },
+    "2026-08": {
+      "avaliado_em": "2026-10-04T02:20:40+00:00",
+      "verdade": {
+        "arquivo": "E:\\Atlon\\data\\raw\\era5_verdade\\tp_2026_08.nc",
+        "sha256": "347b796d0064fe65c1865b403e894ef185e843947920761bcd731955d2061866",
+        "expver": "0005"
+      },
+      "rmse": {
+        "B0T2": 1.578512583990949,
+        "base_T2": 1.6729887541556236,
+        "clim_oficial": 1.865934769416654
+      },
+      "crps": {
+        "contexto": 0.6640145929946684,
+        "constante": 0.6826933257881268
+      },
+      "cobertura80": {
+        "contexto": 0.7262636677231705,
+        "constante": 0.8538205980066446
+      },
+      "crps_regional": {
+        "schaake": 0.3796925126201187,
+        "independente": 0.5577529284807066
+      },
+      "brier_acima_clim": 0.21085110714017857
+    }
+  },
+  "n_meses": 2,
+  "conclusao": "sem conclusão: menos de 6 meses avaliados (regra pré-registrada)",
+  "atualizado_em": "2026-10-04T02:20:43+00:00"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "GOES-D0D1",
+  "plano": "plan.md §13 Etapa 3 passo 3 e M4-F (cabeça diária + passado GOES)",
+  "registrado_em": "2026-10-03",
+  "registrado_antes_de": "qualquer download ou métrica GOES",
+  "fonte": "GOES-R ABI L2 RRQPEF (taxa de chuva, disco completo, 2 km), noaa-goes16 até 2025-04-06 e noaa-goes19 a partir de 2025-04-07 (troca do GOES-Leste); se faltar arquivo num balde, tenta-se o outro",
+  "amostragem": "primeira varredura de cada hora cheia; taxa (mm/h) × 1 h; só pixels com DQF = 0; média dos pixels válidos em cada célula 0,5° do produto diário",
+  "covariaveis": {
+    "goes19": "soma das 19 varreduras de 12 UTC de d0−1 a 06 UTC de d0 (o que já choveu na janela de D0 até a emissão)",
+    "goes7": "soma das 7 varreduras de 00 a 06 UTC de d0 (passado recente imediatamente antes da emissão)"
+  },
+  "disponibilidade": "varreduras até 06:10 UTC; RRQPE publicado poucos minutos após a varredura; emissão comum ~07 UTC",
+  "inits": "as quartas-feiras do conjunto diário, 2020-10..2026-08; init com menos de 15 das 19 varreduras fica sem GOES (fallback)",
+  "D0": {
+    "alvo": "MERGE do dia d0 (12 UTC de d0−1 a 12 UTC de d0)",
+    "CLIM": "hurdle-Gamma por célula × mês (MERGE 2001–2019), a mesma do pré-registro DIARIO-ETAPA3",
+    "G0": "hurdle-Gamma com μ = max(a + b·goes19 + c·clim, ε) e p0 logístico em log1p(goes19) e log1p(clim), por região × estação",
+    "observacao": "não há GEFS para D0 no acervo (a rodada 00 UTC não cobre 12–24 UTC de d0−1); D0 é avaliado só contra CLIM"
+  },
+  "D1": {
+    "M4D": "a cabeça diária do pré-registro DIARIO-ETAPA3 (média do GEFS e climatologia)",
+    "M4F": "M4D + goes7 e goes19 como termos lineares em μ e log1p(·) no p0, por região × estação"
+  },
+  "fallback": "célula sem pixel GOES válido ou init sem GOES: M4F usa a previsão do M4D e G0 usa a CLIM; a contagem de fallbacks entra no relatório e as células não saem da avaliação",
+  "dobras": "as mesmas do diário: anos de teste 2022–2026 (até agosto), treino só com alvos anteriores ao ano de teste",
+  "metricas": "CRPS, MAE, Brier > 1/10/25 mm nas células com estação e no domínio; por região; bootstrap de blocos de 4 inits",
+  "criterios": {
+    "D0": "G0 com CRPS menor que a CLIM, IC95 < 0, nas células com estação",
+    "D1": "M4F com CRPS menor que o M4D, IC95 < 0, nas células com estação; ganho abaixo de 1% é registrado como sem valor prático mesmo que significativo"
+  },
+  "limites_declarados": "RRQPE é estimativa por infravermelho calibrada com micro-ondas, não observação; o MERGE incorpora IMERG, que usa infravermelho geoestacionário, então D0 não é uma verdade independente do preditor; a troca GOES-16 → GOES-19 em 2025 cai dentro das dobras 2025 e 2026"
+}

@@ -1,0 +1,98 @@
+{
+  "produto": "mensal_operacional",
+  "versao": 3,
+  "criado_em": "2026-10-02",
+  "alvo": {
+    "variavel": "taxa media mensal de precipitacao",
+    "unidade": "mm/dia",
+    "fonte": "ERA5 monthly_averaged_reanalysis avg_tprate x 86400; ate 2022-12 o arquivo oficial treino_tp.nc (equivalencia em reports/decisoes.md D-03)",
+    "grade": "0,25 grau; lat -60..15 (301); lon -90..-25 (261); 78561 celulas; sem mascara (terra e oceano)",
+    "metrica_principal": "RMSE nao ponderado sobre celulas e meses (o da competicao); RMSE por area (cos lat) em coluna separada"
+  },
+  "emissao": {
+    "instante": "dia 1 do mes-alvo T, 00 UTC",
+    "regra": "so entram produtos publicados ate o instante de emissao; lead 0,5 emitido ou divulgado dentro de T esta excluido"
+  },
+  "fontes": [
+    {
+      "id": "seas5_l15",
+      "descricao": "ECMWF SEAS5 (system 5 ate init 2022-10; system 51 a partir de init 2022-11), forecastMonth=2, todos os membros",
+      "init_time": "dia 1 de T-1, 00 UTC",
+      "published_at": "dia 5 de T-1, 12 UTC (ECMWF); dia 13 de T-1 (C3S)",
+      "disponivel_na_emissao": true,
+      "rotulo_historico": "hindcast (sistema fixo, produzido depois) para init <= 2016-12 no s5 e init <= 2021-12 no s51; previsao em tempo real nos demais",
+      "climatologia": "do proprio sistema, so com anos anteriores ao bloco avaliado",
+      "caminho": "data/raw/seas5/system{5,51}/seas5-AAAA.nc"
+    },
+    {
+      "id": "seas5_l05",
+      "descricao": "SEAS5 forecastMonth=1 (init dia 1 de T)",
+      "disponivel_na_emissao": false,
+      "motivo": "publicado no dia 5 (ECMWF) ou 13 (C3S) de T; so no produto retrospectivo diagnostico"
+    },
+    {
+      "id": "base_P_O09M",
+      "descricao": "base O09M-CLIP: NNLS (EOF atmosferico, celula, climatologia 30 anos, CFSv2 lead 1,5) + correcao GEFS escalada + clip",
+      "componentes_e_latencia": {
+        "era5_T-1": "estado de T-1 (9 campos e tp). Informacao valida antes da emissao; publicacao ERA5T ~5 dias depois. Usado como PROXY da analise operacional de T-1 (GDAS/IFS, latencia de horas). Rotulo: proxy_reanalise",
+        "cfsv2_l15": "NMME, origem em T-1, divulgacao ~dia 8-9 de T-1; hindcast antes de 2011",
+        "gefs": "ultima quarta-feira antes de T (D-1 ou antes), publicacao em horas; reforecast GEFSv12 ate 2019 (rotulo reforecast), operacional a partir de 2020-09"
+      },
+      "disponivel_na_emissao": "proxy_nao_certificado",
+      "oof": "rolling-origin: membros e pesos NNLS so com anos anteriores; escala GEFS por scale_from_past (scripts/o09m_cal.py)",
+      "rotulo": "oof_rolling (2010-2019), transporte_rolling (2020-11..2022-12), implantado_treino_ate_2022 (2023-2024)",
+      "nota_revisao_2026_10_03": "ERA5T de T-1 sai ~5 dias depois do fim do mes; a substituicao por analise operacional (GDAS/IFS) nao foi demonstrada. B0 com esta base = referencia retrospectiva com proxy."
+    },
+    {
+      "id": "clim_oficial",
+      "descricao": "climatologia 1981-2009 dos alvos oficiais",
+      "disponivel_na_emissao": true
+    },
+    {
+      "id": "base_P_O09M_T2",
+      "descricao": "mesma base O09M-CLIP reconstruida com as 9 atmosfericas de T-2 (treino, normalizacao e calibracao refeitos)",
+      "disponivel_na_emissao": true,
+      "componentes_e_latencia": {
+        "era5_T-2": "ERA5T do mes T-2 publicado ~5 dias apos seu fim, bem antes da emissao",
+        "cfsv2_l15": "inalterado",
+        "gefs": "inalterado"
+      },
+      "estado": "reconstruida em 03/10/2026 (runs/base_t2/sandbox; src/data/base_t2.py); B0-T2 = runs/b0_l15_t2, RMSE 1,7063 nos blocos 2013-2024 (B0 com proxy T-1: 1,7026; diferenca +0,22%, IC inclui 0)"
+    }
+  ],
+  "dobras": {
+    "tipo": "externas cronologicas expansivas; um bloco por ano-alvo",
+    "blocos_avaliados": [
+      "2013",
+      "2014",
+      "2015",
+      "2016",
+      "2017",
+      "2018",
+      "2019",
+      "2021",
+      "2022",
+      "2023",
+      "2024"
+    ],
+    "nota_2021": "o bloco 2021 inclui 2020-11 e 2020-12 (inicio do GEFS operacional na base)",
+    "treino_do_bloco": "todos os meses-alvo anteriores ao primeiro mes do bloco; residuos da base desde 2010-01; MOS e climatologias do SEAS5 desde 1993",
+    "selecao_interna": "cronologica expansiva dentro do prefixo (cada ano do prefixo previsto por modelo treinado so com anos anteriores)",
+    "meses_ausentes_na_base": [
+      "2011-02",
+      "2011-03",
+      "2011-04",
+      "2020-01..2020-10"
+    ],
+    "hiperparametros_herdados": "LightGBM e grades de kappa/alfa vem do S6R e foram escolhidos na competicao com 2010-2019; sao fixos, nao re-selecionados. Risco registrado em reports/decisoes.md D-04"
+  },
+  "desenvolvimento_retrospectivo": "2010-2024 inteiro. Os blocos 2010-2022 e o placar 2023-2024 foram pesquisados repetidamente; resultados aqui nao sao confirmatorios",
+  "bloco_virgem": {
+    "meses": "2025-01..2026-06",
+    "estado": "aberto uma vez em 03/10/2026 (avaliação pré-registrada); agora é desenvolvimento",
+    "regra": "abrir uma unica vez, com modelos, criterios e periodo congelados em reports/, por avaliacao final pre-registrada"
+  },
+  "incerteza": "bootstrap por blocos de meses (blocos de 6 meses), nunca por pixel; reportar por regiao, estacao, ano",
+  "baseline_operacional": "b0_l15_t2 (estado T-2, todas as entradas publicadas antes da emissao)",
+  "referencia_retrospectiva": "b0_l15 (ERA5 de T-1 como proxy nao certificado)"
+}

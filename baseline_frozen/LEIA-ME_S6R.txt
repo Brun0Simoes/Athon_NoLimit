@@ -1,0 +1,63 @@
+WorCAP 2026 - Previsão Mensal de Precipitação na América do Sul
+===============================================================
+
+Equipe no Kaggle: Bruno Simões
+Submissão: candidate_O61-S6R_20260924T022410Z.csv
+SHA-256:   45c17b526465e1ae76586a759a44cf6ab3a31e523473f2b2d9d48a8b40522cb2
+
+
+MODELO
+------
+Previsão = max(P + correção, 0)
+
+  P         base O09M-CLIP (pasta base_O09M-CLIP/), feita com os arquivos oficiais, o GEFSv12 e o CFSv2.
+  correção  soma ponderada, por região e estação do ano, de três componentes treinados no erro da base:
+            1. LightGBM com o SEAS5 lead 0,5 (anomalia, anomalia suavizada e vizinhança 3x3 de 1 grau),
+               P, climatologia, latitude, longitude e mês;
+            2. regressão linear com o SEAS5 e a anomalia de P;
+            3. calibração do SEAS5 (vizinhança 3x3, janela de 3 meses, dados de 1993 em diante)
+               combinada com P.
+            Os pesos são aprendidos com 2010-2019; os componentes são retreinados com 2010-2022
+            para prever 2023-2024.
+
+
+ARQUIVOS
+--------
+  s6r.py             gera a submissão, do carregamento dos dados até o CSV
+  comum.py           funções usadas por s6r.py
+  baixar_seas5.py    baixa o SEAS5/SEAS5.1 do Copernicus
+  requirements.txt   bibliotecas (Python 3.12)
+  base_O09M-CLIP/    código da base P e como gerá-la (COMO_GERAR_A_BASE.txt)
+
+
+COMO EXECUTAR
+-------------
+  1. pip install -r requirements.txt
+  2. python baixar_seas5.py --destino seas5
+  3. Gerar a base P (base_O09M-CLIP/COMO_GERAR_A_BASE.txt). Ela produz:
+       base_residual.npz, transport_oof.npz e official_O09M-CLIP_20260919T155410949985Z.csv
+  4. python s6r.py --oficial <pasta com treino_tp.nc e sample_submission.csv> --seas5 seas5
+                   --base-oof base_residual.npz --base-transporte transport_oof.npz
+                   --base-csv official_O09M-CLIP_20260919T155410949985Z.csv --saida S6R.csv
+
+O passo 4 leva cerca de 10 minutos em um computador de 16 núcleos e 32 GB de RAM, e gera um arquivo
+idêntico ao enviado (mesmo SHA-256).
+
+
+DADOS EXTERNOS
+--------------
+  SEAS5 / SEAS5.1 (ECMWF, lead 0,5, precipitação mensal) - Copernicus Climate Data Store
+    https://cds.climate.copernicus.eu/datasets/seasonal-monthly-single-levels
+  GEFSv12 reforecast (NOAA, na base P)
+    https://noaa-gefs-retrospective.s3.amazonaws.com
+  GEFSv12 operacional (NOAA, na base P)
+    https://noaa-gefs-pds.s3.amazonaws.com
+  CFSv2 NMME (NOAA/NCEP via IRI, na base P)
+    https://iridl.ldeo.columbia.edu/SOURCES/.Models/.NMME/.NCEP-CFSv2/
+
+  Contains modified Copernicus Climate Change Service information [2026]. Neither the European
+  Commission nor ECMWF is responsible for any use that may be made of the Copernicus information
+  or data it contains.
+
+
+Licença MIT. Código desenvolvido com auxílio do assistente de IA Claude (Anthropic).

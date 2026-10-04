@@ -1,0 +1,31 @@
+{
+  "id": "EMISSAO-MENSAL",
+  "plano": "plan.md §10 passo 6 e Apêndice C.5 (confirmação só prospectiva); README §4",
+  "registrado_em": "2026-10-03",
+  "registrado_antes_de": "qualquer insumo da primeira emissão (alvo 2026-10) e muito antes da verdade (ERA5T de 2026-10 sai ~5/11/2026)",
+  "contrato": "configs/contracts/mensal_operacional.json v3: emissão no dia 1 de T, 00 UTC; só entram produtos publicados até esse instante",
+  "insumos": {
+    "era5_T-2": "ERA5T mensal das 9 atmosféricas oficiais do mês T−2 (CDS, publicado ~5 dias após o fim do mês)",
+    "cfsv2_l15": "NMME CFSv2 PENTAD_SAMPLES, origem T−1 (IRI), lead 1,5",
+    "gefs": "GEFSv12 operacional da última quarta-feira antes de T (AWS), janelas W1/W2/W34 do O-09",
+    "seas5_l15": "SEAS5.1 (system 51) init no dia 1 de T−1, leadtime_month 2, todos os membros (CDS)"
+  },
+  "modelo_oficial": {
+    "media": "B0-T2: base O09M-T2 com o modelo congelado da cópia isolada + correções do S6R causal; bloco '2026' com corte em T, treinado com todos os meses observados antes de T (inclui 2025-01..2026-06)",
+    "distribuicao": "hurdle-Gamma com dispersão por contexto (M1-C), reajuste anual conforme reports/fallback.md: treino com blocos ≤ 2024, validação no bloco 2025 (2025-01..2026-06), semente 0",
+    "dependencia": "Schaake shuffle com os campos observados do mesmo mês-calendário nos anos mais recentes antes de T (51 membros)",
+    "fallbacks_registrados": "dispersão constante conjunta (k, p0 por região × estação) produzida junto, para o caso de falha da rede"
+  },
+  "conferencias_de_integridade": [
+    "as previsões do B0 para o bloco 2025 recalculadas nesta cadeia têm de reproduzir as congeladas do bloco virgem (runs/b0_l15_t2v/previsoes_bloco.npz)",
+    "o CFSv2 rebaixado tem de reproduzir o acervo original nas origens em comum",
+    "previsão finita em todas as células; Y do mês emitido ausente (NaN) em todo ajuste"
+  ],
+  "saida": "runs/emissao/<T>/: previsao.npz (média, k, p0, quantis 0,1/0,5/0,9, probabilidade de exceder a climatologia oficial do mês, ensemble Schaake de 51 membros), manifesto.json com o hash de cada insumo e artefato; uma linha por emissão em reports/emissoes.jsonl, gravada antes da verdade",
+  "avaliacao": {
+    "quando": "src/emissao/avalia.py, depois da publicação do ERA5T do mês; reavaliar com o ERA5 final quando sair",
+    "metricas_por_mes": "RMSE (B0-T2, base T−2, climatologia oficial 1981–2009), CRPS (contexto e constante), cobertura de 80%, CRPS regional do ensemble Schaake",
+    "confirmacao": "acumulada: nenhuma conclusão com menos de 6 meses emitidos; a partir de 6, bootstrap por blocos de 3 meses com os mesmos critérios do bloco virgem (B0-T2 < base T−2; contexto ≤ 0,97 × constante; Schaake < independente)"
+  },
+  "proibido": "reemitir um mês depois de ver a verdade; trocar o modelo oficial entre emissão e avaliação; descartar meses emitidos da avaliação acumulada"
+}

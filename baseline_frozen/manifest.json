@@ -1,0 +1,154 @@
+{
+  "criado_em": "2026-10-03T02:14:20+00:00",
+  "origem_codigo": "entrega_worcap2026\\fonte",
+  "codigo": {
+    "s6r.py": "e25329006fba2f1949bfb77e25c9f86483db6d3f253102104b568367dc10f9e2",
+    "h10r.py": "e0180495df8a120345be47041846ea523ddb17ab673cf18f8808a3ca4c25cec0",
+    "comum.py": "6f6bd80761a31c39a67bde42f43bb466280877b76b017966e893cf1eeacf598e",
+    "baixar_seas5.py": "b68680a6926ee6bac2322e32d0c3c5fdf6591953783ed2b5415bd871f50cf999",
+    "requirements.txt": "e1ed7be25815816732c5722cdc6d05e82539a6d1311acd4ca79bb28ae91aae75",
+    "LEIA-ME_S6R.txt": "27233a9d1e23501f561f4c707964b56d0bb57d7346dcb9b927b0d31dd43c5c0f",
+    "LEIA-ME_H10R.txt": "a7a6261b8ebdc531fa0f619ac41e48c6393127054f4af3395b8c4e00cbca284e",
+    "COMO_GERAR_A_BASE.txt": "69d282eee190e1ded0f1e4085022be9b92ffb6a6df75ae2f1b04925a45d75fe3"
+  },
+  "dados": {
+    "base_oof_2010_2019": {
+      "caminho": "final_search/runs/base_residual.npz",
+      "sha256": "5e0bab3c785aa627dbac9be162ab156f4bdd8a2e9cea6055abb2647c5885b39d",
+      "bytes": 119977161
+    },
+    "base_transporte_2020_11_2022_12": {
+      "caminho": "data/experiments/o09m/transport_oof.npz",
+      "sha256": "3b3def115eb5ea849a2a4f748f773d92fea7112d32ccc59f44a42b7374de80e5",
+      "bytes": 26898736
+    },
+    "base_csv_2023_2024": {
+      "caminho": "data/submissions/official_O09M-CLIP_20260919T155410949985Z.csv",
+      "sha256": "8280e7cb8969575a1928f6c58ac181fd4b22d326169955c84bd6874e431ffd6f",
+      "bytes": 67108481
+    },
+    "s6r_csv": {
+      "caminho": "data/submissions/candidate_O61-S6R_20260924T022410Z.csv",
+      "sha256": "45c17b526465e1ae76586a759a44cf6ab3a31e523473f2b2d9d48a8b40522cb2",
+      "bytes": 65234924
+    },
+    "h10r_csv": {
+      "caminho": "data/submissions/candidate_O48-H10R_20260923T215421Z.csv",
+      "sha256": "337c35ce58630d124122a3a6c4a4f69b88ffd5ba38989089b18b5ff98b7f9f20",
+      "bytes": 65237618
+    },
+    "pacote_entrega_zip": {
+      "caminho": "entrega_worcap2026/WorCAP2026_Bruno_Simoes.zip",
+      "sha256": "33614d84323b9553dd3ab7473cbd6a0b073476e381b89d9428fcead82b668219",
+      "bytes": 1271254
+    },
+    "seas5_l05_grib_s5_1993_2021": {
+      "caminho": "data/experiments/o46/raw/s5_1993_2021.grib",
+      "sha256": "30b91fcb5b42ef17cd9e23845fb457e23914767b12cf2139a0d006a00255cfc7",
+      "bytes": 110233440
+    },
+    "seas5_l05_grib_s5_fc_2022": {
+      "caminho": "data/experiments/o46/raw/s5_fc_2022.grib",
+      "sha256": "e9d8ed3e49b59d2e0fec7734b545e238723463f6ec0bc10dffeee47269d72120",
+      "bytes": 5479440
+    },
+    "seas5_l05_grib_s51_hind": {
+      "caminho": "data/experiments/o46/raw/s51_hind.grib",
+      "sha256": "d11eb985ace382d7a2c6a1505a377d2369dfd1e094581688027c808cce7596c2",
+      "bytes": 78336000
+    },
+    "seas5_l05_grib_s51_fc_2022": {
+      "caminho": "data/experiments/o46/raw/s51_fc_2022.grib",
+      "sha256": "0b6ca59f40178634d335a54dd7375af587e0006bee4bc5f12bc413b328fa49e9",
+      "bytes": 1109760
+    },
+    "seas5_l05_grib_s51_fc_2023_2024": {
+      "caminho": "data/experiments/o46/raw/s51_fc_2023_2024.grib",
+      "sha256": "6304f9017a3881840025a93287b8698dab84eb03442338381d03257c80546530",
+      "bytes": 13317120
+    },
+    "encerramento": {
+      "caminho": "docs/reports/ENCERRAMENTO_KAGGLE_20260927.md",
+      "sha256": "a947e880abe27a47df72ddc35b83aeb60f4788d25c4dcca9c232c4e81c4854db",
+      "bytes": 7099
+    },
+    "integridade_encerramento": {
+      "caminho": "data/campaign/closure_20260927/artifact_integrity.json",
+      "sha256": "41a4c2afa1ed23740e2ee69c28821489c550e22833136f5ee9ae9472dfd46845",
+      "bytes": 2455
+    }
+  },
+  "nota": "Dados referenciados somente para leitura; não copiados. Oficiais: data/manifests/kaggle_official_files.json.",
+  "oficiais": [
+    {
+      "path": "previsao-climatica-de-precipitacao-sobre-a-america-do-sul.zip",
+      "bytes": 2010748376,
+      "sha256": "651550aa29dacb2d5ce7a9d6ce34005aaac5b092ab508a84f001fa1b2a7e5442"
+    },
+    {
+      "path": "previsao-climatica-de-precipitacao-sobre-a-america-do-sul/sample_submission.csv",
+      "bytes": 48145117,
+      "sha256": "34fe449ddb309b0579a87786f76049863833d82c26f183d18e943dc76f1e4c8c"
+    },
+    {
+      "path": "previsao-climatica-de-precipitacao-sobre-a-america-do-sul/teste_features.nc",
+      "bytes": 39057097,
+      "sha256": "70bcb5c9bb9c011c8901660834b42dc57ff7e54a4f34161d489ec5e9f05c1f23"
+    },
+    {
+      "path": "previsao-climatica-de-precipitacao-sobre-a-america-do-sul/treino_cloud_cover.nc",
+      "bytes": 190610590,
+      "sha256": "607ee1210615a0ca8a5c954737617e668a5f016eb881554cb1468fda74b4fde1"
+    },
+    {
+      "path": "previsao-climatica-de-precipitacao-sobre-a-america-do-sul/treino_geopotential_850.nc",
+      "bytes": 159707312,
+      "sha256": "ca3baca0177e2e90b42901803f348a4b4affe88bee202b76af3f293fa7035c17"
+    },
+    {
+      "path": "previsao-climatica-de-precipitacao-sobre-a-america-do-sul/treino_rel_hum_850.nc",
+      "bytes": 180398147,
+      "sha256": "90f62b44b1b461259e7539249914e26cf09993f3bcd572ba4871931e45264b19"
+    },
+    {
+      "path": "previsao-climatica-de-precipitacao-sobre-a-america-do-sul/treino_shum_850.nc",
+      "bytes": 175651693,
+      "sha256": "35cf8071b68d1e924ad87e0f8bd801d0a66d1d78ae75fc3cb623bde85c3f47bb"
+    },
+    {
+      "path": "previsao-climatica-de-precipitacao-sobre-a-america-do-sul/treino_surface_pressure.nc",
+      "bytes": 160228025,
+      "sha256": "f00a5e44a03ea923ac0f693b975ef71cd347f8ad3d07692c602e3ac9a25c10fb"
+    },
+    {
+      "path": "previsao-climatica-de-precipitacao-sobre-a-america-do-sul/treino_t2.nc",
+      "bytes": 175952066,
+      "sha256": "7d8c53b438289cddf87a11414ad10c8167f52ff33c6eff459a3288975079ef23"
+    },
+    {
+      "path": "previsao-climatica-de-precipitacao-sobre-a-america-do-sul/treino_temperature_850.nc",
+      "bytes": 172474226,
+      "sha256": "1db7b4fdeba87b6a25f7fb6f1e40abec50964234dd9cc918cd34f902b8e41bac"
+    },
+    {
+      "path": "previsao-climatica-de-precipitacao-sobre-a-america-do-sul/treino_tp.nc",
+      "bytes": 186685299,
+      "sha256": "012bebbe0e38aefdf4f9e2432c3ca22f71d94ea1a1b5421da9d9e5048632cab0"
+    },
+    {
+      "path": "previsao-climatica-de-precipitacao-sobre-a-america-do-sul/treino_tp_alvo.nc",
+      "bytes": 186509303,
+      "sha256": "915f67f2627e37399830d1dd92b209ce1160082b0645662675eab17df957abe4"
+    },
+    {
+      "path": "previsao-climatica-de-precipitacao-sobre-a-america-do-sul/treino_u_850.nc",
+      "bytes": 188451602,
+      "sha256": "73c898f27bea25cf2ab0914bbe5c29acc9794a93f8b6b3affa39854bebccf761"
+    },
+    {
+      "path": "previsao-climatica-de-precipitacao-sobre-a-america-do-sul/treino_v_850.nc",
+      "bytes": 197354831,
+      "sha256": "7bab583972e5718bb0e0fe0fe6a056bd56c968af1f1497205182f7621e26c241"
+    }
+  ]
+}

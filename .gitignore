@@ -1,0 +1,13 @@
+# dados brutos e artefatos intermediários (regenerados pelos coletores e cadeias)
+data/
+runs/
+control/
+*.npz
+*.npy
+*.pt
+*.nc
+*.grib2
+*.log
+__pycache__/
+.pytest_cache/
+*.pyc

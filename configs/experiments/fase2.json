@@ -1,0 +1,39 @@
+{
+  "id": "FASE2",
+  "registrado_em": "2026-10-04",
+  "registrado_antes_de": "qualquer métrica destes cenários",
+  "origem": "cenários motivados pela Etapa 3 (reports/etapa3.md §6, plan.md Apêndice C.5), autorizados pelo usuário",
+  "F2-1_ECC_GEFS": {
+    "pergunta": "ECC com os membros do GEFS sobre as marginais do M4D recupera a estrutura espacial perdida (FSS) sem perder a calibração?",
+    "bracos": "ECC (quantis (i−½)/5 do M4D ordenados pelos postos dos 5 membros do GEFS em cada célula); independente (postos aleatórios); Schaake (postos de 5 campos MERGE passados do treino, no mesmo dia do ano ±15 dias, anos mais recentes); GEFS bruto (5 membros)",
+    "dados": "dobras anuais 2022–2026 do M4D (mesmos coeficientes), leads D1, D3, D5 e D10",
+    "metricas": "CRPS justo das médias regionais diárias (8 regiões); escore de variograma (p = 1/2) em pares de células da mesma região; FSS > 10 mm médio dos membros (1, 3 e 5 células); CRPS justo marginal (custo da discretização em 5 membros)",
+    "criterio": "ECC promovido como dependência diária se o CRPS regional for menor que o do independente com IC95 < 0 (blocos de 4 inits) em D1–D5"
+  },
+  "F2-2_FLOW_RECENTRADO": {
+    "pergunta": "separar média (DEC) e distribuição (flow) resolve a reprovação do M5-B, e o refinamento probabilístico ajuda em modo previsão?",
+    "diagnostico": "ŷ(s) = max(DEC + (flow(s) − média das 8 amostras), 0), reprojetado conservativamente (peso nulo → DEC); critério: RMSE da média ≤ 1,02 × DEC, CRPS < DEC com IC95 < 0 (blocos de 7 dias) e frequência seca mais próxima da observada que a do DEC",
+    "previsao": "Q(m) = os 5 membros ECC do M4D (F2-1) interpolados aos centros grossos do recorte, D1/D3/D5, quartas-feiras 2025-01..2026-08; braços UNIF(Q(m)), DEC(Q(m)) e FLOWREC(Q(m)) (8 amostras por membro); critério: CRPS justo fino de FLOWREC < UNIF com IC95 < 0 (blocos de 4 inits)"
+  },
+  "F2-3_GEFS_D0": {
+    "pergunta": "o GOES ainda acrescenta ao D0 quando há uma previsão GEFS de verdade para o dia corrente?",
+    "dados": "GEFS 12 UTC de d0−1 (publicado ~17 UTC de d0−1), 5 membros, APCP f006–f024 = janela 12 UTC de d0−1 a 12 UTC de d0; quartas-feiras 2020-10..2026-08",
+    "bracos": "CLIM; GD0 (hurdle-Gamma com a média do GEFS 12 UTC e a climatologia, por região × estação); GG0 (GD0 + GOES 19 h); G0 (só GOES, já avaliado)",
+    "criterio": "valor do GOES em D0 se CRPS(GG0) < CRPS(GD0) com IC95 < 0 (blocos de 4 inits) nas células com estação; ganho < 1% registrado como sem valor prático"
+  },
+  "F2-4_SOL_E_DIARIO": {
+    "pergunta": "algum sinal lunar sobrevive à agregação diária da chuva (a escala dos produtos)?",
+    "limite": "o teste subdiário original exigiria chuva horária observada (IMERG pede credencial Earthdata; o ERA5 não tem forçante de maré lunar); este é o teste de sobrevivência à agregação",
+    "dados": "médias diárias do MERGE por região (8) e no domínio, 2001-01-01..2026-09-30; anomalia contra harmônicos do dia do ano ajustados em 2001–2019",
+    "periodos": "semi-sinódico 14,7653 d (batimento da maré semidiurna lunar com o ciclo solar) e sinódico 29,5306 d, fase a partir da lua nova de 2000-01-06 18:14 UTC",
+    "nulo": "amplitudes em 300 períodos falsos uniformes em [10, 45] d, excluindo ±0,7 d dos reais; p empírico com Bonferroni para 2 períodos × 9 séries",
+    "criterio": "sinal sobrevive se p < 0,05/18 em ≥ 2 regiões com a mesma fase (±45°); senão o SOL-E é encerrado como nulo na escala diária"
+  },
+  "F2-5_MOS_MONAN_PILOTO": {
+    "pergunta": "prévia da classe pós-processamento: MONAN + MOS simples contra GEFS + MOS simples com os mesmos dados",
+    "dados": "as 31 rodadas de setembro de 2026 do duelo (estações, verdade MERGE 0,1°)",
+    "mos": "por lead: y = max(a + b·x, 0), ajustado deixando uma semana de rodadas de fora (validação cruzada por blocos de 7 rodadas)",
+    "comparacao": "MAE e RMSE de MONAN-MOS, GEFS-MOS (média dos membros) e M4D (μ)",
+    "status": "piloto declarado: um mês, mesma estação; serve para dimensionar o duelo definitivo, não para declarar vencedor"
+  }
+}

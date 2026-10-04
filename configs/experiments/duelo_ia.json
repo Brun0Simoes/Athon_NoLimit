@@ -1,0 +1,17 @@
+{
+  "id": "DUELO-IA (cenário AWIPS/AI-GEFS do plan.md §8.3)",
+  "registrado_em": "2026-10-04",
+  "registrado_antes_de": "qualquer download ou métrica dos modelos de IA",
+  "motivo": "o plano previa testar a diversidade física × IA (AI-GEFS) via AWIPS; o EDEX público só servia média/spread de 2 ciclos (adaptador bloqueado). O mesmo conteúdo, com membros e histórico, está no AWS Open Data NOAA EAGLE (s3://noaa-nws-graphcastgfs-pds): GraphCastGFS determinístico desde 2024-02-05 e AIGEFS (31 membros) desde 2025-06-01",
+  "fontes": {
+    "GC": "GraphCastGFS 00 UTC (forecasts_13_levels, 0,25°), APCP de 6 h nas horas 18..252, janelas diárias 12–12 UTC; inits do conjunto diário a partir de 2024-02-07",
+    "AIGEFS": "membros mem000–mem004 (o mesmo número do GEFS), arquivo sfc, APCP de 6 h nas horas 18..252; a mensagem é localizada pelos cabeçalhos GRIB (o .idx publicado não confere com o tamanho do arquivo) e conferida na decodificação (parâmetro e passo); inits a partir de 2025-06-04",
+    "agregacao": "0,25° → 0,5° por média de área na grade do conjunto diário"
+  },
+  "avaliacao": "o mesmo arcabouço do DUELO-MONAN-GRADE: MOS hurdle-Gamma por lead × região (estações agrupadas), validação cruzada deixando um mês-calendário de fora, mesmas inits de treino para todos os braços, CRPS/RMSE/MAE/Brier > 10 mm, bootstrap por blocos de 4 inits. Combinações avaliadas na interseção das inits disponíveis: (GEFS, GC), (GEFS, AIGEFS), (GEFS, MONAN, GC, AIGEFS)",
+  "criterios": {
+    "ia_vs_fisico": "MOS_IA vs MOS_GEFS: vencedor por lead só com IC95 do CRPS excluindo 0",
+    "complementaridade": "MOS_GEFS+IA vs MOS_GEFS com IC95 < 0 indica informação nova da IA (a diversidade de família que o plano queria medir)"
+  },
+  "limites_declarados": "GraphCastGFS é experimental (versões podem mudar); AIGEFS só desde 2025-06 e com 5 dos 31 membros; condição inicial dos modelos de IA vem do GDAS/GFS, o que reduz a independência em relação ao GEFS"
+}

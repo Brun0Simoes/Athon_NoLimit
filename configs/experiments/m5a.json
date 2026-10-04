@@ -1,0 +1,20 @@
+{
+  "id": "M5-A",
+  "plano": "plan.md §9.3 passos 1–4 e tabela M5-A; §13 Etapa 3 passo 4",
+  "registrado_em": "2026-10-03",
+  "registrado_antes_de": "qualquer extração do recorte ou treino",
+  "justificativa_do_alvo": "MERGE diário 0,1° (pluviômetros + IMERG 0,1°) é observação fina real; o produto mensal não tem alvo fino adequado (ERA5 0,25°), por isso o M5 só é avaliado no diário",
+  "recorte": "lat −25..−19, lon −48..−42 (Serra do Mar e Mantiqueira, relevo contrastante): 60×60 células de 0,1° e 12×12 células grossas de 0,5° alinhadas às bordas do MERGE (5×5 finas por grossa, áreas cos(lat) normalizadas dentro da grossa)",
+  "teste": "downscaling diagnóstico de observação degradada: Q = agregado conservativo do próprio MERGE na célula grossa (não é previsão; o teste com Q previsto só se abre se o M5-A mostrar estrutura)",
+  "periodo": "treino 2020-10-01..2024-12-31 (os últimos 20% em ordem cronológica para parada antecipada); teste 2025-01-01..2026-09-30",
+  "braços": {
+    "UNIF": "ŷ_i = Q_j (sem estrutura subgrade)",
+    "CLIMF": "ŷ_i = Q_j · c_i / Σ_k a_k c_k, c = climatologia MERGE 0,1° 2001–2019 do mês (padrão climatológico conservativo)",
+    "DEC": "U-Net pequena (16/32/64 canais, GroupNorm, < 1 milhão de parâmetros) com entradas log1p(Q) expandido, log1p(c) do mês, seno e cosseno do dia do ano; saída w = exp(·) e a mesma projeção conservativa; perda MSE em ŷ; Adam 1e-3; até 60 épocas com parada antecipada (paciência 8); semente 0"
+  },
+  "metricas": "RMSE e MAE finos; FSS para > 10 e > 25 mm/dia nas escalas 1, 3 e 5 células finas; frequência de células secas (< 0,1) contra a observada; quantis 95/99 nas células com chuva; erro máximo de agregação |A(ŷ) − Q|",
+  "diagnostico_do_alvo": "fração da variância subgrade, Σ a_i (y_i − Q_j)² / Σ a_i (y_i − ȳ)², e fração dela explicada por CLIMF",
+  "incerteza": "bootstrap por blocos de 7 dias do teste",
+  "criterio": "existe estrutura condicional aprendível se DEC tiver RMSE ao menos 2% menor que CLIMF com IC95 < 0; só então o M5-B (flow) é aberto. Caso contrário, o M5 é encerrado com o resultado registrado",
+  "orcamento": "2 h de GPU no piloto (plan.md §12)"
+}

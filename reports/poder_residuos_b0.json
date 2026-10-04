@@ -1,0 +1,43 @@
+{
+  "criado_em": "2026-10-03T02:44:27+00:00",
+  "meses": 134,
+  "meses_avaliados": 98,
+  "blocos_avaliados": "2016..2024 (3 blocos m\u00ednimos de treino)",
+  "reps": 2000,
+  "rmse_B0_avaliado": 1.7246675213746774,
+  "limiar_nulo_p95_pct": 0.04289633188936104,
+  "nulo": {
+    "mediana": -0.0073162712497687465,
+    "frac_positiva": 0.396
+  },
+  "por_rho": {
+    "0.05": {
+      "ganho_mediano_pct": -0.008424262911121971,
+      "p05": -0.04152748277852836,
+      "p95": 0.06702892483208765,
+      "frac_rejeita_nulo": 0.1205,
+      "ganho_ideal_aprox_pct": 0.011349733555499064
+    },
+    "0.1": {
+      "ganho_mediano_pct": 0.0029727027437309594,
+      "p05": -0.0408729634512317,
+      "p95": 0.1286915495360019,
+      "frac_rejeita_nulo": 0.29,
+      "ganho_ideal_aprox_pct": 0.04285715478116736
+    },
+    "0.2": {
+      "ganho_mediano_pct": 0.05583350733053827,
+      "p05": -0.04317430938471367,
+      "p95": 0.3634384825446202,
+      "frac_rejeita_nulo": 0.531,
+      "ganho_ideal_aprox_pct": 0.14412416494973268
+    },
+    "0.3": {
+      "ganho_mediano_pct": 0.2595909822317166,
+      "p05": 0.012042616241345616,
+      "p95": 0.7214864933040804,
+      "frac_rejeita_nulo": 0.8975,
+      "ganho_ideal_aprox_pct": 0.3579870183358591
+    }
+  }
+}

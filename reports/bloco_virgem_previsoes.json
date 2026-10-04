@@ -1,0 +1,56 @@
+{
+  "congelado_em": "2026-10-03T16:33:23+00:00",
+  "sha256": {
+    "pre_registro": "3c6cd01cc0a391294c2c617be4a2c86d14509dd5b3a90506c462105eb0604757",
+    "base_T2": "f95a3635fa3e17371b0a014936c336cfd0099e42b215724a9854ca42410d64a3",
+    "B0_T2": "8803bcda1464d8758fe9e000d94b32c7a482d96d0b6d15593cfe8b225afe3c7e",
+    "contexto": "103f16b910736f2197d0a7bfc407b8091f4a1318c27d6402c177d31bb976fff1",
+    "constante": "faa602d277903eb3647984c1e557386d8cb8d73b0b16409df356cba7a9cb2bec",
+    "pesos_contexto": "667556575a77419b6d93bc55875a8023f614e2e595bfd1a727c19815ca83b13f",
+    "dataset_m1": "e274fbaae4f37a9e022660f0380aea73f5989fd399b54f7a0f8784cf75afd2ca"
+  },
+  "caminhos": {
+    "pre_registro": "configs\\experiments\\bloco_virgem.json",
+    "base_T2": "runs\\base_t2\\sandbox\\data\\submissions\\base_t2_bloco_virgem.npz",
+    "B0_T2": "runs\\b0_l15_t2v\\previsoes_bloco.npz",
+    "contexto": "runs\\m1cv_contexto_v2024_t2025_s0_param.npz",
+    "constante": "runs\\m1cv_constante_conjunta_v2024_t2025_s0_param.npz",
+    "pesos_contexto": "runs\\m1cv\\contexto_v2024_t2025_s0.pt",
+    "dataset_m1": "runs\\dados\\m1_dataset_t2v.npz"
+  },
+  "alvo_lido": true,
+  "incidentes": [
+    {
+      "registrado_em": "2026-10-03T16:38:26+00:00",
+      "descricao": "Primeira execução de --avaliar (03/10, ~16:40 UTC) conferiu os hashes, leu o alvo e calculou as métricas da média em memória, e abortou ao abrir runs/m1cv_contexto_v2024_t2025_s0_param.npz: zip truncado (BadZipFile), já corrompido no congelamento (o hash confere). Nada foi gravado nem exibido; nenhum resultado foi visto.",
+      "correcao": "k e p0 do contexto regenerados por inferência pura a partir dos pesos congelados (runs/m1cv/contexto_v2024_t2025_s0.pt, hash conferido) e do conjunto congelado (hash conferido), sem retreino e sem o alvo (src/models/m1cv_inferencia.py). Reprodução conferida em dado não-alvo: CRPS de validação 2024 recalculado 0,7290118 vs registrado 0,7290146 (diferença 2,8e-6, não determinismo do cuDNN).",
+      "efeito_no_protocolo": "nenhum ajuste, seleção ou variante nova; a segunda execução de --avaliar é a avaliação reportada",
+      "status": "relato incompleto; substituído pela correção abaixo (revisão reports/revisao_bloco_virgem_20261003.md)"
+    },
+    {
+      "registrado_em": "2026-10-03T17:08:19+00:00",
+      "tipo": "correção do relato",
+      "causa": "Duas cadeias concorrentes. A ferramenta de execução em segundo plano marcou a primeira cadeia (runs/cadeia_bloco_virgem.sh) como interrompida pelo limite de tempo, mas o processo sobreviveu; a segunda (runs/cadeia_bloco_virgem2.sh) foi lançada para retomar e as duas executaram as mesmas etapas nos mesmos caminhos.",
+      "linha_do_tempo_utc": {
+        "16:33:17": "checkpoint runs/m1cv/contexto_v2024_t2025_s0.pt gravado pela cadeia 1 (é o congelado)",
+        "16:33:22": "param.npz e .json do contexto regravados; o npz ficou truncado (causa provável: escrita concorrente)",
+        "16:33:23": "as duas cadeias congelaram, com hashes idênticos",
+        "16:33:29-16:34:26": "as duas pediram o alvo ao CDS; a cadeia 2 parou no conflito do .partial (PermissionError)",
+        "16:34:43": "avaliação automática da cadeia 1 abortou (BadZipFile) depois de ler o alvo em memória; nada gravado nem exibido",
+        "16:35-16:38": "avaliação manual abortou pelo mesmo motivo, também sem gravar nem exibir",
+        "16:38:08": "k e p0 regenerados do checkpoint congelado por inferência",
+        "16:38:53": "avaliação reportada (bloco_virgem_resultado.json)"
+      },
+      "reinferencia": "O CRPS de validação 2024 regenerado (0,7290117751429541) é idêntico, em todos os dígitos, ao registrado pela cadeia 1 (runs/cadeia_bloco_virgem.log), dona do checkpoint. A diferença de 2,8e-6 relatada antes comparava com a métrica da cadeia 2 (treino concorrente), não era ruído da reinferência.",
+      "tentativas_de_avaliacao": "três: duas abortadas antes de qualquer saída (cadeia 1 e manual) e a reportada; nenhuma seleção ou ajuste entre elas",
+      "artefatos_das_duas_cadeias": "B0-T2 (um único processo), conjunto do M1 (sha idêntico nas duas) e constante (determinístico) não divergem"
+    }
+  ],
+  "substituicoes": {
+    "contexto": {
+      "caminho": "runs\\m1cv_contexto_v2024_t2025_s0_param_reinferido.npz",
+      "sha256": "0bb73237a21e2e93865e9200dc2c300953e39f0c10b28c8cd951612d18eed9c1"
+    }
+  },
+  "avaliado_em": "2026-10-03T16:38:53+00:00"
+}

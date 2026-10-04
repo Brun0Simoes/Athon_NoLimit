@@ -1,0 +1,29 @@
+{
+  "id": "SOL-BCD",
+  "registrado_em": "2026-10-03",
+  "registrado_antes_de": "qualquer download de QBO, MJO ou F10.7 e qualquer resultado com eles",
+  "base": "b0_l15 (M2-A nao encontrou sinal; o melhor controle meteorologico e o proprio B0)",
+  "alvo": "r = Y - B0 nos blocos 2016-2024 (3 blocos minimos de treino), grade oficial",
+  "modelo": "ridge com coeficientes por regiao x estacao (8 x 4), kappa por selecao interna cronologica (grade de b0.KAPPAS); mesma rotina do M2-A",
+  "bracos": {
+    "SOL-B0": "controle ENSO: Nino3.4 em T-2 e media T-4..T-2",
+    "SOL-B": "SOL-B0 + QBO u30 e u50 em T-2 + MJO (RMM1, RMM2 medios nos 30 dias ate o dia -2 de T)",
+    "SOL-C": "SOL-B + F10.7 com duas janelas fixas: media de T-1 e media movel de 12 meses ate T-1",
+    "SOL-D": "SOL-C + interacoes F10.7(12m) x QBO u30 e F10.7(12m) x QBO u50",
+    "SOL-NEG": "SOL-B + indice falso: F10.7 com fase aleatoria (mesmo espectro), 200 sorteios; mesma selecao"
+  },
+  "disponibilidade": {
+    "nino34": "mensal, publicado no inicio do mes seguinte: T-2 e estrito",
+    "qbo": "CPC u30/u50 mensal: T-2 estrito",
+    "mjo": "RMM diario (BOM), atraso de ~1 dia: janela ate o dia -2 de T",
+    "f107": "fluxo diario observado em tempo real: media de T-1 disponivel no fim de T-1"
+  },
+  "padronizacao": "cada indice padronizado com media e desvio do treino de cada bloco",
+  "criterio": {
+    "contraste_sol_c": "SOL-C contra SOL-B pareado",
+    "contraste_sol_d": "SOL-D contra SOL-C pareado",
+    "promocao": "melhora >= 0,5% no RMSE e IC95 de blocos de 6 meses < 0 E ganho acima do percentil 95 do SOL-NEG",
+    "nota_poder": "reports/poder_residuos_b0.json: com 98 meses avaliados, rho 0,1 tem poder ~29% e ganho ideal ~0,04%; resultado nulo sera inconclusivo, nao prova de ausencia"
+  },
+  "proibido": "procurar outras janelas ou defasagens depois de ver o resultado"
+}

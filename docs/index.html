@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Athon NoLimit</title>
+<meta name="description" content="Previsão de precipitação mensal e diária sobre a América do Sul: fluxo, modelos, validação, AWIPS-II e duelo Athon × MONAN.">
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #fcfcfb; --surface: #ffffff; --surface-2: #f4f3ef; --border: #e4e2dc;
+    --text: #0b0b0b; --text-2: #52514e; --muted: #7a7974;
+    --athon: #2a78d6; --monan: #eb6834; --m4d: #1baf7a; --accent-soft: #eef5fd;
+    --code-bg: #f4f3ef;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #141413; --surface: #1a1a19; --surface-2: #222220; --border: #33332f;
+      --text: #f5f5f2; --text-2: #c3c2b7; --muted: #9a998f;
+      --athon: #3987e5; --monan: #d95926; --m4d: #199e70; --accent-soft: #17283d;
+      --code-bg: #222220;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #141413; --surface: #1a1a19; --surface-2: #222220; --border: #33332f;
+    --text: #f5f5f2; --text-2: #c3c2b7; --muted: #9a998f;
+    --athon: #3987e5; --monan: #d95926; --m4d: #199e70; --accent-soft: #17283d;
+    --code-bg: #222220;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 "Segoe UI", system-ui, -apple-system, Roboto, sans-serif; }
+  a { color: var(--athon); }
+  header { border-bottom: 1px solid var(--border); background: var(--surface); position: sticky; top: 0; z-index: 10; }
+  .barra { max-width: 1120px; margin: 0 auto; padding: 10px 16px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .marca { font-weight: 700; letter-spacing: .5px; }
+  nav { display: flex; gap: 14px; flex-wrap: wrap; font-size: 14px; }
+  nav a { color: var(--text-2); text-decoration: none; }
+  nav a:hover { color: var(--text); }
+  .tema { margin-left: auto; background: var(--surface-2); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 4px 10px; cursor: pointer; font: inherit; font-size: 13px; }
+  main { max-width: 1120px; margin: 0 auto; padding: 0 16px 64px; }
+  section { padding-top: 40px; scroll-margin-top: 64px; }
+  h1 { font-size: clamp(28px, 5vw, 44px); line-height: 1.1; margin: 36px 0 12px; }
+  h2 { font-size: 22px; margin: 0 0 12px; font-family: ui-monospace, "Cascadia Code", Consolas, monospace; }
+  h2::before { content: "❯ "; color: var(--athon); }
+  h3 { font-size: 17px; margin: 24px 0 8px; }
+  p, li { color: var(--text-2); }
+  .lead { font-size: 18px; max-width: 820px; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 24px 0 8px; }
+  .tile { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+  .tile .v { font-size: 28px; font-weight: 700; color: var(--text); }
+  .tile .r { font-size: 13px; color: var(--muted); }
+  figure { margin: 16px 0; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px; }
+  figure img { width: 100%; height: auto; display: block; border-radius: 6px; background: #fcfcfb; }
+  figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; }
+  .tabela { overflow-x: auto; margin: 12px 0; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  th { color: var(--text-2); font-weight: 600; background: var(--surface-2); }
+  tr:last-child td { border-bottom: 0; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .ok { color: var(--athon); font-weight: 600; }
+  .grade2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+  .cartao { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; }
+  .cartao h3 { margin-top: 0; }
+  pre { background: var(--code-bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; overflow-x: auto; font-size: 13px; line-height: 1.5; }
+  code { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; }
+  .placar { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin: 16px 0; }
+  .placar .cartao { border-left: 4px solid var(--athon); }
+  .rotulo { display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--athon); font-weight: 600; }
+  footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; padding: 20px 16px; text-align: center; }
+  @media (max-width: 640px) { nav { display: none; } th, td { padding: 6px 8px; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="barra">
+    <span class="marca">athon · nolimit</span>
+    <nav>
+      <a href="#fluxo">fluxo</a><a href="#modelos">modelos</a><a href="#resultados">resultados</a>
+      <a href="#duelo">athon × monan</a><a href="#awips">awips-ii</a><a href="#tecnicas">técnicas</a>
+      <a href="#discussoes">discussões</a><a href="#reproducao">reprodução</a>
+    </nav>
+    <button class="tema" id="tema" type="button" aria-label="Alternar tema">tema</button>
+  </div>
+</header>
+<main>
+  <h1>Athon NoLimit</h1>
+  <p class="lead">Previsão de precipitação sobre a América do Sul em duas escalas: média mensal (0,25°) e chuva diária de D0 a D10 (0,5°). Origem no WorCAP 2026 (S6R, 1º lugar). O estudo pós-competição usa contrato operacional estrito, validação pré-registrada e confronto direto com o MONAN.</p>
+  <div class="tiles">
+    <div class="tile"><div class="v">1,7125</div><div class="r">RMSE mensal no bloco cego 2025–26 (−2,27% vs base, 17/18 meses)</div></div>
+    <div class="tile"><div class="v">−7,2%</div><div class="r">CRPS mensal com dispersão por contexto</div></div>
+    <div class="tile"><div class="v">−23,7%</div><div class="r">CRPS diário D1 do M4D contra o GEFS bruto</div></div>
+    <div class="tile"><div class="v">9 / 10</div><div class="r">leads em que o Athon vence o MONAN corrigido</div></div>
+  </div>
+
+  <section id="fluxo">
+    <h2>fluxo</h2>
+    <figure><img src="assets/pipeline.svg" alt="Fluxo do Athon: trilha mensal e trilha diária, com a faixa de validação"><figcaption>Trilha mensal (emissão no dia 1, 00 UTC) e trilha diária (rodada 00 UTC). Só entram produtos publicados até a emissão.</figcaption></figure>
+    <div class="grade2">
+      <div class="cartao"><h3>Mensal</h3><ol>
+        <li>Estado ERA5T de T−2, CFSv2 lead 1,5, GEFS da última quarta e SEAS5 lead 1,5 (51 membros).</li>
+        <li>Base O09M-T2: NNLS de EOF atmosférico, regressão por célula, climatologia de 30 anos e CFSv2, mais correção GEFS.</li>
+        <li>B0-T2: S6R causal, base + Σ W(região, estação)·cₖ (LightGBM no resíduo, ridge H6, MOS do SEAS5).</li>
+        <li>Hurdle-Gamma com média no B0-T2; k e p0 por rede de contexto.</li>
+        <li>Schaake/ECC: 51 cenários espacialmente coerentes.</li></ol></div>
+      <div class="cartao"><h3>Diário</h3><ol>
+        <li>GEFS, AIGEFS, GraphCastGFS, MONAN, GOES e climatologia MERGE.</li>
+        <li>Acumulados de 6 h em janelas 12–12 UTC, agregados por área em 0,5°.</li>
+        <li>Hurdle-Gamma por lead × região × estação.</li>
+        <li>D0: GEFS 12 UTC da véspera + chuva GOES até a emissão.</li>
+        <li>Schaake com campos MERGE passados.</li></ol></div>
+    </div>
+  </section>
+
+  <section id="modelos">
+    <h2>modelos</h2>
+    <div class="tabela"><table>
+      <thead><tr><th>Modelo</th><th>Escala</th><th>Função</th><th>Estado</th></tr></thead>
+      <tbody>
+        <tr><td><b>B0-T2</b></td><td>mensal</td><td>S6R causal sobre a base com estado de T−2</td><td class="ok">operacional</td></tr>
+        <tr><td><b>M1-C</b></td><td>mensal</td><td>dispersão por rede de contexto</td><td class="ok">promovido</td></tr>
+        <tr><td><b>Schaake / ECC</b></td><td>mensal e diário</td><td>dependência espacial dos cenários</td><td class="ok">promovido</td></tr>
+        <tr><td><b>M4D</b></td><td>diário</td><td>cabeça hurdle-Gamma sobre o GEFS</td><td class="ok">promovido</td></tr>
+        <tr><td><b>Athon diário</b></td><td>diário</td><td>mesma cabeça sobre GEFS + AIGEFS</td><td class="ok">melhor diário</td></tr>
+        <tr><td><b>GG0</b></td><td>D0</td><td>GEFS 12 UTC da véspera + GOES</td><td class="ok">promovido</td></tr>
+        <tr><td>M1-A</td><td>mensal</td><td>rede sobre os membros do SEAS5</td><td>−0,39%</td></tr>
+        <tr><td>M2 / SOL</td><td>mensal</td><td>solo, energia, QBO, MJO, F10.7, geometria solar</td><td>nulo</td></tr>
+        <tr><td>M3</td><td>mensal</td><td>pré-treino CMIP6</td><td>sem ganho sobre o B0</td></tr>
+        <tr><td>M4-A/C</td><td>mensal</td><td>transporte de umidade do GEFS</td><td>≤ 0,06%</td></tr>
+        <tr><td>M5</td><td>0,1°</td><td>refinamento conservativo (U-Net, flow)</td><td>só diagnóstico</td></tr>
+      </tbody></table></div>
+    <p><b>Hurdle-Gamma com média fixa:</b> θ = m / ((1 − p0)·k), de modo que a dispersão é treinada sem alterar a média; CRPS em forma fechada. <b>Por que T−2:</b> o ERA5T de T−1 sai depois da emissão. <b>Por que o placar não se repete:</b> o S6R usava o SEAS5 lead 0,5, publicado após o início do mês (1,5527); com o lead disponível, 1,70.</p>
+  </section>
+
+  <section id="resultados">
+    <h2>resultados</h2>
+    <h3>Mensal (RMSE, mm/dia)</h3>
+    <div class="tabela"><table>
+      <thead><tr><th>Avaliação</th><th class="num">Base T−2</th><th class="num">B0-T2</th><th>Contraste</th></tr></thead>
+      <tbody>
+        <tr><td>Desenvolvimento 2013–2024</td><td class="num">—</td><td class="num">1,7063</td><td>proxy T−1: 1,7026</td></tr>
+        <tr><td>Bloco cego 2025-01..2026-06</td><td class="num">1,7523</td><td class="num"><b>1,7125</b></td><td>−2,27%, IC95 &lt; 0</td></tr>
+        <tr><td>Emissão 2026-07</td><td class="num">1,672</td><td class="num"><b>1,612</b></td><td>−3,6%</td></tr>
+        <tr><td>Emissão 2026-08</td><td class="num">1,673</td><td class="num"><b>1,579</b></td><td>−5,6%</td></tr>
+        <tr><td>Bloco cego contra MERGE</td><td class="num">2,689</td><td class="num"><b>2,668</b></td><td>−0,8%, IC95 &lt; 0</td></tr>
+      </tbody></table></div>
+    <h3>Diário (CRPS, mm/dia, células com estação)</h3>
+    <div class="tabela"><table>
+      <thead><tr><th>Lead</th><th class="num">Climatologia</th><th class="num">GEFS bruto</th><th class="num">M4D</th><th class="num">vs GEFS</th></tr></thead>
+      <tbody>
+        <tr><td>D1</td><td class="num">2,225</td><td class="num">2,466</td><td class="num"><b>1,880</b></td><td class="num">−23,7%</td></tr>
+        <tr><td>D5</td><td class="num">2,249</td><td class="num">2,652</td><td class="num"><b>2,063</b></td><td class="num">−22,2%</td></tr>
+        <tr><td>D10</td><td class="num">2,217</td><td class="num">2,827</td><td class="num"><b>2,179</b></td><td class="num">−22,9%</td></tr>
+      </tbody></table></div>
+    <figure><img src="assets/athon_mensal_2026-10.png" alt="Mapas da emissão mensal de outubro de 2026: média, anomalia e probabilidade de chuva acima da climatologia"><figcaption>Emissão prospectiva de outubro de 2026, registrada antes da verdade.</figcaption></figure>
+    <figure><img src="assets/athon_diario_d1.png" alt="Mapas do produto diário M4D: chuva esperada e probabilidade de mais de 10 mm"><figcaption>Produto diário M4D, rodada de 02/10/2026, D1.</figcaption></figure>
+  </section>
+
+  <section id="duelo">
+    <h2>athon × monan</h2>
+    <p>MONAN global 10 km (INPE), precipitação em grade de 26/11/2025 a 02/10/2026, lida por faixa de bytes no recorte da América do Sul. Verdade MERGE 0,5° no diário; ERA5 e MERGE no mensal.</p>
+    <div class="placar">
+      <div class="cartao"><span class="rotulo">arena diária</span><h3>Athon vence</h3><p>9 de 10 leads contra o MONAN corrigido pelo mesmo MOS (−1,8% a −6,2%); metade do erro do MONAN bruto; vence nas 8 regiões em D1.</p></div>
+      <div class="cartao"><span class="rotulo">arena mensal</span><h3>Athon à frente, empate estatístico</h3><p>ERA5: RMSE 1,801 contra 1,894 (−4,9%, 7/8 meses); IC inclui zero com 8 meses. MERGE: empate. A rodada do MONAN usada sai depois da emissão do Athon.</p></div>
+    </div>
+    <div class="tabela"><table>
+      <thead><tr><th>Lead</th><th class="num">Athon</th><th class="num">MONAN corrigido</th><th class="num">MONAN bruto</th><th class="num">M4D</th><th>Athon vs MONAN corrigido</th></tr></thead>
+      <tbody>
+        <tr><td>D1</td><td class="num"><b>1,657</b></td><td class="num">1,757</td><td class="num">3,113</td><td class="num">1,728</td><td>−5,7%</td></tr>
+        <tr><td>D3</td><td class="num"><b>1,754</b></td><td class="num">1,845</td><td class="num">3,515</td><td class="num">1,834</td><td>−5,0%</td></tr>
+        <tr><td>D5</td><td class="num"><b>1,882</b></td><td class="num">1,953</td><td class="num">3,964</td><td class="num">1,934</td><td>−3,6%</td></tr>
+        <tr><td>D7</td><td class="num"><b>1,990</b></td><td class="num">2,078</td><td class="num">4,306</td><td class="num">2,054</td><td>−4,3%</td></tr>
+        <tr><td>D10</td><td class="num"><b>1,913</b></td><td class="num">1,948</td><td class="num">4,481</td><td class="num">1,928</td><td>−1,8%</td></tr>
+      </tbody></table></div>
+    <figure><img src="assets/duelo_diario.svg" alt="CRPS por lead: Athon, MONAN corrigido e M4D"><figcaption>Arena diária, CRPS por lead. Menor é melhor.</figcaption></figure>
+    <figure><img src="assets/duelo_mensal.svg" alt="RMSE por mês contra ERA5: Athon e MONAN mensal"><figcaption>Arena mensal, RMSE por mês contra ERA5 (março de 2026 sem rodada MONAN).</figcaption></figure>
+  </section>
+
+  <section id="awips">
+    <h2>awips-ii</h2>
+    <p>O AWIPS-II, distribuído pela Unidata, reúne o EDEX (ingestão por LDM, decodificação e serviço de dados), o CAVE (visualização) e o python-awips (acesso programático). O painel abaixo é gerado com python-awips a partir do EDEX público: ciclo mais recente do AIGEFS (média e espalhamento) e do GFS.</p>
+    <figure><img src="assets/awips_painel.png" alt="Painel AWIPS-II: AIGEFS média, AIGEFS desvio-padrão e GFS sobre a América do Sul"><figcaption>Painel AWIPS-II, chuva entre +12 h e +36 h do ciclo consultado.</figcaption></figure>
+    <p>O EDEX público guarda poucos ciclos e serve ensembles de IA só com média e desvio-padrão. Para treino e avaliação, o Athon lê os mesmos modelos com membros e histórico direto do AWS Open Data NOAA EAGLE.</p>
+  </section>
+
+  <section id="tecnicas">
+    <h2>técnicas</h2>
+    <div class="grade2">
+      <div class="cartao"><h3>Validação</h3><ul>
+        <li>Contrato de emissão com instante de publicação de cada insumo.</li>
+        <li>Dobras cronológicas expansivas; seleção interna cronológica.</li>
+        <li>Pré-registro com sha256 antes de qualquer métrica.</li>
+        <li>Bloco cego aberto uma vez; emissões registradas antes da verdade.</li>
+        <li>Bootstrap por blocos contíguos.</li></ul></div>
+      <div class="cartao"><h3>Probabilidade e engenharia</h3><ul>
+        <li>CRPS fechado da hurdle-Gamma; CRPS justo para ensembles; PIT aleatorizado.</li>
+        <li>ECC e Schaake shuffle para dependência espacial.</li>
+        <li>Leitura parcial de GRIB (índice e cabeçalhos) e de HDF5 remoto (faixa de bytes).</li>
+        <li>Execução exclusiva (mutex + Job Object) e escrita atômica de artefatos.</li></ul></div>
+    </div>
+  </section>
+
+  <section id="discussoes">
+    <h2>discussões</h2>
+    <ul>
+      <li><b>Média mensal perto do limite das fontes testadas:</b> membros, solo, Sol, CMIP6 e transporte não acrescentaram ≥ 0,5% ao B0-T2.</li>
+      <li><b>Dispersão específica do alvo:</b> contra ERA5 o contexto ganha 7%; contra MERGE a dispersão constante é melhor.</li>
+      <li><b>IA no diário:</b> GraphCastGFS e AIGEFS superam o GEFS (brutos −8% a −14%; corrigidos −1% a −6%).</li>
+      <li><b>MONAN:</b> viés úmido bruto; corrigido empata com o GEFS; combinado acrescenta 1–3%.</li>
+      <li><b>Refinamento 0,1°:</b> aprendível com total observado, sem ganho com total previsto.</li>
+      <li><b>Astronomia:</b> maré lunar M2 detectada na chuva horária (0,42%, p = 0,005), irrelevante na escala diária e mensal.</li>
+      <li><b>Limites:</b> confirmação prospectiva com 2 meses avaliados; validação cruzada por mês nos duelos diários; ~10 meses de MONAN.</li>
+    </ul>
+  </section>
+
+  <section id="reproducao">
+    <h2>reprodução</h2>
+<pre><code># mensal
+python -m src.emissao.mensal insumos --alvo 2026-11
+python -m src.executa_cadeia runs/cadeia_emissao.sh runs/cadeia_emissao_202611.log 2026-11
+python -m src.emissao.avalia
+# diário e duelos
+python -m src.models.diario_m4
+python -m src.verification.duelo_multimodelo
+python -m src.verification.duelo_athon_monan diario
+python -m src.verification.duelo_athon_monan mensal
+# site
+python -m src.site.awips_painel
+python -m src.site.figuras --saida docs/assets</code></pre>
+    <p>Código, pré-registros e relatórios: <a href="https://github.com/Brun0Simoes/Athon_NoLimit">github.com/Brun0Simoes/Athon_NoLimit</a>.</p>
+  </section>
+</main>
+<footer>Athon NoLimit · precipitação mensal e diária na América do Sul · estudo encerrado em 04/10/2026</footer>
+<script>
+  (function () {
+    var raiz = document.documentElement, botao = document.getElementById("tema");
+    try { var salvo = localStorage.getItem("tema"); if (salvo) raiz.setAttribute("data-theme", salvo); } catch (e) {}
+    botao.addEventListener("click", function () {
+      var escuro = raiz.getAttribute("data-theme") === "dark" ||
+        (!raiz.getAttribute("data-theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+      var novo = escuro ? "light" : "dark";
+      raiz.setAttribute("data-theme", novo);
+      try { localStorage.setItem("tema", novo); } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>

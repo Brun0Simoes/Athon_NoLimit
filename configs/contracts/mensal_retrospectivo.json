@@ -1,0 +1,14 @@
+{
+  "produto": "mensal_retrospectivo_diagnostico",
+  "versao": 1,
+  "criado_em": "2026-10-02",
+  "uso": "estudar mecanismos e tetos condicionais; ranking separado do operacional, nunca misturado",
+  "permitido_alem_do_operacional": [
+    "SEAS5 lead 0,5 (init dia 1 de T, publicado dentro de T)",
+    "ERA5 final revisada em vez do vintage ERA5T",
+    "fontes com latencia incompativel com a emissao do dia 1 (ex.: ERA5-Land do mes T-1 completo)"
+  ],
+  "rotulo_obrigatorio": "toda tabela e figura com resultado retrospectivo leva o rotulo RETROSPECTIVO",
+  "referencia": "O61-S6R (lead 0,5) e uma referencia deste produto, nao do operacional",
+  "grade_alvo_dobras": "iguais ao mensal_operacional.json"
+}
