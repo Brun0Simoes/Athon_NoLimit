@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" width="900" height="540" role="img" aria-label="Duelo Athon contra MONAN">
+<title>Duelo Athon contra MONAN</title>
+<defs><filter id="brilho" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="4"/></filter>
+<linearGradient id="varredura" x1="0" x2="1" y1="0" y2="0" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".35"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="0"/><animateTransform attributeName="gradientTransform" type="translate" values="-1 0;1 0" dur="3.2s" repeatCount="indefinite"/></linearGradient>
+<marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8b93a7"/></marker>
+<style>
+  text { font-family: 'JetBrains Mono','Cascadia Code',Consolas,'DejaVu Sans Mono',monospace; }
+  .tit { font-size: 14px; font-weight: 700; }
+  .sub { font-size: 11px; fill: #8b93a7; }
+  .lab { font-size: 11px; fill: #8b93a7; letter-spacing: .5px; }
+  .conn { fill: none; stroke-width: 1.6; stroke-dasharray: 6 6; animation: flui 1.4s linear infinite; }
+  .glow { animation: pulsa 3.2s ease-in-out infinite; }
+  .varre { mix-blend-mode: screen; }
+  .cursor { animation: pisca 1s steps(1) infinite; }
+  @keyframes flui { to { stroke-dashoffset: -24; } }
+  @keyframes pulsa { 0%, 100% { opacity: .18; } 50% { opacity: .65; } }
+  @keyframes pisca { 50% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .conn, .glow, .cursor { animation: none !important; } .varre { display: none; } }
+</style></defs>
+<rect width="900" height="540" rx="16" fill="#0b0f17"/>
+<rect x="6" y="6" width="888" height="528" rx="12" fill="none" stroke="#2b2140" stroke-width="1.5"/>
+<text x="28" y="40" class="tit" fill="#ff4d7d">$ cat duelo.log</text>
+<rect class="cursor" x="154.0" y="28" width="8" height="15" fill="#ff4d7d"/>
+<text x="872" y="40" class="lab" text-anchor="end">71 rodadas diárias · 8 meses com ERA5</text>
+<text x="28" y="88" class="lab">diário · D1 · CRPS (células com estação)</text>
+<text x="286" y="119" class="sub" text-anchor="end" style="font-size:12px;fill:#8b93a7;font-weight:400">monan bruto</text>
+<rect class="barra" x="300" y="104" width="287.0" height="20" rx="4" fill="#ff8c42" fill-opacity="0.7"/>
+<rect class="varre" x="300" y="104" width="287.0" height="20" rx="4" fill="url(#varredura)"/>
+<text class="val sub" x="597.0" y="119" style="font-size:12px;fill:#8b93a7">3,113</text>
+<text x="286" y="153" class="sub" text-anchor="end" style="font-size:12px;fill:#8b93a7;font-weight:400">gefs bruto</text>
+<rect class="barra" x="300" y="138" width="261.8" height="20" rx="4" fill="#6b7fb3" fill-opacity="0.7"/>
+<rect class="varre" x="300" y="138" width="261.8" height="20" rx="4" fill="url(#varredura)"/>
+<text class="val sub" x="571.8" y="153" style="font-size:12px;fill:#8b93a7">2,839</text>
+<text x="286" y="187" class="sub" text-anchor="end" style="font-size:12px;fill:#8b93a7;font-weight:400">aigefs bruto</text>
+<rect class="barra" x="300" y="172" width="231.9" height="20" rx="4" fill="#6b7fb3" fill-opacity="0.7"/>
+<rect class="varre" x="300" y="172" width="231.9" height="20" rx="4" fill="url(#varredura)"/>
+<text class="val sub" x="541.9" y="187" style="font-size:12px;fill:#8b93a7">2,515</text>
+<text x="286" y="221" class="sub" text-anchor="end" style="font-size:12px;fill:#8b93a7;font-weight:400">monan + MOS</text>
+<rect class="barra" x="300" y="206" width="162.0" height="20" rx="4" fill="#ff8c42" fill-opacity="0.7"/>
+<rect class="varre" x="300" y="206" width="162.0" height="20" rx="4" fill="url(#varredura)"/>
+<text class="val sub" x="472.0" y="221" style="font-size:12px;fill:#8b93a7">1,757</text>
+<text x="286" y="255" class="sub" text-anchor="end" style="font-size:12px;fill:#8b93a7;font-weight:400">m4d</text>
+<rect class="barra" x="300" y="240" width="159.3" height="20" rx="4" fill="#6b7fb3" fill-opacity="0.7"/>
+<rect class="varre" x="300" y="240" width="159.3" height="20" rx="4" fill="url(#varredura)"/>
+<text class="val sub" x="469.3" y="255" style="font-size:12px;fill:#8b93a7">1,728</text>
+<text x="286" y="289" class="sub" text-anchor="end" style="font-size:12px;fill:#e6e8ee;font-weight:700">athon diário</text>
+<rect class="glow" x="300" y="274" width="152.8" height="20" rx="4" fill="#4fd6e8" filter="url(#brilho)"/>
+<rect class="barra" x="300" y="274" width="152.8" height="20" rx="4" fill="#4fd6e8" fill-opacity="1"/>
+<rect class="varre" x="300" y="274" width="152.8" height="20" rx="4" fill="url(#varredura)"/>
+<text class="val sub" x="462.8" y="289" style="font-size:12px;fill:#e6e8ee">1,657 · −5,7% vs monan + MOS</text>
+<text x="300" y="310" class="lab">0 ── mm/dia, menor é melhor</text>
+<text x="28" y="348" class="lab">mensal · RMSE contra ERA5</text>
+<text x="286" y="379" class="sub" text-anchor="end" style="font-size:12px;fill:#8b93a7;font-weight:400">monan 10 dias bruto</text>
+<rect class="barra" x="300" y="364" width="287.0" height="20" rx="4" fill="#ff8c42" fill-opacity="0.7"/>
+<rect class="varre" x="300" y="364" width="287.0" height="20" rx="4" fill="url(#varredura)"/>
+<text class="val sub" x="597.0" y="379" style="font-size:12px;fill:#8b93a7">3,364</text>
+<text x="286" y="413" class="sub" text-anchor="end" style="font-size:12px;fill:#8b93a7;font-weight:400">climatologia</text>
+<rect class="barra" x="300" y="398" width="167.4" height="20" rx="4" fill="#6b7fb3" fill-opacity="0.7"/>
+<rect class="varre" x="300" y="398" width="167.4" height="20" rx="4" fill="url(#varredura)"/>
+<text class="val sub" x="477.4" y="413" style="font-size:12px;fill:#8b93a7">1,962</text>
+<text x="286" y="447" class="sub" text-anchor="end" style="font-size:12px;fill:#8b93a7;font-weight:400">monan mensal</text>
+<rect class="barra" x="300" y="432" width="161.6" height="20" rx="4" fill="#ff8c42" fill-opacity="0.7"/>
+<rect class="varre" x="300" y="432" width="161.6" height="20" rx="4" fill="url(#varredura)"/>
+<text class="val sub" x="471.6" y="447" style="font-size:12px;fill:#8b93a7">1,894</text>
+<text x="286" y="481" class="sub" text-anchor="end" style="font-size:12px;fill:#e6e8ee;font-weight:700">athon B0-T2</text>
+<rect class="glow" x="300" y="466" width="153.7" height="20" rx="4" fill="#4fd6e8" filter="url(#brilho)"/>
+<rect class="barra" x="300" y="466" width="153.7" height="20" rx="4" fill="#4fd6e8" fill-opacity="1"/>
+<rect class="varre" x="300" y="466" width="153.7" height="20" rx="4" fill="url(#varredura)"/>
+<text class="val sub" x="463.7" y="481" style="font-size:12px;fill:#e6e8ee">1,801 · −4,9% · 7/8 meses</text>
+<text x="300" y="502" class="lab">0 ── mm/dia, menor é melhor</text>
+</svg>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,6 +53,8 @@
   .tile .r { font-size: 13px; color: var(--muted); }
   figure { margin: 16px 0; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px; }
   figure img { width: 100%; height: auto; display: block; border-radius: 6px; background: #fcfcfb; }
+  figure.terminal { background: transparent; border: 0; padding: 0; }
+  figure.terminal img { background: transparent; border-radius: 16px; }
   figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; }
   .tabela { overflow-x: auto; margin: 12px 0; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
   table { border-collapse: collapse; width: 100%; font-size: 14px; }
@@ -97,7 +99,8 @@
 
   <section id="fluxo">
     <h2>fluxo</h2>
-    <figure><img src="assets/pipeline.svg" alt="Fluxo do Athon: trilha mensal e trilha diária, com a faixa de validação"><figcaption>Trilha mensal (emissão no dia 1, 00 UTC) e trilha diária (rodada 00 UTC). Só entram produtos publicados até a emissão.</figcaption></figure>
+    <figure class="terminal"><img src="assets/fluxo_mensal.svg" alt="Fluxo mensal do Athon"><figcaption>Fluxo mensal: emissão no dia 1, 00 UTC, só com o que já foi publicado.</figcaption></figure>
+    <figure class="terminal"><img src="assets/fluxo_diario.svg" alt="Fluxo diário do Athon"><figcaption>Fluxo diário: rodada 00 UTC, D0–D10, alvo MERGE 0,5°.</figcaption></figure>
     <div class="grade2">
       <div class="cartao"><h3>Mensal</h3><ol>
         <li>Estado ERA5T de T−2, CFSv2 lead 1,5, GEFS da última quarta e SEAS5 lead 1,5 (51 membros).</li>
@@ -136,6 +139,7 @@
 
   <section id="resultados">
     <h2>resultados</h2>
+    <figure class="terminal"><img src="assets/results.svg" alt="Resultados do Athon no bloco cego"></figure>
     <h3>Mensal (RMSE, mm/dia)</h3>
     <div class="tabela"><table>
       <thead><tr><th>Avaliação</th><th class="num">Base T−2</th><th class="num">B0-T2</th><th>Contraste</th></tr></thead>
@@ -174,7 +178,8 @@
         <tr><td>D7</td><td class="num"><b>1,990</b></td><td class="num">2,078</td><td class="num">4,306</td><td class="num">2,054</td><td>−4,3%</td></tr>
         <tr><td>D10</td><td class="num"><b>1,913</b></td><td class="num">1,948</td><td class="num">4,481</td><td class="num">1,928</td><td>−1,8%</td></tr>
       </tbody></table></div>
-    <figure><img src="assets/duelo_diario.svg" alt="CRPS por lead: Athon, MONAN corrigido e M4D"><figcaption>Arena diária, CRPS por lead. Menor é melhor.</figcaption></figure>
+    <figure class="terminal"><img src="assets/duelo.svg" alt="Duelo Athon contra MONAN"></figure>
+    <figure><img src="assets/duelo_diario.svg" alt="CRPS por lead: Athon, MONAN corrigido e M4D"><figcaption>Arena diária, CRPS por lead (D1–D10). Menor é melhor.</figcaption></figure>
     <figure><img src="assets/duelo_mensal.svg" alt="RMSE por mês contra ERA5: Athon e MONAN mensal"><figcaption>Arena mensal, RMSE por mês contra ERA5 (março de 2026 sem rodada MONAN).</figcaption></figure>
   </section>
 

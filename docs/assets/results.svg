@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 494" width="900" height="494" role="img" aria-label="Resultados do Athon no bloco cego">
+<title>Resultados do Athon no bloco cego</title>
+<defs><filter id="brilho" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="4"/></filter>
+<linearGradient id="varredura" x1="0" x2="1" y1="0" y2="0" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".35"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="0"/><animateTransform attributeName="gradientTransform" type="translate" values="-1 0;1 0" dur="3.2s" repeatCount="indefinite"/></linearGradient>
+<marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8b93a7"/></marker>
+<style>
+  text { font-family: 'JetBrains Mono','Cascadia Code',Consolas,'DejaVu Sans Mono',monospace; }
+  .tit { font-size: 14px; font-weight: 700; }
+  .sub { font-size: 11px; fill: #8b93a7; }
+  .lab { font-size: 11px; fill: #8b93a7; letter-spacing: .5px; }
+  .conn { fill: none; stroke-width: 1.6; stroke-dasharray: 6 6; animation: flui 1.4s linear infinite; }
+  .glow { animation: pulsa 3.2s ease-in-out infinite; }
+  .varre { mix-blend-mode: screen; }
+  .cursor { animation: pisca 1s steps(1) infinite; }
+  @keyframes flui { to { stroke-dashoffset: -24; } }
+  @keyframes pulsa { 0%, 100% { opacity: .18; } 50% { opacity: .65; } }
+  @keyframes pisca { 50% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .conn, .glow, .cursor { animation: none !important; } .varre { display: none; } }
+</style></defs>
+<rect width="900" height="494" rx="16" fill="#0b0f17"/>
+<rect x="6" y="6" width="888" height="482" rx="12" fill="none" stroke="#2b2140" stroke-width="1.5"/>
+<text x="28" y="40" class="tit" fill="#ff4d7d">$ cat results.log</text>
+<rect class="cursor" x="170.8" y="28" width="8" height="15" fill="#ff4d7d"/>
+<text x="872" y="40" class="lab" text-anchor="end">bloco cego 2025-01..2026-06 · ERA5 · grade 0,25°</text>
+<text x="28" y="88" class="lab">média mensal · RMSE</text>
+<text x="286" y="119" class="sub" text-anchor="end" style="font-size:12px;fill:#8b93a7;font-weight:400">climatologia 1981–2009</text>
+<rect class="barra" x="300" y="104" width="287.0" height="20" rx="4" fill="#6b7fb3" fill-opacity="0.7"/>
+<rect class="varre" x="300" y="104" width="287.0" height="20" rx="4" fill="url(#varredura)"/>
+<text class="val sub" x="597.0" y="119" style="font-size:12px;fill:#8b93a7">1,8774</text>
+<text x="286" y="153" class="sub" text-anchor="end" style="font-size:12px;fill:#8b93a7;font-weight:400">base O09M-T2</text>
+<rect class="barra" x="300" y="138" width="267.9" height="20" rx="4" fill="#6b7fb3" fill-opacity="0.7"/>
+<rect class="varre" x="300" y="138" width="267.9" height="20" rx="4" fill="url(#varredura)"/>
+<text class="val sub" x="577.9" y="153" style="font-size:12px;fill:#8b93a7">1,7523 · −6,7%</text>
+<text x="286" y="187" class="sub" text-anchor="end" style="font-size:12px;fill:#e6e8ee;font-weight:700">athon B0-T2</text>
+<rect class="glow" x="300" y="172" width="261.8" height="20" rx="4" fill="#4fd6e8" filter="url(#brilho)"/>
+<rect class="barra" x="300" y="172" width="261.8" height="20" rx="4" fill="#4fd6e8" fill-opacity="1"/>
+<rect class="varre" x="300" y="172" width="261.8" height="20" rx="4" fill="url(#varredura)"/>
+<text class="val sub" x="571.8" y="187" style="font-size:12px;fill:#e6e8ee">1,7125 · −2,27% · 17/18 meses</text>
+<text x="300" y="208" class="lab">0 ── mm/dia, menor é melhor</text>
+<text x="28" y="246" class="lab">distribuição · CRPS</text>
+<text x="286" y="277" class="sub" text-anchor="end" style="font-size:12px;fill:#8b93a7;font-weight:400">dispersão constante</text>
+<rect class="barra" x="300" y="262" width="287.0" height="20" rx="4" fill="#6b7fb3" fill-opacity="0.7"/>
+<rect class="varre" x="300" y="262" width="287.0" height="20" rx="4" fill="url(#varredura)"/>
+<text class="val sub" x="597.0" y="277" style="font-size:12px;fill:#8b93a7">0,7928</text>
+<text x="286" y="311" class="sub" text-anchor="end" style="font-size:12px;fill:#e6e8ee;font-weight:700">athon · contexto</text>
+<rect class="glow" x="300" y="296" width="266.2" height="20" rx="4" fill="#4fd6e8" filter="url(#brilho)"/>
+<rect class="barra" x="300" y="296" width="266.2" height="20" rx="4" fill="#4fd6e8" fill-opacity="1"/>
+<rect class="varre" x="300" y="296" width="266.2" height="20" rx="4" fill="url(#varredura)"/>
+<text class="val sub" x="576.2" y="311" style="font-size:12px;fill:#e6e8ee">0,7354 · −7,2% · 18/18 meses</text>
+<text x="300" y="332" class="lab">0 ── mm/dia, menor é melhor</text>
+<text x="28" y="370" class="lab">cenários · CRPS regional</text>
+<text x="286" y="401" class="sub" text-anchor="end" style="font-size:12px;fill:#8b93a7;font-weight:400">amostragem independente</text>
+<rect class="barra" x="300" y="386" width="287.0" height="20" rx="4" fill="#6b7fb3" fill-opacity="0.7"/>
+<rect class="varre" x="300" y="386" width="287.0" height="20" rx="4" fill="url(#varredura)"/>
+<text class="val sub" x="597.0" y="401" style="font-size:12px;fill:#8b93a7">0,4772</text>
+<text x="286" y="435" class="sub" text-anchor="end" style="font-size:12px;fill:#e6e8ee;font-weight:700">athon · schaake</text>
+<rect class="glow" x="300" y="420" width="216.5" height="20" rx="4" fill="#4fd6e8" filter="url(#brilho)"/>
+<rect class="barra" x="300" y="420" width="216.5" height="20" rx="4" fill="#4fd6e8" fill-opacity="1"/>
+<rect class="varre" x="300" y="420" width="216.5" height="20" rx="4" fill="url(#varredura)"/>
+<text class="val sub" x="526.5" y="435" style="font-size:12px;fill:#e6e8ee">0,3599 · −24,6%</text>
+<text x="300" y="456" class="lab">0 ── mm/dia, menor é melhor</text>
+</svg>

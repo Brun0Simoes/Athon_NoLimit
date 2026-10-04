@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500" role="img" aria-label="Fluxo diário do Athon">
+<title>Fluxo diário do Athon</title>
+<defs><filter id="brilho" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="4"/></filter>
+<linearGradient id="varredura" x1="0" x2="1" y1="0" y2="0" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".35"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="0"/><animateTransform attributeName="gradientTransform" type="translate" values="-1 0;1 0" dur="3.2s" repeatCount="indefinite"/></linearGradient>
+<marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8b93a7"/></marker>
+<style>
+  text { font-family: 'JetBrains Mono','Cascadia Code',Consolas,'DejaVu Sans Mono',monospace; }
+  .tit { font-size: 14px; font-weight: 700; }
+  .sub { font-size: 11px; fill: #8b93a7; }
+  .lab { font-size: 11px; fill: #8b93a7; letter-spacing: .5px; }
+  .conn { fill: none; stroke-width: 1.6; stroke-dasharray: 6 6; animation: flui 1.4s linear infinite; }
+  .glow { animation: pulsa 3.2s ease-in-out infinite; }
+  .varre { mix-blend-mode: screen; }
+  .cursor { animation: pisca 1s steps(1) infinite; }
+  @keyframes flui { to { stroke-dashoffset: -24; } }
+  @keyframes pulsa { 0%, 100% { opacity: .18; } 50% { opacity: .65; } }
+  @keyframes pisca { 50% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .conn, .glow, .cursor { animation: none !important; } .varre { display: none; } }
+</style></defs>
+<rect width="900" height="500" rx="16" fill="#0b0f17"/>
+<path class="conn" d="M208,61.0 C232,61.0 226,167.0 250,167.0" stroke="#39d353" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.30s"/>
+<circle cx="208" cy="61.0" r="3.2" fill="#39d353"/>
+<path class="conn" d="M208,121.0 C232,121.0 226,167.0 250,167.0" stroke="#39d353" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.30s"/>
+<circle cx="208" cy="121.0" r="3.2" fill="#39d353"/>
+<path class="conn" d="M208,181.0 C232,181.0 226,167.0 250,167.0" stroke="#39d353" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.30s"/>
+<circle cx="208" cy="181.0" r="3.2" fill="#39d353"/>
+<path class="conn" d="M208,241.0 C422.20000000000005,241.0 469.79999999999995,282.0 684,282.0" stroke="#39d353" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.50s"/>
+<circle cx="208" cy="241.0" r="3.2" fill="#39d353"/>
+<path class="conn" d="M420,167.0 C444,167.0 436,63.0 460,63.0" stroke="#ff4d7d" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.20s"/>
+<circle cx="420" cy="167.0" r="3.2" fill="#ff4d7d"/>
+<path class="conn" d="M420,167.0 C444,167.0 436,137.0 460,137.0" stroke="#ff4d7d" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.40s"/>
+<circle cx="420" cy="167.0" r="3.2" fill="#ff4d7d"/>
+<path class="conn" d="M420,167.0 C444,167.0 436,211.0 460,211.0" stroke="#ff4d7d" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.60s"/>
+<circle cx="420" cy="167.0" r="3.2" fill="#ff4d7d"/>
+<path class="conn" d="M630,63.0 C654.3,63.0 659.7,153.0 684,153.0" stroke="#6b7fb3" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.30s"/>
+<circle cx="630" cy="63.0" r="3.2" fill="#6b7fb3"/>
+<path class="conn" d="M630,137.0 C654.3,137.0 659.7,153.0 684,153.0" stroke="#ff4d7d" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.50s"/>
+<circle cx="630" cy="137.0" r="3.2" fill="#ff4d7d"/>
+<path class="conn" d="M778.0,190 C778.0,220.0 778.0,220.0 778.0,250" stroke="#f2e85c" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.10s"/>
+<circle cx="778.0" cy="190" r="3.2" fill="#f2e85c"/>
+<path class="conn" d="M684,282.0 C659.7,282.0 654.3,327.0 630,327.0" stroke="#f2e85c" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.40s"/>
+<circle cx="684" cy="282.0" r="3.2" fill="#f2e85c"/>
+<path class="conn" d="M460,327.0 C436,327.0 444,327.0 420,327.0" stroke="#4fd6e8" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.70s"/>
+<circle cx="460" cy="327.0" r="3.2" fill="#4fd6e8"/>
+<path class="conn" d="M208,301.0 C232,301.0 226,247.0 250,247.0" stroke="#39d353" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.90s"/>
+<circle cx="208" cy="301.0" r="3.2" fill="#39d353"/>
+<rect x="6" y="6" width="888" height="488" rx="12" fill="none" stroke="#2b2140" stroke-width="1.5"/>
+<text x="118" y="26" class="lab" text-anchor="middle">rodada 00 UTC</text>
+<text x="335" y="120" class="lab" text-anchor="middle">agregação</text>
+<text x="545" y="26" class="lab" text-anchor="middle">modelos</text>
+<text x="778" y="106" class="lab" text-anchor="middle">distribuição</text>
+<g class="no" style="animation-delay:0.00s">
+<rect class="glow" x="28" y="36" width="180" height="50" rx="7" fill="none" stroke="#39d353" stroke-width="3" filter="url(#brilho)" style="animation-delay:0.00s"/>
+<rect x="28" y="36" width="180" height="50" rx="7" fill="#0f1520" stroke="#39d353" stroke-width="1.6"/>
+<text x="118.0" y="55.5" class="tit" fill="#39d353" text-anchor="middle">GEFS</text>
+<text x="118.0" y="72.5" class="sub" text-anchor="middle">5 membros · APCP 6 h</text>
+</g>
+<g class="no" style="animation-delay:0.10s">
+<rect class="glow" x="28" y="96" width="180" height="50" rx="7" fill="none" stroke="#39d353" stroke-width="3" filter="url(#brilho)" style="animation-delay:0.10s"/>
+<rect x="28" y="96" width="180" height="50" rx="7" fill="#0f1520" stroke="#39d353" stroke-width="1.6"/>
+<text x="118.0" y="115.5" class="tit" fill="#39d353" text-anchor="middle">AIGEFS · IA</text>
+<text x="118.0" y="132.5" class="sub" text-anchor="middle">5 mbr · NOAA EAGLE</text>
+</g>
+<g class="no" style="animation-delay:0.20s">
+<rect class="glow" x="28" y="156" width="180" height="50" rx="7" fill="none" stroke="#39d353" stroke-width="3" filter="url(#brilho)" style="animation-delay:0.20s"/>
+<rect x="28" y="156" width="180" height="50" rx="7" fill="#0f1520" stroke="#39d353" stroke-width="1.6"/>
+<text x="118.0" y="175.5" class="tit" fill="#39d353" text-anchor="middle">MONAN 10 km</text>
+<text x="118.0" y="192.5" class="sub" text-anchor="middle">grade · faixa de bytes</text>
+</g>
+<g class="no" style="animation-delay:0.30s">
+<rect class="glow" x="28" y="216" width="180" height="50" rx="7" fill="none" stroke="#39d353" stroke-width="3" filter="url(#brilho)" style="animation-delay:0.30s"/>
+<rect x="28" y="216" width="180" height="50" rx="7" fill="#0f1520" stroke="#39d353" stroke-width="1.6"/>
+<text x="118.0" y="235.5" class="tit" fill="#39d353" text-anchor="middle">GOES RRQPE</text>
+<text x="118.0" y="252.5" class="sub" text-anchor="middle">até 06 UTC · DQF=0</text>
+</g>
+<g class="no" style="animation-delay:0.40s">
+<rect class="glow" x="28" y="276" width="180" height="50" rx="7" fill="none" stroke="#39d353" stroke-width="3" filter="url(#brilho)" style="animation-delay:0.40s"/>
+<rect x="28" y="276" width="180" height="50" rx="7" fill="#0f1520" stroke="#39d353" stroke-width="1.6" stroke-dasharray="5 4"/>
+<text x="118.0" y="295.5" class="tit" fill="#39d353" text-anchor="middle">AWIPS-II</text>
+<text x="118.0" y="312.5" class="sub" text-anchor="middle">EDEX · python-awips</text>
+</g>
+<g class="no" style="animation-delay:0.60s">
+<rect class="glow" x="250" y="130" width="170" height="74" rx="7" fill="none" stroke="#ff4d7d" stroke-width="3" filter="url(#brilho)" style="animation-delay:0.60s"/>
+<rect x="250" y="130" width="170" height="74" rx="7" fill="#0f1520" stroke="#ff4d7d" stroke-width="1.6"/>
+<text x="335.0" y="154.0" class="tit" fill="#ff4d7d" text-anchor="middle">janelas 12–12</text>
+<text x="335.0" y="171.0" class="sub" text-anchor="middle">APCP 6 h → 24 h</text>
+<text x="335.0" y="186.0" class="sub" text-anchor="middle">área → 0,5°</text>
+</g>
+<g class="no" style="animation-delay:0.80s">
+<rect class="glow" x="460" y="36" width="170" height="54" rx="7" fill="none" stroke="#6b7fb3" stroke-width="3" filter="url(#brilho)" style="animation-delay:0.80s"/>
+<rect x="460" y="36" width="170" height="54" rx="7" fill="#0f1520" stroke="#6b7fb3" stroke-width="1.6"/>
+<text x="545.0" y="57.5" class="tit" fill="#6b7fb3" text-anchor="middle">M4D</text>
+<text x="545.0" y="74.5" class="sub" text-anchor="middle">GEFS · 6 anos</text>
+</g>
+<g class="no" style="animation-delay:0.90s">
+<rect class="glow" x="460" y="110" width="170" height="54" rx="7" fill="none" stroke="#ff4d7d" stroke-width="3" filter="url(#brilho)" style="animation-delay:0.90s"/>
+<rect x="460" y="110" width="170" height="54" rx="7" fill="#0f1520" stroke="#ff4d7d" stroke-width="1.6"/>
+<text x="545.0" y="131.5" class="tit" fill="#ff4d7d" text-anchor="middle">athon diário</text>
+<text x="545.0" y="148.5" class="sub" text-anchor="middle">GEFS + AIGEFS</text>
+</g>
+<g class="no" style="animation-delay:1.00s">
+<rect class="glow" x="460" y="184" width="170" height="54" rx="7" fill="none" stroke="#6b7fb3" stroke-width="3" filter="url(#brilho)" style="animation-delay:1.00s"/>
+<rect x="460" y="184" width="170" height="54" rx="7" fill="#0f1520" stroke="#6b7fb3" stroke-width="1.6" stroke-dasharray="5 4"/>
+<text x="545.0" y="205.5" class="tit" fill="#6b7fb3" text-anchor="middle">MONAN + MOS</text>
+<text x="545.0" y="222.5" class="sub" text-anchor="middle">rival no duelo</text>
+</g>
+<g class="no" style="animation-delay:1.20s">
+<rect class="glow" x="684" y="116" width="188" height="74" rx="7" fill="none" stroke="#f2e85c" stroke-width="3" filter="url(#brilho)" style="animation-delay:1.20s"/>
+<rect x="684" y="116" width="188" height="74" rx="7" fill="#0f1520" stroke="#f2e85c" stroke-width="1.6"/>
+<text x="778.0" y="140.0" class="tit" fill="#f2e85c" text-anchor="middle">hurdle-Gamma</text>
+<text x="778.0" y="157.0" class="sub" text-anchor="middle">lead × região × est.</text>
+<text x="778.0" y="172.0" class="sub" text-anchor="middle">μ linear · p0 logít.</text>
+</g>
+<g class="no" style="animation-delay:1.30s">
+<rect class="glow" x="684" y="250" width="188" height="64" rx="7" fill="none" stroke="#f2e85c" stroke-width="3" filter="url(#brilho)" style="animation-delay:1.30s"/>
+<rect x="684" y="250" width="188" height="64" rx="7" fill="#0f1520" stroke="#f2e85c" stroke-width="1.6" stroke-dasharray="5 4"/>
+<text x="778.0" y="276.5" class="tit" fill="#f2e85c" text-anchor="middle">D0 · GG0</text>
+<text x="778.0" y="293.5" class="sub" text-anchor="middle">GEFS 12 UTC + GOES</text>
+</g>
+<g class="no" style="animation-delay:1.40s">
+<rect class="glow" x="460" y="300" width="170" height="54" rx="7" fill="none" stroke="#6b7fb3" stroke-width="3" filter="url(#brilho)" style="animation-delay:1.40s"/>
+<rect x="460" y="300" width="170" height="54" rx="7" fill="#0f1520" stroke="#6b7fb3" stroke-width="1.6"/>
+<text x="545.0" y="321.5" class="tit" fill="#6b7fb3" text-anchor="middle">schaake</text>
+<text x="545.0" y="338.5" class="sub" text-anchor="middle">campos MERGE</text>
+</g>
+<g class="no" style="animation-delay:1.50s">
+<rect class="glow" x="230" y="300" width="190" height="54" rx="7" fill="none" stroke="#4fd6e8" stroke-width="3" filter="url(#brilho)" style="animation-delay:1.50s"/>
+<rect x="230" y="300" width="190" height="54" rx="7" fill="#0f1520" stroke="#4fd6e8" stroke-width="1.6"/>
+<text x="325.0" y="321.5" class="tit" fill="#4fd6e8" text-anchor="middle">produto diário</text>
+<text x="325.0" y="338.5" class="sub" text-anchor="middle">D0–D10 · P>10 mm</text>
+</g>
+<g class="no" style="animation-delay:1.60s">
+<rect class="glow" x="250" y="222" width="170" height="50" rx="7" fill="none" stroke="#4fd6e8" stroke-width="3" filter="url(#brilho)" style="animation-delay:1.60s"/>
+<rect x="250" y="222" width="170" height="50" rx="7" fill="#0f1520" stroke="#4fd6e8" stroke-width="1.6" stroke-dasharray="5 4"/>
+<text x="335.0" y="241.5" class="tit" fill="#4fd6e8" text-anchor="middle">painel AWIPS-II</text>
+<text x="335.0" y="258.5" class="sub" text-anchor="middle">ciclo mais recente</text>
+</g>
+<g class="no" style="animation-delay:1.6s"><rect x="24" y="406" width="852" height="60" rx="10" fill="none" stroke="#3a4256" stroke-width="1.4" stroke-dasharray="7 5"/>
+<text x="450.0" y="428" class="tit" fill="#8b93a7" text-anchor="middle">anti-vazamento</text>
+<text x="450.0" y="447" class="sub" text-anchor="middle">treino só com alvos anteriores · dobras anuais 2022–2026 · MOS dos duelos com mesmas rodadas</text></g>
+</svg>

@@ -32,7 +32,7 @@ evidência    bloco cego 2025-01..2026-06, emissões prospectivas, duelo com o M
 
 ### `❯ fluxo`
 
-![Fluxo do Athon](docs/assets/pipeline.svg)
+<p align="center"><img src="docs/assets/fluxo_mensal.svg" alt="Fluxo mensal do Athon" width="900"></p>
 
 **Mensal.**
 1. **Insumos.** Estado ERA5T do mês T−2, CFSv2 lead 1,5, GEFS da última quarta-feira e os 51 membros do SEAS5 lead 1,5. É o que existe publicado no dia 1, às 00 UTC.
@@ -45,6 +45,8 @@ evidência    bloco cego 2025-01..2026-06, emissões prospectivas, duelo com o M
    Os pesos W e as penalidades são escolhidos só com anos anteriores ao bloco previsto.
 4. **Distribuição.** Hurdle-Gamma com média fixa no B0-T2. A forma k e a probabilidade de mês seco p0 vêm de uma rede convolucional de contexto (M1-C).
 5. **Dependência.** Os quantis de cada célula são ordenados pelos postos de campos observados passados (Schaake) ou dos membros do SEAS5 (ECC). O resultado são 51 cenários espacialmente coerentes.
+
+<p align="center"><img src="docs/assets/fluxo_diario.svg" alt="Fluxo diário do Athon" width="900"></p>
 
 **Diário.**
 1. **Fontes.** GEFS, modelos de IA da NOAA (AIGEFS, GraphCastGFS), MONAN, GOES e climatologia MERGE 2001–2019.
@@ -82,6 +84,8 @@ mês. A mesma receita com lead 0,5 dá 1,5527; com o lead 1,5 disponível na emi
 S6R vinha desse lead.
 
 ### `❯ resultados`
+
+<p align="center"><img src="docs/assets/results.svg" alt="Resultados do Athon no bloco cego" width="900"></p>
 
 **Mensal** (RMSE em mm/dia, sem ponderação, grade oficial):
 
@@ -122,6 +126,8 @@ O MONAN é o modelo global de 10 km do INPE, operacional desde setembro de 2026.
 em grade (`dataserver.cptec.inpe.br/dataserver_dimnt/monan/monan_gam/netcdf`), lida por faixa de bytes só no
 recorte da América do Sul: 72 rodadas de 26/11/2025 a 02/10/2026.
 
+<p align="center"><img src="docs/assets/duelo.svg" alt="Duelo Athon contra MONAN" width="900"></p>
+
 **Arena diária** (a casa do MONAN). O campeão do Athon é o MOS sobre GEFS + AIGEFS, sem o MONAN como entrada.
 O MONAN entra bruto e corrigido pelo mesmo MOS. Os números são CRPS nas células com estação, com validação
 cruzada deixando um mês de fora:
@@ -133,8 +139,6 @@ cruzada deixando um mês de fora:
 | D5 | **1,882** | 1,953 | 3,964 | 1,934 | −3,6%, Athon vence |
 | D7 | **1,990** | 2,078 | 4,306 | 2,054 | −4,3%, Athon vence |
 | D10 | **1,913** | 1,948 | 4,481 | 1,928 | −1,8%, Athon vence |
-
-![Arena diária](docs/assets/duelo_diario.svg)
 
 - **Contra o MONAN corrigido:** o Athon vence em 9 de 10 leads, com empate em D9.
 - **Contra o MONAN bruto:** o Athon tem metade do erro.
@@ -150,8 +154,6 @@ cruzada deixando um mês de fora:
 |---|---|---|---|---|---|
 | ERA5 | 8 | **1,801** | 1,894 | 3,364 | 1,962 |
 | MERGE | 9 | 2,603 | 2,606 | 3,549 | 2,801 |
-
-![Arena mensal](docs/assets/duelo_mensal.svg)
 
 - **Contra o ERA5:** o Athon tem RMSE 4,9% menor e vence em 7 de 8 meses. Com 8 meses, o intervalo de confiança inclui zero, então o resultado é empate estatístico, com vantagem do Athon.
 - **Contra o MERGE:** empate.

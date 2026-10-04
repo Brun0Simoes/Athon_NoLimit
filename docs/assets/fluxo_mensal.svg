@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="900" height="480" role="img" aria-label="Fluxo mensal do Athon">
+<title>Fluxo mensal do Athon</title>
+<defs><filter id="brilho" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="4"/></filter>
+<linearGradient id="varredura" x1="0" x2="1" y1="0" y2="0" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".35"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="0"/><animateTransform attributeName="gradientTransform" type="translate" values="-1 0;1 0" dur="3.2s" repeatCount="indefinite"/></linearGradient>
+<marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8b93a7"/></marker>
+<style>
+  text { font-family: 'JetBrains Mono','Cascadia Code',Consolas,'DejaVu Sans Mono',monospace; }
+  .tit { font-size: 14px; font-weight: 700; }
+  .sub { font-size: 11px; fill: #8b93a7; }
+  .lab { font-size: 11px; fill: #8b93a7; letter-spacing: .5px; }
+  .conn { fill: none; stroke-width: 1.6; stroke-dasharray: 6 6; animation: flui 1.4s linear infinite; }
+  .glow { animation: pulsa 3.2s ease-in-out infinite; }
+  .varre { mix-blend-mode: screen; }
+  .cursor { animation: pisca 1s steps(1) infinite; }
+  @keyframes flui { to { stroke-dashoffset: -24; } }
+  @keyframes pulsa { 0%, 100% { opacity: .18; } 50% { opacity: .65; } }
+  @keyframes pisca { 50% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .conn, .glow, .cursor { animation: none !important; } .varre { display: none; } }
+</style></defs>
+<rect width="900" height="480" rx="16" fill="#0b0f17"/>
+<path class="conn" d="M208,67.0 C232,67.0 226,155.0 250,155.0" stroke="#39d353" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.30s"/>
+<circle cx="208" cy="67.0" r="3.2" fill="#39d353"/>
+<path class="conn" d="M208,135.0 C232,135.0 226,155.0 250,155.0" stroke="#39d353" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.30s"/>
+<circle cx="208" cy="135.0" r="3.2" fill="#39d353"/>
+<path class="conn" d="M208,203.0 C232,203.0 226,155.0 250,155.0" stroke="#39d353" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.30s"/>
+<circle cx="208" cy="203.0" r="3.2" fill="#39d353"/>
+<path class="conn" d="M208,271.0 C321.4,271.0 346.6,219.0 460,219.0" stroke="#39d353" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.60s"/>
+<circle cx="208" cy="271.0" r="3.2" fill="#39d353"/>
+<path class="conn" d="M420,155.0 C444,155.0 436,67.0 460,67.0" stroke="#ff4d7d" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.40s"/>
+<circle cx="420" cy="155.0" r="3.2" fill="#ff4d7d"/>
+<path class="conn" d="M420,155.0 C444,155.0 436,143.0 460,143.0" stroke="#ff4d7d" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.40s"/>
+<circle cx="420" cy="155.0" r="3.2" fill="#ff4d7d"/>
+<path class="conn" d="M420,155.0 C444,155.0 436,219.0 460,219.0" stroke="#ff4d7d" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.40s"/>
+<circle cx="420" cy="155.0" r="3.2" fill="#ff4d7d"/>
+<path class="conn" d="M630,67.0 C654.3,67.0 659.7,139.0 684,139.0" stroke="#ff4d7d" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.20s"/>
+<circle cx="630" cy="67.0" r="3.2" fill="#ff4d7d"/>
+<text x="657" y="97" class="lab" text-anchor="middle">c₁</text>
+<path class="conn" d="M630,143.0 C654.3,143.0 659.7,139.0 684,139.0" stroke="#6b7fb3" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.50s"/>
+<circle cx="630" cy="143.0" r="3.2" fill="#6b7fb3"/>
+<text x="657" y="135" class="lab" text-anchor="middle">c₂</text>
+<path class="conn" d="M630,219.0 C654.3,219.0 659.7,139.0 684,139.0" stroke="#6b7fb3" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.80s"/>
+<circle cx="630" cy="219.0" r="3.2" fill="#6b7fb3"/>
+<text x="657" y="173" class="lab" text-anchor="middle">c₃</text>
+<path class="conn" d="M778.0,176 C778.0,206.0 778.0,206.0 778.0,236" stroke="#f2e85c" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.10s"/>
+<circle cx="778.0" cy="176" r="3.2" fill="#f2e85c"/>
+<path class="conn" d="M684,273.0 C659.7,273.0 654.3,319.0 630,319.0" stroke="#f2e85c" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.40s"/>
+<circle cx="684" cy="273.0" r="3.2" fill="#f2e85c"/>
+<path class="conn" d="M460,319.0 C436,319.0 444,319.0 420,319.0" stroke="#4fd6e8" stroke-opacity=".75" marker-end="url(#seta)" style="animation-delay:-0.70s"/>
+<circle cx="460" cy="319.0" r="3.2" fill="#4fd6e8"/>
+<rect x="6" y="6" width="888" height="468" rx="12" fill="none" stroke="#2b2140" stroke-width="1.5"/>
+<text x="118" y="30" class="lab" text-anchor="middle">publicado até o dia 1, 00 UTC</text>
+<text x="335" y="104" class="lab" text-anchor="middle">base</text>
+<text x="545" y="30" class="lab" text-anchor="middle">s6r causal</text>
+<text x="772" y="92" class="lab" text-anchor="middle">combinação</text>
+<g class="no" style="animation-delay:0.00s">
+<rect class="glow" x="28" y="40" width="180" height="54" rx="7" fill="none" stroke="#39d353" stroke-width="3" filter="url(#brilho)" style="animation-delay:0.00s"/>
+<rect x="28" y="40" width="180" height="54" rx="7" fill="#0f1520" stroke="#39d353" stroke-width="1.6"/>
+<text x="118.0" y="61.5" class="tit" fill="#39d353" text-anchor="middle">ERA5T · T−2</text>
+<text x="118.0" y="78.5" class="sub" text-anchor="middle">9 campos · estado</text>
+</g>
+<g class="no" style="animation-delay:0.10s">
+<rect class="glow" x="28" y="108" width="180" height="54" rx="7" fill="none" stroke="#39d353" stroke-width="3" filter="url(#brilho)" style="animation-delay:0.10s"/>
+<rect x="28" y="108" width="180" height="54" rx="7" fill="#0f1520" stroke="#39d353" stroke-width="1.6"/>
+<text x="118.0" y="129.5" class="tit" fill="#39d353" text-anchor="middle">CFSv2 · NMME</text>
+<text x="118.0" y="146.5" class="sub" text-anchor="middle">lead 1,5</text>
+</g>
+<g class="no" style="animation-delay:0.20s">
+<rect class="glow" x="28" y="176" width="180" height="54" rx="7" fill="none" stroke="#39d353" stroke-width="3" filter="url(#brilho)" style="animation-delay:0.20s"/>
+<rect x="28" y="176" width="180" height="54" rx="7" fill="#0f1520" stroke="#39d353" stroke-width="1.6"/>
+<text x="118.0" y="197.5" class="tit" fill="#39d353" text-anchor="middle">GEFS</text>
+<text x="118.0" y="214.5" class="sub" text-anchor="middle">última quarta · 5 mbr</text>
+</g>
+<g class="no" style="animation-delay:0.30s">
+<rect class="glow" x="28" y="244" width="180" height="54" rx="7" fill="none" stroke="#39d353" stroke-width="3" filter="url(#brilho)" style="animation-delay:0.30s"/>
+<rect x="28" y="244" width="180" height="54" rx="7" fill="#0f1520" stroke="#39d353" stroke-width="1.6"/>
+<text x="118.0" y="265.5" class="tit" fill="#39d353" text-anchor="middle">SEAS5</text>
+<text x="118.0" y="282.5" class="sub" text-anchor="middle">lead 1,5 · 51 membros</text>
+</g>
+<g class="no" style="animation-delay:0.50s">
+<rect class="glow" x="250" y="116" width="170" height="78" rx="7" fill="none" stroke="#ff4d7d" stroke-width="3" filter="url(#brilho)" style="animation-delay:0.50s"/>
+<rect x="250" y="116" width="170" height="78" rx="7" fill="#0f1520" stroke="#ff4d7d" stroke-width="1.6"/>
+<text x="335.0" y="142.0" class="tit" fill="#ff4d7d" text-anchor="middle">base O09M-T2</text>
+<text x="335.0" y="159.0" class="sub" text-anchor="middle">NNLS: EOF · célula</text>
+<text x="335.0" y="174.0" class="sub" text-anchor="middle">clim · CFSv2 + GEFS</text>
+</g>
+<g class="no" style="animation-delay:0.70s">
+<rect class="glow" x="460" y="40" width="170" height="54" rx="7" fill="none" stroke="#ff4d7d" stroke-width="3" filter="url(#brilho)" style="animation-delay:0.70s"/>
+<rect x="460" y="40" width="170" height="54" rx="7" fill="#0f1520" stroke="#ff4d7d" stroke-width="1.6"/>
+<text x="545.0" y="61.5" class="tit" fill="#ff4d7d" text-anchor="middle">lightgbm</text>
+<text x="545.0" y="78.5" class="sub" text-anchor="middle">resíduo · SEAS5 · 3×3</text>
+</g>
+<g class="no" style="animation-delay:0.80s">
+<rect class="glow" x="460" y="116" width="170" height="54" rx="7" fill="none" stroke="#6b7fb3" stroke-width="3" filter="url(#brilho)" style="animation-delay:0.80s"/>
+<rect x="460" y="116" width="170" height="54" rx="7" fill="#0f1520" stroke="#6b7fb3" stroke-width="1.6"/>
+<text x="545.0" y="137.5" class="tit" fill="#6b7fb3" text-anchor="middle">ridge H6</text>
+<text x="545.0" y="154.5" class="sub" text-anchor="middle">SEAS5 · reg × estação</text>
+</g>
+<g class="no" style="animation-delay:0.90s">
+<rect class="glow" x="460" y="192" width="170" height="54" rx="7" fill="none" stroke="#6b7fb3" stroke-width="3" filter="url(#brilho)" style="animation-delay:0.90s"/>
+<rect x="460" y="192" width="170" height="54" rx="7" fill="#0f1520" stroke="#6b7fb3" stroke-width="1.6"/>
+<text x="545.0" y="213.5" class="tit" fill="#6b7fb3" text-anchor="middle">MOS SEAS5</text>
+<text x="545.0" y="230.5" class="sub" text-anchor="middle">janela de 3 meses</text>
+</g>
+<g class="no" style="animation-delay:1.10s">
+<rect class="glow" x="684" y="102" width="188" height="74" rx="7" fill="none" stroke="#f2e85c" stroke-width="3" filter="url(#brilho)" style="animation-delay:1.10s"/>
+<rect x="684" y="102" width="188" height="74" rx="7" fill="#0f1520" stroke="#f2e85c" stroke-width="1.6"/>
+<text x="778.0" y="126.0" class="tit" fill="#f2e85c" text-anchor="middle">B0-T2</text>
+<text x="778.0" y="143.0" class="sub" text-anchor="middle">P + ΣW(reg,est)·cₖ</text>
+<text x="778.0" y="158.0" class="sub" text-anchor="middle">W e κ só do passado</text>
+</g>
+<g class="no" style="animation-delay:1.30s">
+<rect class="glow" x="684" y="236" width="188" height="74" rx="7" fill="none" stroke="#f2e85c" stroke-width="3" filter="url(#brilho)" style="animation-delay:1.30s"/>
+<rect x="684" y="236" width="188" height="74" rx="7" fill="#0f1520" stroke="#f2e85c" stroke-width="1.6" stroke-dasharray="5 4"/>
+<text x="778.0" y="260.0" class="tit" fill="#f2e85c" text-anchor="middle">hurdle-Gamma</text>
+<text x="778.0" y="277.0" class="sub" text-anchor="middle">média = B0-T2</text>
+<text x="778.0" y="292.0" class="sub" text-anchor="middle">k, p0 · rede contexto</text>
+</g>
+<g class="no" style="animation-delay:1.40s">
+<rect class="glow" x="460" y="290" width="170" height="58" rx="7" fill="none" stroke="#6b7fb3" stroke-width="3" filter="url(#brilho)" style="animation-delay:1.40s"/>
+<rect x="460" y="290" width="170" height="58" rx="7" fill="#0f1520" stroke="#6b7fb3" stroke-width="1.6"/>
+<text x="545.0" y="313.5" class="tit" fill="#6b7fb3" text-anchor="middle">schaake</text>
+<text x="545.0" y="330.5" class="sub" text-anchor="middle">51 cenários</text>
+</g>
+<g class="no" style="animation-delay:1.50s">
+<rect class="glow" x="230" y="290" width="190" height="58" rx="7" fill="none" stroke="#4fd6e8" stroke-width="3" filter="url(#brilho)" style="animation-delay:1.50s"/>
+<rect x="230" y="290" width="190" height="58" rx="7" fill="#0f1520" stroke="#4fd6e8" stroke-width="1.6"/>
+<text x="325.0" y="313.5" class="tit" fill="#4fd6e8" text-anchor="middle">produto mensal</text>
+<text x="325.0" y="330.5" class="sub" text-anchor="middle">média · quantis · P>clim</text>
+</g>
+<g class="no" style="animation-delay:1.6s"><rect x="24" y="388" width="852" height="58" rx="10" fill="none" stroke="#3a4256" stroke-width="1.4" stroke-dasharray="7 5"/>
+<text x="450.0" y="410" class="tit" fill="#8b93a7" text-anchor="middle">anti-vazamento</text>
+<text x="450.0" y="429" class="sub" text-anchor="middle">só o publicado até a emissão · dobras expansivas · bloco cego 2025–26 · pré-registro sha256</text></g>
+</svg>
